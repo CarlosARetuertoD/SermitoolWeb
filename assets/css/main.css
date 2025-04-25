@@ -1,4 +1,3 @@
-/* Declaración del selector raíz para definir variables globales */
 :root {
   /* Define la fuente predeterminada para el sitio con una lista de respaldo */
   --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -186,7 +185,7 @@ h6 {
 
 /* Estilos para la imagen dentro del logo ubicado en el header */
 .header .logo img {
-  max-height: 32px; /* Altura máxima de la imagen es 32px */
+  max-height: 60px; /* Altura máxima de la imagen es 32px */
   margin-right: 8px; /* Margen a la derecha para separar la imagen del texto del logo */
 }
 
@@ -553,12 +552,12 @@ h6 {
 /* Estilos para la sección "about" dentro del footer */
 .footer .footer-about .logo {
   line-height: 1; /* Altura de línea 1 para el logo */
-  margin-bottom: 25px; /* Margen inferior de 25px */
+  margin-bottom: 10px; /* Margen inferior de 25px */
 }
 
 /* Imagen dentro del logo en el footer */
 .footer .footer-about .logo img {
-  max-height: 40px; /* Altura máxima de 40px */
+  max-height: 80px; /* Altura máxima de 40px */
   margin-right: 6px; /* Margen a la derecha de 6px */
 }
 /* Texto del logo en el footer */
@@ -881,8 +880,8 @@ section,
   margin-bottom: 30px; /* Margen inferior de 30px para separar del siguiente contenido */
   color: var(--accent-color); /* Aplica el color de acento al texto */
   padding-bottom: 30px; /* Padding inferior de 30px para dar espacio al pseudo-elemento decorativo */
-  font-size: 56px; /* Tamaño de fuente grande de 56px */
-  font-weight: 700; /* Fuente en negrita */
+  font-size: 80px; /* Tamaño de fuente grande de 56px */
+  font-weight: 800; /* Fuente en negrita */
   position: relative; /* Posicionamiento relativo para el pseudo-elemento */
 }
 

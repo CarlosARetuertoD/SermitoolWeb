@@ -51,81 +51,52 @@
   <body class="contact-page">
     <!-- El atributo "contact-page" en la etiqueta <body> ayuda a aplicar estilos específicos para la página de contacto -->
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <!-- Encabezado fijo al tope de la página, con clases de Bootstrap para estructura flexible y alineación centrada -->
-      <div class="container-fluid container-xl d-flex justify-content-between align-items-center">
-        <!-- Contenedor fluido que limita el ancho máximo y distribuye el contenido entre los extremos -->
-        <!-- Logo de la empresa -->
-        <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Enlace al inicio que incluye el logotipo y está estilizado con flex -->
-          <h1 class="sitename">SERMITOOL</h1>
-          <!-- Nombre del sitio, con clase "sitename" -->
-          <span>.</span>
-          <!-- Punto decorativo junto al nombre -->
-        </a>
-        <!-- Menú de navegación -->
-        <nav id="navmenu" class="navmenu">
-          <!-- Contenedor del menú de navegación con id "navmenu" -->
-          <ul>
-            <!-- Lista principal de navegación -->
-            <li><a href="index.html">Inicio</a></li>
-            <!-- Enlace a la página de inicio -->
-            <li class="dropdown">
-              <!-- Elemento con submenú desplegable -->
-              <a href="products.html">
-                <span>Productos</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i>
-                <!-- Ícono que indica que hay un submenú -->
-              </a>
-              <ul>
-                <!-- Submenú para la sección "Productos" -->
-                <li class="dropdown">
-                  <!-- Submenú anidado para "Perforadoras" -->
-                  <a href="#">
-                    <span>Perforadoras</span>
-                    <i class="bi bi-chevron-down toggle-dropdown"></i>
-                  </a>
-                  <ul>
-                    <!-- Lista interna de productos -->
-                    <li><a href="item.html">Jackleg SECAN S250</a></li>
-                    <li><a href="item.html">Jackleg</a></li>
-                    <li><a href="item.html">Sinker</a></li>
-                    <li><a href="item.html">Stoper</a></li>
-                    <li><a href="item.html">Lubricadoras</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <!-- Submenú anidado para "Repuestos" -->
-                  <a href="#">
-                    <span>Repuestos</span>
-                    <i class="bi bi-chevron-down toggle-dropdown"></i>
-                  </a>
-                  <ul>
-                    <!-- Lista interna de repuestos -->
-                    <li><a href="item.html">Neumáticos</a></li>
-                    <li><a href="item.html">Hidráulicos</a></li>
-                  </ul>
-                </li>
-                <li><a href="item.html">Sostenimiento</a></li>
-                <!-- Enlace a Sostenimiento -->
-                <li><a href="item.html">Iluminacion</a></li>
-                <!-- Enlace a Iluminación -->
-              </ul>
-            </li>
-            <li><a href="services.html">Servicios</a></li>
-            <!-- Enlace a la página de Servicios -->
-            <li><a href="quality.html">Calidad</a></li>
-            <!-- Enlace a la página de Calidad -->
-            <li><a href="about.html">Nosotros</a></li>
-            <!-- Enlace a la página de Nosotros -->
-            <li><a href="contact.html" class="active">Contactenos</a></li>
-            <!-- Enlace a la página de Contacto, marcado como activo -->
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          <!-- Ícono para activar el menú móvil (visible sólo en pantallas menores a extra grande) -->
-        </nav>
-      </div>
-    </header>
+      <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex justify-content-between align-items-center position-relative">
+          <!-- Logo de la empresa -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logoSermitool.png" alt="SERMITOOL Logo" class="hero-logo" weight="200">
+          </a>
+          <!-- Menú de navegación principal -->
+          <nav id="navmenu" class="navmenu">
+            <!-- Contenedor del menú de navegación -->
+            <ul>
+              <li class="dropdown">
+                <a href="products.html" class="active">
+                  <span>Productos</span>
+                  <i class="bi bi-chevron-down toggle-dropdown"></i>
+                </a>
+                <ul>
+                  <li class="dropdown">
+                    <a href="#"><span>Perforadoras</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="item.html">Jackleg SECAN S250</a></li>
+                      <li><a href="item.html">Jackleg</a></li>
+                      <li><a href="item.html">Sinker</a></li>
+                      <li><a href="item.html">Stoper</a></li>
+                      <li><a href="item.html">Lubricadoras</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#"><span>Repuestos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="item.html">Neumáticos</a></li>
+                      <li><a href="item.html">Hidráulicos</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="item.html">Sostenimiento</a></li>
+                  <li><a href="item.html">Iluminacion</a></li>
+                </ul>
+              </li>
+              <li><a href="services.html">Servicios</a></li>
+              <li><a href="quality.html">Calidad</a></li>
+              <li><a href="about.html">Nosotros</a></li>
+              <li><a href="contact.html">Contáctanos</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+        </div>
+      </header> 
 
     <main class="main">
       <!-- Contenido principal de la página -->
