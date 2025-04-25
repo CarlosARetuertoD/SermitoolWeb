@@ -1,76 +1,54 @@
 <!DOCTYPE html>
-<html lang="es"> <!-- Define que el documento es HTML5 y que el idioma principal es español -->
+<html lang="es"> 
 
 <head>
-  <!-- La sección head contiene metadatos, enlaces a hojas de estilo y otros recursos necesarios antes del contenido principal -->
-  <meta charset="utf-8"> <!-- Define la codificación de caracteres a UTF-8 -->
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"> <!-- Configura el viewport para responsividad en móviles -->
+  <meta charset="utf-8"> 
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+  <title> Sermitool </title>
+  <meta name="description" content="Conoce más sobre Sermitool, proveedor líder en equipos de perforación minera."> 
+  <meta name="keywords" content="Sermitool, minería, perforación, OEM, equipos mineros, Sudáfrica"> 
 
-  <!-- Título de la página y metadatos para SEO -->
-  <title>Sermitool - Calidad</title>
-  <meta name="description" content="Gestión de calidad en equipos de perforación para minería - Sermitool Perú">
-  <meta name="keywords" content="Sermitool, Calidad, OEM, minería, perforación, Arequipa">
+  <!-- Íconos para el sitio -->
+  <link href="assets/img/favicon.ico" rel="icon"> 
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
 
-  <!-- Íconos para la pestaña del navegador y dispositivos Apple -->
-  <link href="assets/img/favicon.ico" rel="icon"> <!-- Favicon del sitio -->
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> <!-- Icono para dispositivos Apple -->
+  <!-- Preconexión y carga de fuentes desde Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"> 
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Fuentes de Google -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"> <!-- Preconecta a Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> <!-- Preconecta al dominio que aloja las fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
-  <!-- Carga las tipografías Roboto, Open Sans y Poppins desde Google Fonts -->
+  <!-- Archivos CSS de proveedores (librerías externas) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> 
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> 
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
 
-  <!-- CSS de librerías externas (Vendor CSS Files) -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap para estilos y componentes responsivos -->
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> <!-- Iconos de Bootstrap Icons -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet"> <!-- CSS para animaciones al hacer scroll (AOS) -->
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> <!-- CSS de Font Awesome para iconografía adicional -->
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> <!-- CSS para lightbox (GLightbox) -->
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> <!-- CSS para el slider/carousel (Swiper) -->
-
-  <!-- Hoja de estilos principal del sitio -->
-  <link href="assets/css/main.css" rel="stylesheet"> <!-- Archivo CSS personalizado del sitio -->
+  <!-- Archivo CSS principal para personalización del sitio -->
+  <link href="assets/css/main.css" rel="stylesheet"> 
 </head>
 
-<body class="projects-page"> <!-- Se asigna la clase "projects-page" para estilos específicos en esta sección -->
+<body class="projects-page"> 
 
-  <!-- ========== ENCABEZADO ========== -->
   <header id="header" class="header d-flex align-items-center fixed-top">
-    <!-- Encabezado fijo en la parte superior con utilidades de Bootstrap para alineación (d-flex, align-items-center) -->
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <!-- Contenedor fluido que limita el ancho (container-xl) y distribuye el contenido entre los extremos -->
-      
-      <!-- Logotipo con nombre del sitio -->
+    <div class="container-fluid container-xl d-flex justify-content-between align-items-center position-relative">
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Enlace al inicio, con clase "logo" y estilos flex para alinear elementos -->
-        <h1 class="sitename">SERMITOOL</h1><span>.</span>
-        <!-- Nombre del sitio "SERMITOOL" y un punto decorativo -->
+        <img src="assets/img/logoSermitool.png" alt="SERMITOOL Logo" class="hero-logo" weight="200">
       </a>
-
-      <!-- Menú de navegación principal -->
       <nav id="navmenu" class="navmenu">
-        <!-- Contenedor del menú principal -->
-        <ul>
-          <!-- Lista principal de navegación -->
-          <li><a href="index.html">Inicio</a></li>
+        <ul>     
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="quality.html">Calidad</a></li>
           <li class="dropdown">
-            <!-- Elemento de menú con submenú desplegable para "Productos" -->
-            <a href="products.html">
-              <span>Productos</span> 
+            <a href="products.html" class="active">
+              <span>Productos</span>
               <i class="bi bi-chevron-down toggle-dropdown"></i>
-              <!-- Ícono de flecha para indicar la presencia de un dropdown -->
             </a>
             <ul>
-              <!-- Submenú para "Productos" -->
               <li class="dropdown">
-                <!-- Submenú anidado para "Perforadoras" -->
-                <a href="#">
-                  <span>Perforadoras</span> 
-                  <i class="bi bi-chevron-down toggle-dropdown"></i>
-                </a>
+                <a href="#"><span>Perforadoras</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <!-- Lista de productos de perforadoras -->
                   <li><a href="item.html">Jackleg SECAN S250</a></li>
                   <li><a href="item.html">Jackleg</a></li>
                   <li><a href="item.html">Sinker</a></li>
@@ -79,13 +57,8 @@
                 </ul>
               </li>
               <li class="dropdown">
-                <!-- Submenú anidado para "Repuestos" -->
-                <a href="#">
-                  <span>Repuestos</span> 
-                  <i class="bi bi-chevron-down toggle-dropdown"></i>
-                </a>
+                <a href="#"><span>Repuestos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <!-- Lista de productos de repuestos -->
                   <li><a href="item.html">Neumáticos</a></li>
                   <li><a href="item.html">Hidráulicos</a></li>
                 </ul>
@@ -94,48 +67,29 @@
               <li><a href="item.html">Iluminacion</a></li>
             </ul>
           </li>
-          <li><a href="services.html">Servicios</a></li> <!-- Enlace a Servicios -->
-          <li><a href="quality.html" class="active">Calidad</a></li> <!-- Enlace a Calidad (activo) -->
-          <li><a href="about.html">Nosotros</a></li> <!-- Enlace a Nosotros -->
-          <li><a href="contact.html">Contactenos</a></li> <!-- Enlace a Contacto -->
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contáctanos</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        <!-- Ícono para activar el menú en dispositivos móviles (visible solo en pantallas menores a XL) -->
       </nav>
     </div>
-  </header>
-
-  <!-- ========== CONTENIDO PRINCIPAL ========== -->
+  </header>  
   <main class="main">
-    <!-- Contenedor principal para el contenido de la página -->
-
-    <!-- TÍTULO DE LA PÁGINA -->
     <div class="page-title dark-background" style="background-image: url(assets/img/backgrounds/page-title-bg.jpg);">
-      <!-- Sección que muestra el título de la página con un fondo oscuro y una imagen de fondo definida inline -->
       <div class="container position-relative">
-        <!-- Contenedor para centrar y posicionar el título y las migas de pan (breadcrumbs) -->
         <h1>Gestión de Calidad</h1>
-        <!-- Título principal -->
         <nav class="breadcrumbs">
-          <!-- Navegación de "migas de pan" que ayuda al usuario a entender la ruta de la página -->
           <ol>
-            <!-- Lista ordenada para las migas de pan -->
             <li><a href="index.html">Inicio</a></li>
-            <li class="current">Calidad</li> <!-- Elemento actual sin enlace -->
+            <li class="current">Calidad</li>
           </ol>
         </nav>
       </div>
     </div>
 
-    <!-- SECCIÓN PRINCIPAL DE CALIDAD -->
     <section class="section" id="quality-info">
-      <!-- Sección identificada como "quality-info" para estilos y scripts específicos -->
       <div class="container" data-aos="fade-up">
-        <!-- Contenedor principal con animación de entrada "fade-up" (AOS) -->
-
-        <!-- Título y descripción introductoria -->
         <div class="section-title text-center">
-          <!-- Título centrado para la sección -->
           <h2>Comprometidos con la Calidad</h2>
           <p>
             En <strong>SERMITOOL</strong> trabajamos bajo un enfoque de mejora continua y cumplimiento riguroso de estándares internacionales.<br>
@@ -143,16 +97,10 @@
           </p>
         </div>
 
-        <!-- GRILLA DE ICONOS Y DESCRIPCIONES -->
-        <div class="row gy-4"> <!-- Fila con separación vertical (gutter vertical gy-4) -->
-
-          <!-- Bloque 1: Sistema de gestión -->
+        <div class="row gy-4">
           <div class="col-lg-6">
-            <!-- Columna que ocupa 6/12 en pantallas grandes -->
-            <div class="icon-box d-flex align-items-start">
-              <!-- Contenedor de icono y texto, con alineación inicial (flex) -->
+            <div class="icon-box d-flex align-items-start">              
               <i class="bi bi-patch-check-fill text-success fs-1 me-4"></i>
-              <!-- Ícono (patch-check-fill) con color de éxito, tamaño grande (fs-1) y margen a la derecha (me-4) -->
               <div>
                 <h4>Sistema de Gestión de Calidad</h4>
                 <p>Aplicamos controles rigurosos en cada etapa del proceso: desde la forja, mecanizado, tratamiento térmico hasta el ensamblaje y despacho. Todos nuestros procesos están alineados con estándares ISO para asegurar resistencia, precisión y confiabilidad.</p>
@@ -160,11 +108,9 @@
             </div>
           </div>
 
-          <!-- Bloque 2: Alianza estratégica -->
           <div class="col-lg-6">
             <div class="icon-box d-flex align-items-start">
               <i class="bi bi-shield-lock-fill text-warning fs-1 me-4"></i>
-              <!-- Ícono de escudo con color de advertencia (text-warning) -->
               <div>
                 <h4>Alianza con NASA Engineering</h4>
                 <p>Colaboramos con nuestro partner en Sudáfrica, proveedor OEM certificado para grandes marcas del sector minero global como SECO, BOART LONGYEAR y TRANTER.</p>
@@ -172,11 +118,9 @@
             </div>
           </div>
 
-          <!-- Bloque 3: Control técnico -->
           <div class="col-lg-6">
             <div class="icon-box d-flex align-items-start">
               <i class="bi bi-gear-wide-connected text-primary fs-1 me-4"></i>
-              <!-- Ícono de engranaje con color primario -->
               <div>
                 <h4>Control de Procesos</h4>
                 <p>Monitoreamos cada fase técnica para asegurar productos con vida útil prolongada y excelente desempeño en condiciones mineras exigentes.</p>
@@ -184,11 +128,9 @@
             </div>
           </div>
 
-          <!-- Bloque 4: Servicio al cliente -->
           <div class="col-lg-6">
             <div class="icon-box d-flex align-items-start">
               <i class="bi bi-award-fill text-danger fs-1 me-4"></i>
-              <!-- Ícono de premio con color de alerta (text-danger) -->
               <div>
                 <h4>Satisfacción del Cliente</h4>
                 <p>Nuestro compromiso se extiende más allá de la venta: ofrecemos atención personalizada, entregas puntuales y soporte técnico postventa.</p>
@@ -196,125 +138,36 @@
             </div>
           </div>
 
-        </div> <!-- Fin de la fila -->
-      </div> <!-- Fin del contenedor principal de la sección -->
+        </div>
+      </div>
     </section>
-
   </main>
 
-  <!-- ========== PIE DE PÁGINA (FOOTER) ========== -->
-  <footer id="footer" class="footer dark-background">
-    <!-- Footer con fondo oscuro definido por la clase "dark-background" -->
-    
-    <!-- PARTE SUPERIOR DEL FOOTER -->
-    <div class="container footer-top">
-      <!-- Contenedor para la parte superior del footer -->
-      <div class="row gy-4"> <!-- Fila con separación vertical (gy-4) -->
-        
-        <!-- COL-1: Información de la empresa y contacto -->
-        <div class="col-lg-4 col-md-6 footer-about">
-          <!-- Columna para información sobre la empresa -->
-          <a href="index.html" class="logo d-flex align-items-center">
-            <!-- Enlace al inicio con logotipo -->
-            <span class="sitename">Sermitool Peru S.R.L.</span>
-          </a>
-          <!-- Datos de contacto -->
-          <div class="footer-contact">
-            <p class="mt-3">
-              <strong>Teléfonos:</strong> 
-              <span>+51-959301020 <strong>//</strong> +51-959932990</span>
-            </p>
-            <p><strong>PH/Fax:</strong> <span>51-054-407562</span></p>
-            <p><strong>RPM:</strong> <span>#717410</span></p>
-            <p><strong>Email:</strong> <span>info@sermitool.com</span></p>
-          </div>
-        </div>
+  <div id="footer-placeholder"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      fetch('partials/footer.html')
+        .then(r => r.ok ? r.text() : Promise.reject(r.status))
+        .then(html => {
+          document.getElementById('footer-placeholder').outerHTML = html;
+        })
+        .catch(err => console.error('Error cargando footer:', err));
+    });
+  </script>
 
-        <!-- COL-2: Redes Sociales -->
-        <div class="col-lg-4 col-md-6 footer-links">
-          <!-- Columna para mostrar enlaces a redes sociales -->
-          <h4>Redes Sociales</h4>
-          <div class="social-links d-flex mt-2">
-            <!-- Contenedor de los íconos de redes, con alineación en línea usando flex -->
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#" target="_blank">
-              <img src="assets/img/icons/tiktok-icon.svg" alt="TikTok">
-              <!-- Ícono en formato imagen para TikTok, abre en nueva pestaña -->
-            </a>
-          </div>
-        </div>
-        
-        <!-- COL-3: Dirección con Mapa -->
-        <div class="col-lg-4 col-md-6 footer-links">
-          <!-- Columna para mostrar la dirección física y el mapa incrustado -->
-          <h4>Dirección</h4>
-          <div class="map-container" style="border-radius: 8px; overflow: hidden;">
-            <!-- Contenedor para el mapa con estilo inline para bordes redondeados y ocultar contenido desbordado -->
-            <p>
-              Calle Platino Nº 210 - J.C. Mariátegui (Ref. continuación calle Chicago en APIMA)
-              <br> Paucarpata-Arequipa, Perú
-            </p>
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d956.7956372541275!2d-71.50657208815375!3d-16.41555266190697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b12317ff21d%3A0xe03ae5551fa49a8e!2sPlatino%20210%2C%20Arequipa!5e0!3m2!1ses-419!2spe!4v1516807224893" 
-              width="100%" 
-              height="200" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <!-- Iframe que incrusta el mapa de Google con la ubicación de la empresa -->
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- PARTE INFERIOR DEL FOOTER: Derechos de autor y créditos -->
-    <div class="container copyright text-center mt-4">
-      <!-- Contenedor centrado para mostrar la información de copyright -->
-      <p>
-        © <span>Copyright</span> 
-        <strong class="px-1 sitename">Sermitool Peru S.R.L</strong> 
-        <span>All Rights Reserved</span>
-      </p>
-      <div class="credits">
-        Designed by <a href="#">REDEL Smart Software Solutions.</a>
-        <!-- Créditos del diseño (deben conservarse si es versión gratuita) -->
-      </div>
-    </div>
-  </footer>
-
-  <!-- Botón flotante para subir al inicio -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <!-- Botón que permite regresar al inicio de la página -->
     <i class="bi bi-arrow-up-short"></i>
-    <!-- Ícono de flecha hacia arriba -->
   </a>
-
-  <!-- Preloader: Elemento que se muestra mientras carga la página -->
   <div id="preloader"></div>
-
-  <!-- Librerías JavaScript necesarias -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- JavaScript de Bootstrap para componentes interactivos -->
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <!-- Script para validar el formulario de email -->
   <script src="assets/vendor/aos/aos.js"></script>
-  <!-- JavaScript para animaciones al hacer scroll (AOS) -->
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <!-- JavaScript para la funcionalidad de lightbox (GLightbox) -->
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <!-- Script para asegurar la carga correcta de las imágenes -->
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <!-- Script para organizar y filtrar elementos (Isotope) -->
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <!-- JavaScript para el slider/carousel (Swiper) -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <!-- Script para contadores animados (PureCounter) -->
   <script src="assets/js/main.js"></script>
-  <!-- Script principal con funcionalidades personalizadas del sitio -->
 </body>
 
 </html>

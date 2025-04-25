@@ -1,28 +1,19 @@
 (function() {
-  "use strict"; // Ejecuta el script en modo estricto, lo que ayuda a evitar errores comunes
-
-  /**
-   * Aplica la clase .scrolled al <body> cuando la página se ha desplazado hacia abajo.
-   */
+  "use strict";
   function toggleScrolled() {
-    // Selecciona el elemento <body> y el encabezado (header) con id "header"
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
-    // Si el header no tiene ninguna de estas clases de posición (scroll-up-sticky, sticky-top, fixed-top), no hace nada.
     if (
       !selectHeader.classList.contains('scroll-up-sticky') &&
       !selectHeader.classList.contains('sticky-top') &&
       !selectHeader.classList.contains('fixed-top')
     )
       return;
-    // Si la posición vertical de la ventana supera 100 píxeles, agrega la clase 'scrolled' al <body>;
-    // de lo contrario, la remueve.
     window.scrollY > 100
       ? selectBody.classList.add('scrolled')
       : selectBody.classList.remove('scrolled');
   }
 
-  // Asocia la función toggleScrolled al evento 'scroll' y a la carga completa de la página.
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 

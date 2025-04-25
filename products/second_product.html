@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- Se especifica el tipo de documento y que el idioma principal es español -->
   <head>
     <meta charset="utf-8"> 
     <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
@@ -29,7 +28,7 @@
     <link href="assets/css/main.css" rel="stylesheet"> 
   </head>
 
-  <body class="about-page">
+  <body class="project-details-page">
       <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl d-flex justify-content-between align-items-center position-relative">
           <a href="index.html" class="logo d-flex align-items-center">
@@ -72,81 +71,112 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
         </div>
-      </header>
+      </header>          
 
     <main class="main">
       <div class="page-title dark-background" style="background-image: url(assets/img/backgrounds/page-title-bg.jpg);">
         <div class="container position-relative">
-          <h1>Nosotros</h1>
+          <h1>Item Generico</h1>
           <nav class="breadcrumbs">
             <ol>
               <li><a href="index.html">Inicio</a></li>
-              <li class="current">Nosotros</li>
+              <li><a href="productos.html">Productos</a></li>
+              <li class="current">Item</li>
             </ol>
           </nav>
         </div>
       </div>
 
-      <section id="about" class="about section">
-        <div class="container">
-          <div class="row position-relative align-items-center">
-            <div class="col-lg-6 about-img" data-aos="zoom-out" data-aos-delay="200">
-              <img src="assets/img/nosotros-img.jpg" alt="Sermitool empresa minera" class="img-fluid rounded">
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <h2 class="inner-title">Sobre Nosotros</h2>
-              <div class="our-story">
-                <h4>Desde 1995</h4>
-                <h3>Nuestra Historia</h3>
-                <p>SERMITOOL PERU SRL es una empresa fundada en Arequipa – Perú, especializada en proveer equipos de perforación y componentes para la industria minera. Nos enfocamos en ofrecer productos de alta calidad y un servicio que cumpla con los más altos estándares técnicos y profesionales.</p>
-                <p>Desde el 2015, establecimos una alianza estratégica con <strong>NASA ENGINEERING de Sudáfrica</strong>, pionera en la fabricación de equipos OEM para empresas mineras líderes como SECO, BOART LONGYEAR y TRANTER.</p>
+      <section id="project-details" class="item section">
+        <div class="container" data-aos="fade-up">
+          <div class="row justify-content-between gy-4 mt-4">
+            <!-- DESCRIPCIÓN DEL PRODUCTO -->
+            <div class="col-lg-8" data-aos="fade-up">
+              <div class="portfolio-description">
+                <h2>Producto 1 - Componente para Perforación</h2>
+                <!-- Título del producto -->
+                <p>
+                  Componente diseñado para aplicaciones mineras de alto impacto, fabricado con precisión y resistencia para condiciones de trabajo extremo.
+                </p>
+                <!-- Primer párrafo descriptivo -->
+                <p>
+                  Ideal para labores subterráneas que demandan durabilidad, facilidad de mantenimiento y compatibilidad con maquinaria existente en faena.
+                </p>
+                <!-- Segundo párrafo descriptivo -->
+                <p>
+                  Fabricado bajo especificaciones OEM, asegura desempeño constante y mínimo desgaste.
+                </p>
+                <!-- Tercer párrafo descriptivo -->
                 <ul>
-                  <li><i class="bi bi-check-circle"></i> Equipos de perforación con tecnología de punta</li>
-                  <li><i class="bi bi-check-circle"></i> Componentes OEM certificados</li>
-                  <li><i class="bi bi-check-circle"></i> Comprometidos con la mejora continua</li>
+                  <!-- Lista de características o beneficios del producto -->
+                  <li>Alta resistencia a abrasión y fatiga.</li>
+                  <li>Optimizado para perforación en galerías.</li>
+                  <li>Construcción robusta, ideal para mina subterránea.</li>
                 </ul>
-                <p>Nuestra política es brindar soluciones técnicas sólidas, relaciones de largo plazo y una atención personalizada que supere las expectativas de nuestros clientes.</p>
-                <div class="watch-video d-flex align-items-center position-relative">
-                  <i class="bi bi-play-circle"></i>
-                  <a href="https://www.youtube.com/watch?v=MoViMMZURtA&ab_channel=ADIASOFTESPA%C3%91OL" class="glightbox stretched-link">Ver Video</a>
-                </div>
+              </div>
+            </div>
+            
+            <!-- INFORMACIÓN TÉCNICA DEL PRODUCTO -->
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <!-- Columna de 3/12 para la ficha técnica, con animación y un retardo adicional -->
+              <div class="portfolio-info">
+                <!-- Contenedor para la información técnica -->
+                <h3>Ficha Técnica</h3>
+                <!-- Título de la ficha técnica -->
+                <ul>
+                  <!-- Lista de información técnica -->
+                  <li><strong>Categoría</strong>: Repuestos Mineros</li>
+                  <li><strong>Fabricante</strong>: NASA Engineering</li>
+                  <li><strong>Origen</strong>: Sudáfrica</li>
+                  <li><strong>Disponibilidad</strong>: Stock permanente</li>
+                </ul>
+                <a href="#" class="btn-quote align-self-start">Solicitar cotización</a>
+                <!-- Botón que permite solicitar una cotización; la clase "btn-visit" estiliza el botón -->
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="mision-vision" class="section">
-        <div class="container">
-          <div class="row gy-4" data-aos="fade-up">
-            <div class="col-lg-4">
-              <div class="card h-100 p-4 shadow-sm">
-                <h4 class="text-primary">Misión</h4>
-                <p>Proveer productos y soluciones para perforación minera con los más altos estándares de calidad, generando satisfacción, confiabilidad y eficiencia en nuestros clientes, impulsando el desarrollo industrial del país.</p>
+          <!-- CARRUSEL DE IMÁGENES -->
+          <div class="portfolio-details-slider swiper init-swiper">
+            <!-- Contenedor para el slider/carrusel de imágenes, usando Swiper -->
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
+                },
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>
+            <!-- Configuración del Swiper en formato JSON embebido -->
+            <div class="swiper-wrapper align-items-center">
+              <!-- Contenedor de los slides, con alineación vertical centrada -->
+              <div class="swiper-slide">
+                <img src="assets/img/products/product-1.jpg" alt="">
+                <!-- Slide con imagen del producto; el atributo alt está vacío y se puede ajustar según necesidades -->
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/products/product-2.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/products/product-3.jpg" alt="">
               </div>
             </div>
-
-            <div class="col-lg-4">
-              <div class="card h-100 p-4 shadow-sm">
-                <h4 class="text-success">Visión</h4>
-                <p>Ser reconocidos como una empresa referente en el sector minero a nivel global, destacando por la calidad de nuestros productos, innovación tecnológica y relaciones comerciales de confianza.</p>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="card h-100 p-4 shadow-sm">
-                <h4 class="text-warning">Valores</h4>
-                <ul class="list-unstyled mb-0">
-                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Integridad</li>
-                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Compromiso</li>
-                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Lealtad</li>
-                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Servicio al cliente</li>
-                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Responsabilidad</li>
-                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Puntualidad</li>
-                </ul>
-              </div>
-            </div>
+            <!-- Controles de navegación del slider -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+            <!-- Estos elementos se usan por Swiper para la navegación y la paginación -->
           </div>
         </div>
       </section>
@@ -163,22 +193,34 @@
           .catch(err => console.error('Error cargando footer:', err));
       });
     </script>
-    
+
+    <!-- Botón para volver al tope de la página (Scroll Top) -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
       <i class="bi bi-arrow-up-short"></i>
-        <!-- Ícono de flecha hacia arriba, indica la función de regresar al inicio -->
+      <!-- Ícono de flecha hacia arriba -->
     </a>
 
+    <!-- Preloader: Se muestra mientras la página carga -->
     <div id="preloader"></div>
+
+    <!-- Archivos JavaScript de proveedores y script principal -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Bootstrap para interactividad (ej. modales, dropdowns) -->
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Script para la validación del formulario de email -->
     <script src="assets/vendor/aos/aos.js"></script>
+    <!-- Script para las animaciones al hacer scroll (AOS) -->
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <!-- Script para la funcionalidad lightbox -->
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <!-- Asegura la carga correcta de las imágenes -->
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <!-- Script para la organización y filtrado de elementos (Isotope) -->
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Script para el slider/carousel (Swiper) -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <!-- Script para contadores animados (PureCounter) -->
     <script src="assets/js/main.js"></script>
-    
+    <!-- Script principal con funcionalidades personalizadas del sitio -->
   </body>
 </html>
