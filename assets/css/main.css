@@ -845,7 +845,15 @@ section,
 /*--------------------------------------------------------------*/
 /* Hero Section                                               */
 /*--------------------------------------------------------------*/
+section#indexproducts {
+  padding: 2rem 1rem;            /* espacio arriba/abajo y algo de holgura lateral */
+  background: #f9f9f9;
+}
 
+section#indexproducts .container {
+  max-width: 1200px;             /* no crece sin límite */
+  margin: 0 auto;                /* centra */
+}
 /* Estilos para la sección hero, que es la primera sección visual y de bienvenida */
 .hero {
   width: 100%; /* Ocupa el ancho completo */
