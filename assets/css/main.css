@@ -880,7 +880,7 @@ section,
   margin-bottom: 30px; /* Margen inferior de 30px para separar del siguiente contenido */
   color: var(--accent-color); /* Aplica el color de acento al texto */
   padding-bottom: 30px; /* Padding inferior de 30px para dar espacio al pseudo-elemento decorativo */
-  font-size: 60px; /* Tamaño de fuente grande de 56px */
+  font-size: 80px; /* Tamaño de fuente grande de 56px */
   font-weight: 800; /* Fuente en negrita */
   position: relative; /* Posicionamiento relativo para el pseudo-elemento */
 }
@@ -890,7 +890,7 @@ section,
   content: ""; /* Contenido vacío para decoración */
   position: absolute; /* Posicionamiento absoluto respecto a h2 */
   display: block; /* Se muestra como bloque para poder definir ancho y alto */
-  width: 250px; /* Ancho de 80px para la línea */
+  width: 100px; /* Ancho de 80px para la línea */
   height: 4px; /* Altura de 4px para la línea */
   background: var(--accent-color); /* Color de la línea en acento */
   left: 0; /* Alineado a la izquierda */
