@@ -27,11 +27,9 @@
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script>
       (function(){
-        emailjs.init('qPGTUXDM_4qvuKAEx'); // Reemplaza con tu User ID de EmailJS
+        emailjs.init('qPGTUXDM_4qvuKAEx'); 
       })();
     </script>
-
-    <!-- Oculta por defecto los mensajes de estado -->
     <style>
       .loading, .error-message, .sent-message { display: none; }
     </style>
@@ -48,7 +46,7 @@
             <li><a href="services.html">Servicios</a></li>
             <li><a href="quality.html">Calidad</a></li>
             <li class="dropdown">
-              <a href="products.html" class="active">
+              <a href="products.html">
                 <span>Productos</span>
                 <i class="bi bi-chevron-down toggle-dropdown"></i>
               </a>
@@ -75,7 +73,7 @@
               </ul>
             </li>
             <li><a href="about.html">Nosotros</a></li>
-            <li><a href="contact.html">Contáctanos</a></li>
+            <li><a href="contact.html"  class="active">Contáctanos</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -83,7 +81,7 @@
     </header>     
 
     <main class="main">
-      <!-- TÍTULO DE LA PÁGINA -->
+
       <div class="page-title dark-background" style="background-image: url(assets/img/backgrounds/page-title-bg.jpg);">
         <div class="container position-relative">
           <h1>Contáctanos</h1>
@@ -96,11 +94,8 @@
         </div>
       </div>
 
-      <!-- SECCIÓN DE CONTACTO -->
       <section id="contact" class="contact section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-          <!-- INFO: Dirección, Teléfonos, Correo -->
           <div class="row gy-4 mb-4">
             <div class="col-lg-4">
               <div class="info-item d-flex flex-column justify-content-center align-items-center text-center h-100 p-4 border rounded">
@@ -124,10 +119,13 @@
               </div>
             </div>
           </div>
-
           <div class="row gy-4 mt-1">
+            <!-- MAPA -->
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d956.7956372541275!2d-71.506572!3d-16.4155526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b12317ff21d%3A0xe03ae5551fa49a8e!2sPlatino%20210%2C%20Arequipa!5e0!3m2!1ses-419!2spe!4v1516807224893" frameborder="0" style="width: 100%; height: 400px; border: 0;" allowfullscreen loading="lazy"></iframe>
+            </div>
             <!-- FORMULARIO -->
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
               <form id="contact-form" class="php-email-form">
                 <div class="row gy-4">
                   <div class="col-md-6">
@@ -150,16 +148,10 @@
                   </div>
                 </div>
               </form>
-            </div>
-            <!-- MAPA -->
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d956.7956372541275!2d-71.506572!3d-16.4155526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b12317ff21d%3A0xe03ae5551fa49a8e!2sPlatino%20210%2C%20Arequipa!5e0!3m2!1ses-419!2spe!4v1516807224893" frameborder="0" style="width: 100%; height: 400px; border: 0;" allowfullscreen loading="lazy"></iframe>
-            </div>
+            </div>         
           </div>
-
         </div>
       </section>
-
     </main>
 
     <div id="footer-placeholder"></div>
@@ -182,8 +174,7 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <!-- EmailJS envío de formulario -->
+    
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('contact-form');
@@ -211,6 +202,5 @@
         });
       });
     </script>
-
   </body>
 </html>

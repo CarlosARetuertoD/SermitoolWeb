@@ -1338,13 +1338,13 @@ section#indexproducts .container {
 @media (min-width: 991px) {
   .about .inner-title {
     max-width: 65%; /* Limita el ancho máximo del título al 65% del contenedor */
-    margin: 0 0 80px 0; /* Ajusta el margen: 0 arriba, 0 derecha, 80px abajo, 0 izquierda */
+    margin: 40px 0 40px 0; /* Ajusta el margen: 0 arriba, 0 derecha, 80px abajo, 0 izquierda */
   }
 }
 
 /* Estilos para el contenedor de la historia ("our-story") en la sección About */
 .about .our-story {
-  padding: 40px; /* Aplica 40px de padding en todos los lados */
+  padding: 30px; /* Aplica 40px de padding en todos los lados */
   background-color: color-mix(in srgb, var(--default-color), transparent 96%);
       /* Establece el fondo mezclando el color por defecto con 96% de transparencia */
 }
@@ -1352,7 +1352,7 @@ section#indexproducts .container {
 /* Para pantallas de al menos 991px, ajusta el padding del contenedor "our-story" */
 @media (min-width: 991px) {
   .about .our-story {
-    padding-right: 35%; /* Aplica un padding derecho del 35% para dar espacio a otros elementos */
+    padding-right: 25%; /* Aplica un padding derecho del 35% para dar espacio a otros elementos */
   }
 }
 
@@ -1455,6 +1455,7 @@ section#indexproducts .container {
 /* Selecciona las imágenes dentro del slider de detalles del portafolio */
 .item .portfolio-details-slider img {
   width: 100%; /* Las imágenes ocupan el ancho completo del contenedor */
+  margin-top: 0 !important;
 }
 
 /* Selecciona la envoltura (wrapper) de Swiper en la sección de detalles de proyectos */
@@ -1727,11 +1728,12 @@ section#indexproducts .container {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
       /* Al pasar el cursor, el fondo se mezcla con 20% de transparencia del color de acento */
 }
+
 .ficha-tecnica {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  background-color: #f2f2f2;   /* fondo gris muy ligero */
+  background-color: #ffffff;   /* fondo gris muy ligero */
   border: 2px solid #000;      /* borde exterior negro */
 }
 
@@ -1739,16 +1741,48 @@ section#indexproducts .container {
 .ficha-tecnica td {
   border: 1px solid #000;      /* bordes internos negros */
   padding: 0.5rem 0.75rem;
-  background-color: #fff;      /* fondo blanco en celdas */
+  background-color: #ffffff;      /* fondo blanco en celdas */
 }
 
 .ficha-tecnica th {
-  background-color: #ccc;      /* gris medio para cabeceras */
+  background-color: #000000;      /* gris medio para cabeceras */
   color: #000;
   text-align: left;
   font-weight: bold;
 }
 
 .ficha-tecnica tr:nth-child(even) td {
-  background-color: #e8e8e8;   /* filas pares con gris suave */
+  background-color: #dedede;   /* filas pares con gris suave */
+}
+
+.btn-quote {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    var(--accent-color) 0%, 
+    var(--accent-color) 100%
+  ) !important;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px var(--accent-color) !important;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 40px;
+}
+
+.btn-quote:hover {
+  background: linear-gradient(
+    90deg,
+    var(--accent-color) 0%,
+    var(--accent-color) 100%
+  ) !important;
+  transform: translateY(-2px);
+}
+
+.btn-quote:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px var(--accent-color) !important;
 }
