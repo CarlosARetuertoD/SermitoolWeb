@@ -1538,7 +1538,43 @@ section#indexproducts .container {
   left: 0; /* Alineado al borde izquierdo */
   bottom: 0; /* Ubicado en la parte inferior del h3 */
 }
+.portfolio-info .ficha-tecnica {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-family: var(--default-font);
+  color: var(--default-color);
+}
 
+/* Encabezados de columna */
+.portfolio-info .ficha-tecnica th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background-color: var(--heading-color);
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Celdas de datos */
+.portfolio-info .ficha-tecnica td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Filas en fondo alterno */
+.portfolio-info .ficha-tecnica tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .portfolio-info .ficha-tecnica th,
+  .portfolio-info .ficha-tecnica td {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
 /* Selecciona la lista de información dentro de .portfolio-info */
 .item .portfolio-info ul {
   list-style: none; /* Elimina viñetas predeterminadas */
@@ -1691,4 +1727,28 @@ section#indexproducts .container {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
       /* Al pasar el cursor, el fondo se mezcla con 20% de transparencia del color de acento */
 }
+.ficha-tecnica {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #f2f2f2;   /* fondo gris muy ligero */
+  border: 2px solid #000;      /* borde exterior negro */
+}
 
+.ficha-tecnica th,
+.ficha-tecnica td {
+  border: 1px solid #000;      /* bordes internos negros */
+  padding: 0.5rem 0.75rem;
+  background-color: #fff;      /* fondo blanco en celdas */
+}
+
+.ficha-tecnica th {
+  background-color: #ccc;      /* gris medio para cabeceras */
+  color: #000;
+  text-align: left;
+  font-weight: bold;
+}
+
+.ficha-tecnica tr:nth-child(even) td {
+  background-color: #e8e8e8;   /* filas pares con gris suave */
+}
