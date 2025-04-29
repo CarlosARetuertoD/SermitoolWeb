@@ -159,7 +159,6 @@
   // ============ FETCH HEADER Y FOOTER ============
   document.addEventListener('DOMContentLoaded', () => {
     const fetches = [];
-
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
       const headerFetch = fetch('/partials/header.html')
