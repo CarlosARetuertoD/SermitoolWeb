@@ -57,19 +57,6 @@
     });
   }
 
-  function activarLinkActual() {
-    const currentPath = window.location.pathname.split('/').pop(); // Ej: "about.html"
-  
-    document.querySelectorAll('#navmenu a').forEach(link => {
-      const linkPath = link.getAttribute('href');
-      if (linkPath && linkPath.includes(currentPath)) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }
-
   function setupModalCotizacion() {
     const openBtn = document.getElementById('openModal');
     if (openBtn) {
@@ -152,7 +139,6 @@
     GLightbox({ selector: '.glightbox' });
 
     new PureCounter();
-    activarLinkActual();
     setupModalCotizacion();
   }
 
