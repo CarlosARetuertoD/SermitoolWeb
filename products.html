@@ -25,8 +25,37 @@
     <link href="assets/css/main.css" rel="stylesheet"> 
   </head>
   <body class="projects-page">
-    <div id="header-placeholder"></div>  
-
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex justify-content-between align-items-center position-relative">
+        <a href="/index.html" class="logo d-flex align-items-center">
+          <img src="/assets/img/logoSermitool.png" alt="SERMITOOL Logo" class="hero-logo" weight="200">
+        </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="/services.html">Servicios</a></li>
+            <li><a href="/quality.html">Calidad</a></li>
+            <li class="dropdown">
+              <a href="/products.html"  class="active">
+                <span>Productos</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <ul>
+                <li class="dropdown">
+                  <a href="#"><span>Perforadoras</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="/products/secans250_info.html">Jackleg SECAN S250</a></li>
+                  </ul>
+                </li>
+                <li><a href="/products/scoop_info.html">Scoop Minero</a></li>
+              </ul>
+            </li>
+            <li><a href="/about.html">Nosotros</a></li>
+            <li><a href="/contact.html">Contáctanos</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
     <main class="main">
       <div class="page-title dark-background" style="background-image: url(assets/img/backgrounds/page-title-bg.jpg);">
         <div class="container position-relative">
