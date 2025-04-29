@@ -57,6 +57,19 @@
     });
   }
 
+  function activarLinkActual() {
+    const currentPath = window.location.pathname.split('/').pop(); // Ej: "about.html"
+  
+    document.querySelectorAll('#navmenu a').forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (linkPath && linkPath.includes(currentPath)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
   function setupModalCotizacion() {
     const openBtn = document.getElementById('openModal');
     if (openBtn) {
@@ -91,11 +104,9 @@
   }
 
   function initScriptsAfterHeaderFooter() {
-    // Scroll cambios en header
     document.addEventListener('scroll', toggleScrolled);
     window.addEventListener('load', toggleScrolled);
 
-    // Mobile Nav
     const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
     if (mobileNavToggleBtn) {
       mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
@@ -118,7 +129,6 @@
       });
     });
 
-    // Preloader
     const preloader = document.querySelector('#preloader');
     if (preloader) {
       window.addEventListener('load', () => {
@@ -126,7 +136,6 @@
       });
     }
 
-    // Scroll Top
     const scrollTopBtn = document.querySelector('.scroll-top');
     if (scrollTopBtn) {
       scrollTopBtn.addEventListener('click', (e) => {
@@ -137,17 +146,13 @@
       document.addEventListener('scroll', toggleScrollTop);
     }
 
-    // AOS y Swiper
     window.addEventListener('load', aosInit);
     window.addEventListener('load', initSwiper);
 
-    // GLightbox
     GLightbox({ selector: '.glightbox' });
 
-    // PureCounter
     new PureCounter();
-
-    // Modal Cotización
+    activarLinkActual();
     setupModalCotizacion();
   }
 
@@ -163,7 +168,7 @@
         .catch(err => console.error('Error cargando header:', err));
       fetches.push(headerFetch);
     }
-
+    
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
       const footerFetch = fetch('/partials/footer.html')
