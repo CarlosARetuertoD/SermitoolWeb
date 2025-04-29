@@ -26,49 +26,8 @@
   </head>
 
   <body class="services-page"> 
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl d-flex justify-content-between align-items-center position-relative">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/logoSermitool.png" alt="SERMITOOL Logo" class="hero-logo" weight="200">
-        </a>
-        <nav id="navmenu" class="navmenu">
-          <ul>     
-            <li><a href="services.html">Servicios</a></li>
-            <li><a href="quality.html">Calidad</a></li>
-            <li class="dropdown">
-              <a href="products.html" class="active">
-                <span>Productos</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i>
-              </a>
-              <ul>
-                <li class="dropdown">
-                  <a href="#"><span>Perforadoras</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="item.html">Jackleg SECAN S250</a></li>
-                    <li><a href="item.html">Jackleg</a></li>
-                    <li><a href="item.html">Sinker</a></li>
-                    <li><a href="item.html">Stoper</a></li>
-                    <li><a href="item.html">Lubricadoras</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#"><span>Repuestos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="item.html">Neumáticos</a></li>
-                    <li><a href="item.html">Hidráulicos</a></li>
-                  </ul>
-                </li>
-                <li><a href="item.html">Sostenimiento</a></li>
-                <li><a href="item.html">Iluminacion</a></li>
-              </ul>
-            </li>
-            <li><a href="about.html">Nosotros</a></li>
-            <li><a href="contact.html">Contáctanos</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-      </div>
-    </header>
+
+    <div id="header-placeholder"></div>
 
     <main class="main">
       <div class="page-title dark-background" style="background-image: url(assets/img/backgrounds/page-title-bg.jpg);">
@@ -139,21 +98,13 @@
     </main>
 
     <div id="footer-placeholder"></div>
-    <script>
-      document.addEventListener('DOMContentLoaded', ()=> {
-        fetch('partials/footer.html')
-          .then(r => r.ok ? r.text() : Promise.reject(r.status))
-          .then(html => {
-            document.getElementById('footer-placeholder').outerHTML = html;
-          })
-          .catch(err => console.error('Error cargando footer:', err));
-      });
-    </script>
 
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
       <i class="bi bi-arrow-up-short"></i> 
     </a>
+    
     <div id="preloader"></div>
+
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
@@ -163,6 +114,7 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/js/main.js"></script>
+
   </body>
 
 </html>

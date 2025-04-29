@@ -1823,30 +1823,55 @@ section#indexproducts .container {
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
   align-items: center;
   justify-content: center;
-  z-index: 1000;
 }
+
 .modal.show {
   display: flex;
 }
+
 .modal-card {
-  background: #fff;
+  background-color: #fff;
+  margin: auto;
   padding: 2rem;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 500px;
   width: 90%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   position: relative;
 }
-.close-btn {
+
+.modal-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-card .close-btn {
   position: absolute;
-  top: 0.5rem; right: 0.75rem;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  color: #555;
+}
+
+.modal-card .form-control {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
 }
