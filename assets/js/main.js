@@ -153,7 +153,6 @@
       openBtn.addEventListener('click', async () => {
         let modal = document.getElementById('quoteModal');
         const producto = openBtn.dataset.producto || 'Producto';
-
         if (!modal) {
           try {
             const res = await fetch('/partials/modal-cotizacion.html');
@@ -166,7 +165,7 @@
 
             const textarea = modal.querySelector('textarea[name="message"]');
             if (textarea) {
-              textarea.value = `Quisiera cotización del producto ${producto}`;
+              textarea.value = `Hola, Quisiera una cotización del producto ${producto}`;
             }
 
             const subject = modal.querySelector('input[name="_subject"]');
