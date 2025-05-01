@@ -1875,3 +1875,31 @@ section#indexproducts .container {
   border-radius: 4px;
   font-size: 0.95rem;
 }
+/* Botón de WhatsApp dentro de .portfolio-info */
+.btn-whatsapp {
+  padding: 8px 40px !important; /* Padding: 8px vertical y 40px horizontal */
+  background: #25D366; /* Color oficial de WhatsApp */
+  color: #fff;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 12px #25D366; /* Sombra suave */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover: suaviza el fondo y levanta ligeramente el botón */
+.btn-whatsapp:hover {
+  background: color-mix(in srgb, #25D366, transparent 30%);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Active: da efecto de clic presionado */
+.btn-whatsapp:active {
+  transform: translateY(1px);
+}

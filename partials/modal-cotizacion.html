@@ -1,13 +1,13 @@
-<div class="modal show" id="quoteModal">
+<div class="modal" id="quoteModal">
   <div class="modal-card">
-    <button class="close-btn">&times;</button>
+    <button class="close-btn" onclick="cerrarModal()">&times;</button>
     <h3>Solicitud de Cotización</h3>
-    <form action="https://formspree.io/f/yourFormId" method="POST">
+    <form id="cotizacion-form">
       <input type="text" name="name" class="form-control" placeholder="Nombre Completo" required>
-      <input type="tel" name="phone" class="form-control" placeholder="Numero Celular" required>
+      <input type="tel" name="phone" class="form-control" placeholder="Número Celular" required>
       <input type="text" name="company" class="form-control" placeholder="Empresa" required>
-      <textarea name="message" class="form-control" placeholder="Mensaje de cotización" rows="4">Cotizacion</textarea>
-      <input type="hidden" name="_subject" value="Solicitud de Cotización - Scoop Minero">
+      <input type="hidden" name="product" id="product-input">
+      <textarea name="message" class="form-control" placeholder="Mensaje de cotización" rows="4">Cotización</textarea>
       <button type="submit" class="btn btn-quote mx-auto d-block">Solicitar Cotización</button>
     </form>
   </div>
