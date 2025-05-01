@@ -1623,7 +1623,8 @@ section#indexproducts .container {
 
 /* Selecciona los párrafos dentro de .portfolio-description */
 .item .portfolio-description p {
-  padding: 0; /* Sin padding para mantener el diseño uniforme */
+  padding: 0;
+  text-align: justify; /* Sin padding para mantener el diseño uniforme */
 }
 
 /*--------------------------------------------------------------
@@ -1876,30 +1877,53 @@ section#indexproducts .container {
   font-size: 0.95rem;
 }
 /* Botón de WhatsApp dentro de .portfolio-info */
-.btn-whatsapp {
-  padding: 8px 40px !important; /* Padding: 8px vertical y 40px horizontal */
-  background: #25D366; /* Color oficial de WhatsApp */
-  color: #fff;
-  border-radius: 50px;
-  display: inline-flex;
+.btn-whatsapp-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; 
+  width: 50px;
+  height: 50px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  font-weight: 500;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   text-decoration: none;
-  border: none;
-  box-shadow: 0 4px 12px #25D366; /* Sombra suave */
-  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover: suaviza el fondo y levanta ligeramente el botón */
-.btn-whatsapp:hover {
-  background: color-mix(in srgb, #25D366, transparent 30%);
-  transform: translateY(-2px);
-  text-decoration: none;
-  color: #fff;
+.btn-whatsapp-fixed:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
 }
 
-/* Active: da efecto de clic presionado */
-.btn-whatsapp:active {
-  transform: translateY(1px);
+.btn-whatsapp-fixed i {
+  font-size: 1.5rem;
+}
+
+/* Tooltip personalizado */
+.btn-whatsapp-fixed .tooltip-text {
+  position: absolute;
+  right: 60px;
+  background-color: #ffffff;
+  color: #25D366;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-whatsapp-fixed:hover .tooltip-text {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -248,19 +248,17 @@
       }
     };
 //BTN WHATSAPP
-    document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("whatsapp-btn");
-        if (btn) {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
+  document.addEventListener('DOMContentLoaded', function () {
+    const boton = document.getElementById('boton-flotante-whatsapp');
 
-            const numero = "51940824283";
-            const producto = btn.dataset.producto || "producto";
-            const mensaje = `Hola, quisiera una cotización del producto ${producto}`;
-            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
-            window.open(url, "_blank");
-          });
-        }
+    if (boton) {
+      boton.addEventListener('click', function () {
+        const numero = '51940824283';
+        const producto = boton.getAttribute('data-producto') || 'producto';
+        const mensaje = encodeURIComponent(`Hola, deseo cotizar el ${producto}.`);
+        const url = `https://wa.me/${numero}?text=${mensaje}`;
+        window.open(url, '_blank');
       });
+    }
+  });
 })();

@@ -87,22 +87,26 @@
                 <p>
                   Su pie de avance neumático estándar, armado con vástago de acero inoxidable, garantiza máxima resistencia a la corrosión y picaduras, y se respalda en tres fuerzas impulsoras: correcta calidad, precios competitivos y garantía de entregas oportunas.
                 </p>
+                <div class="mb-4">
+                  <a 
+                    href="/assets/img/products/brochures/BROCHURE_SECAN_JACKLEG_S250.pdf" 
+                    download="Ficha_Tecnica_SECAN_S250.pdf" 
+                    class="text-decoration-underline text-danger d-inline-flex align-items-center"
+                    style="cursor: pointer; font-weight: 500;">
+                    <i class="bi bi-file-earmark-pdf-fill me-2"></i>
+                    Descargar Brochure
+                  </a>
+                </div>
                 <div id="form-status" style="display: none;"></div>
-                <a href="javascript:void(0);" 
-                  class="btn btn-quote mt-3" 
-                  onclick="abrirCotizacion('Secan S250')">
-                  <i class="bi bi-envelope-fill me-2"></i>
-                  Solicitar Cotización
-                </a>
-                <a 
-                  href="/assets/img/products/brochures/BROCHURE_SECAN_JACKLEG_S250.pdf" 
-                  download="Ficha_Tecnica_SECAN_S250.pdf" 
-                  class="btn btn-download mt-3 d-inline-flex align-items-center">
-                  <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-                  Descargar PDF
-                </a>
+                <div class="d-flex justify-content-end">
+                  <a href="javascript:void(0);" 
+                     class="btn btn-quote"
+                     onclick="abrirCotizacion('Secan S250')">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    Solicitar Cotización
+                  </a>
+                </div>
               </div>
-      
               <!-- SLIDER DE IMÁGENES -->
               <div class="portfolio-details-slider swiper init-swiper mx-auto mt-0">
                 <script type="application/json" class="swiper-config">
@@ -183,14 +187,17 @@
       </section>
       
     </main>
+    <a href="javascript:void(0);" 
+        id="boton-flotante-whatsapp" 
+        class="btn-whatsapp-fixed" 
+        data-producto="Jackleg SECAN S250"
+        aria-label="WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+      <span class="tooltip-text">¡Cotiza ya!</span>
+    </a>
 
     <div id="footer-placeholder"></div>
-
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-      <i class="bi bi-arrow-up-short"></i>
-    </a>
     <div id="preloader"></div>
-
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/vendor/php-email-form/validate.js"></script>
     <script src="/assets/vendor/aos/aos.js"></script>
@@ -199,6 +206,7 @@
     <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="/assets/js/main.js"></script>
   </body>
