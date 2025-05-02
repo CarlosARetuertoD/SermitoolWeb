@@ -56,28 +56,31 @@
         </nav>
       </div>
     </header> 
-    
+
     <main class="main">
       <div class="page-title dark-background" style="background-image: url(/assets/img/backgrounds/page-title-bg.jpg);">
         <div class="container position-relative">
           <h1>Scoop Minero</h1>
           <nav class="breadcrumbs">
             <ol>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="productos.html">Productos</a></li>
+              <li><a href="/index.html">Inicio</a></li>
+              <li><a href="/productos.html">Productos</a></li>
               <li class="current">Scoop Minero</li>
             </ol>
           </nav>
         </div>
       </div>
+
       <section id="project-details" class="item section py-5">
         <div class="container" data-aos="fade-up">
           <div class="row gy-5 align-items-start">
+
+            <!-- DESCRIPCIÓN -->
             <div class="col-lg-7 d-flex flex-column">
               <div class="portfolio-description bg-white p-4 mb-0">
                 <h2>Cargador Frontal de Bajo Perfil</h2>
                 <p>
-                  Scoop diseñado específicamente para operaciones de acarreo en galerías de baja altura, optimizando el movimiento y transporte de mineral en interior de mina.
+                  Scoop diseñado específicamente para operaciones de acarreo en galerías de baja altura, optimizando el movimiento y transporte de mineral en interior mina.
                 </p>
                 <p>
                   Su perfil reducido permite acceder a espacios confinados, ofreciendo maniobrabilidad superior y máxima seguridad en túneles estrechos.
@@ -85,30 +88,34 @@
                 <p>
                   Construido con acero de alta resistencia y sistema de descarga rápida, garantiza durabilidad y eficiencia operativa bajo condiciones extremas.
                 </p>
-                <ul class="mb-0">
+                <ul class="mb-4">
                   <li>Perfil bajo para acceso en galerías con altura limitada.</li>
                   <li>Sistema de vaciado hidráulico rápido.</li>
                   <li>Mango ergonómico y fácil de maniobrar.</li>
                   <li>Borde reforzado contra abrasión.</li>
                   <li>Compatibilidad con equipos de acarreo estándar.</li>
                 </ul>
+                <div class="mb-4">
+                  <a 
+                    href="/assets/img/products/brochures/BROCHURE_SECAN_JACKLEG_S250.pdf" 
+                    download="Ficha_Tecnica_SECAN_S250.pdf" 
+                    class="text-decoration-underline text-danger d-inline-flex align-items-center"
+                    style="cursor: pointer; font-weight: 500;">
+                    <i class="bi bi-file-earmark-pdf-fill me-2"></i>
+                    Descargar Brochure
+                  </a>
+                </div>
                 <div id="form-status" style="display: none;"></div>
-                <a href="javascript:void(0);" 
-                  class="btn btn-quote mt-3" 
-                  onclick="abrirCotizacion('Scoop Frontal de Bajo Perfil')">
-                  <i class="bi bi-envelope-fill me-2"></i>
-                  Solicitar Cotización
-                </a>
-                <a href="#" 
-                    class="btn btn-whatsapp mt-3" 
-                    data-producto="Scoop Minero 0.6 m³"
-                    id="whatsapp-btn">
-                  <i class="bi bi-whatsapp me-2"></i> Cotizar
-                </a>
-                <p class="mt-3">
-                  <strong>Nota:</strong> El Scoop Minero es un equipo esencial para optimizar la logística de acarreo en operaciones subterráneas, mejorando la eficiencia y seguridad en el transporte de mineral.
-                </p>  
+                <div class="d-flex justify-content-end">
+                  <a href="javascript:void(0);" 
+                    class="btn btn-quote mt-3" 
+                    onclick="abrirCotizacion('Scoop Frontal de Bajo Perfil')">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    Solicitar Cotización
+                  </a>
+                </div>
               </div>
+              <!-- SLIDER DE IMÁGENES -->
               <div class="portfolio-details-slider swiper init-swiper mx-auto mt-0">
                 <script type="application/json" class="swiper-config">
                   {
@@ -121,15 +128,18 @@
                   }
                 </script>
                 <div class="swiper-wrapper align-items-center">
-                  <div class="swiper-slide"><img src="/assets/img/products/scoop/scoop-1.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="/assets/img/products/scoop/scoop-2.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="/assets/img/products/scoop/scoop-3.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/assets/img/products/scoop/scoop-1.jpg" alt="SECAN S250 vista 1"></div>
+                  <div class="swiper-slide"><img src="/assets/img/products/scoop/scoop-2.jpg" alt="SECAN S250 vista 2"></div>
+                  <div class="swiper-slide"><img src="/assets/img/products/scoop/scoop-3.jpg" alt="SECAN S250 vista 3"></div>
+                  <div class="swiper-slide"><img src="/assets/img/products/scoop/scoop-4.jpg" alt="SECAN S250 vista 4"></div>
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-pagination"></div>
               </div>
             </div>
+      
+            <!-- FICHA TÉCNICA -->
             <div class="col-lg-5">
               <div class="portfolio-info bg-white p-4" >
                 <h3>Ficha Técnica</h3>
@@ -219,17 +229,22 @@
                 </table>        
               </div>
             </div>
+      
           </div>
         </div>
       </section>
+      
     </main>
-
-    <div id="footer-placeholder"></div>
-
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-      <i class="bi bi-arrow-up-short"></i>
+    <a href="javascript:void(0);" 
+        id="boton-flotante-whatsapp" 
+        class="btn-whatsapp-fixed" 
+        data-producto="Scoop Frontal de Bajo Perfil"
+        aria-label="WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+      <span class="tooltip-text">¡Cotiza ya!</span>
     </a>
 
+    <div id="footer-placeholder"></div>
     <div id="preloader"></div>
 
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -241,7 +256,7 @@
     <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="/assets/js/main.js"></script>
   </body>
-  
 </html>

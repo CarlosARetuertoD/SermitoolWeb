@@ -255,7 +255,7 @@
       boton.addEventListener('click', function () {
         const numero = '51940824283';
         const producto = boton.getAttribute('data-producto') || 'producto';
-        const mensaje = encodeURIComponent(`Hola, deseo cotizar el ${producto}.`);
+        const mensaje = encodeURIComponent(`Hola, quisiera cotizar el ${producto}.`);
         const url = `https://wa.me/${numero}?text=${mensaje}`;
         window.open(url, '_blank');
       });
