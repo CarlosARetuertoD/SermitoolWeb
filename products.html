@@ -3,17 +3,16 @@
   <head>
     <meta charset="utf-8"> 
     <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
-    <title> Sermitool </title>
+    <title>Sermitool</title> 
     <meta name="description" content="Conoce más sobre Sermitool, proveedor líder en equipos de perforación minera."> 
     <meta name="keywords" content="Sermitool, minería, perforación, OEM, equipos mineros, Sudáfrica"> 
 
     <link href="assets/img/favicon.png" rel="icon"> 
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
 
-
     <link href="https://fonts.googleapis.com" rel="preconnect"> 
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
@@ -28,32 +27,29 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl d-flex justify-content-between align-items-center position-relative">
         <a href="/index.html" class="logo d-flex align-items-center">
-          <img src="/assets/img/logoSermitool.png" alt="SERMITOOL Logo" class="hero-logo" weight="200">
+          <img src="/assets/img/logoSermitool.png" alt="SERMITOOL Logo" class="hero-logo" width="200">
         </a>
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="/services.html">Servicios</a></li>
             <li><a href="/quality.html">Calidad</a></li>
             <li class="dropdown">
-              <a href="/products.html">
-                <span>Productos</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i>
-              </a>
+              <a href="/products.html"><span>Productos</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li class="dropdown">
-                  <a href="#"><span>Perforadoras</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <a href="#"><span>Perforadoras</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                   <ul>
                     <li><a href="/products/jackleg250_info.html">Jackleg Secan S250</a></li>
                     <li><a href="/products/stoper250_info.html">Stoper Secan S250</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#"><span>Maquinas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <a href="#"><span>Maquinas</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                   <ul>
                     <li><a href="/products/scoop_info.html">Scoop Minero</a></li>
                   </ul>
                 </li>
-                <li><a href="/products/scoop_info.html">Repuestos</a></li>
+                <li><a href="/products.html">Repuestos</a></li>
               </ul>             
             </li>          
             <li><a href="/about.html">Nosotros</a></li>
@@ -63,6 +59,7 @@
         </nav>
       </div>
     </header> 
+
     <main class="main">
       <div class="page-title dark-background" style="background-image: url(assets/img/backgrounds/page-title-bg.jpg);">
         <div class="container position-relative">
@@ -135,22 +132,8 @@
                   </div>
                 </div>
               </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repuestos">
-                <div class="portfolio-content h-100">
-                  <img src="/assets/img/products/jackleg-s250/jackleg-s250-4.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>C1418A</h4>
-                    <p>Bocina hexagonal 7/8.</p>
-                    <a href="assets/img/products/jackleg-s250/jackleg-s250-4.jpg" class="glightbox preview-link" title="Vista rápida">
-                      <i class="bi bi-zoom-in"></i>
-                    </a>
-                    <a href="/products/scoop_info.html" class="details-link" title="Ver más">
-                      <i class="bi bi-link-45deg"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              
+              <div id="contenedor-repuestos"></div>
 
             </div>
           </div>
@@ -159,7 +142,6 @@
     </main>
 
     <div id="footer-placeholder"></div>
-    
     <div id="preloader"></div>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -170,6 +152,7 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/js/fetch-repuestos.js"></script>
     <script src="assets/js/main.js"></script>
 
   </body>
