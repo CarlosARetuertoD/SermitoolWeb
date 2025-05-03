@@ -1,0 +1,29 @@
+[
+    {
+      "id": "jackleg-s250",
+      "nombre": "Jackleg Secan-S250",
+      "imagen": "/assets/img/products/jackleg-s250/jackleg-s250-1.jpg",
+      "imagen_zoom": "/assets/img/products/jackleg-s250/jackleg-s250-2.jpg",
+      "url": "/products/jackleg250_info.html",
+      "descripcion": "Perforadora neumática de alta resistencia.",
+      "filter": "filter-perforadoras"
+    },
+    {
+      "id": "stoper-s250",
+      "nombre": "Stoper Secan-S250",
+      "imagen": "/assets/img/products/stoper-s250/stoper-s250-1.jpg",
+      "imagen_zoom": "/assets/img/products/stoper-s250/stoper-s250-2.jpg",
+      "url": "/products/stoper250_info.html",
+      "descripcion": "Perforadora vertical neumática de alta resistencia.",
+      "filter": "filter-perforadoras"
+    },
+    {
+      "id": "scoop-minero",
+      "nombre": "Scoop Minero",
+      "imagen": "/assets/img/products/scoop/scoop-1.jpg",
+      "imagen_zoom": "/assets/img/products/scoop/scoop-2.jpg",
+      "url": "/products/scoop_info.html",
+      "descripcion": "Cargador frontal de bajo perfil para minería subterránea.",
+      "filter": "filter-maquinas"
+    }
+]

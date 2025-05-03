@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.isotope-container');
   const filtrosContainer = document.querySelector('.portfolio-filters');
@@ -7,27 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
     layoutMode: 'fitRows'
   });
 
-  fetch('/assets/json/repuestos.json')
-    .then(res => res.json())
-    .then(data => {
-      const nuevos = [];
-      const categorias = new Set();
+  const archivos = ['/assets/json/productos.json', '/assets/json/repuestos.json'];
+  const nuevos = [];
+  const categorias = new Set();
 
-      data.forEach(rep => {
-        const filtro = rep.filter && typeof rep.filter === 'string' ? rep.filter : 'filter-otros';
+  Promise.all(archivos.map(file => fetch(file).then(r => r.json())))
+    .then(([repuestos, productos]) => {
+      const data = [...repuestos, ...productos];
+
+      data.forEach(item => {
+        const filtro = item.filter && typeof item.filter === 'string' ? item.filter : 'filter-otros';
         categorias.add(filtro);
 
-        const imagenZoom = rep.imagen_zoom || rep.imagen;
-        const descripcion = rep.descripcion || rep.nombre;
-        const url = rep.url || `/products/repuesto.html?id=${rep.id}`;
+        const imagenZoom = item.imagen_zoom || item.imagen;
+        const descripcion = item.descripcion || item.nombre;
+        const url = item.url || `/products/${filtro.includes('repuestos') ? 'repuesto' : 'producto'}.html?id=${item.id}`;
 
         const el = document.createElement('div');
         el.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filtro}`;
         el.innerHTML = `
           <div class="portfolio-content h-100">
-            <img src="${rep.imagen}" class="img-fluid" alt="${rep.nombre}">
+            <img src="${item.imagen}" class="img-fluid" alt="${item.nombre}">
             <div class="portfolio-info">
-              <h4>${rep.id.toUpperCase()}</h4>
+              <h4>${item.id.toUpperCase()}</h4>
               <p>${descripcion}</p>
               <a href="${imagenZoom}" class="glightbox preview-link" title="Vista rápida">
                 <i class="bi bi-zoom-in"></i>
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nuevos.push(el);
       });
 
-      // Generar botones de filtro dinámicos
+      // Botones de filtro
       filtrosContainer.innerHTML = '';
       const btnTodos = document.createElement('li');
       btnTodos.className = 'filter-active';
@@ -57,18 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
         filtrosContainer.appendChild(li);
       });
 
-      // Re-inicializar Glightbox
       GLightbox({ selector: '.glightbox' });
-
-      // Agregar nuevos ítems a Isotope
       iso.appended(nuevos);
 
-      // Esperar a que carguen las imágenes
       imagesLoaded(container, () => {
         iso.arrange();
       });
 
-      // Activar filtros
       filtrosContainer.querySelectorAll('li').forEach(btn => {
         btn.addEventListener('click', () => {
           filtrosContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
@@ -79,3 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 });
+

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "a2598a",
+    "nombre": "Trompa (Parte delantera)",
+    "imagen": "/assets/img/products/repuestos/a2598a.jpg",
+    "imagen_zoom": "/assets/img/products/repuestos/a2598a.jpg",
+    "url": "",
+    "descripcion": "Repuesto frontal de impacto compatible con taladros neumáticos.",
+    "filter": "filter-repuestos"
+  },
+  {
+    "id": "b1170",
+    "nombre": "Trinquete (35 Dientes)",
+    "imagen": "/assets/img/products/repuestos/b1170.jpg",
+    "imagen_zoom": "/assets/img/products/repuestos/b1170.jpg",
+    "url": "",
+    "descripcion": "Componente esencial para la transmisión de fuerza del martillo.",
+    "filter": "filter-repuestos"
+  },
+  {
+    "id": "c1512",
+    "nombre": "Tuerca Chuck",
+    "imagen": "/assets/img/products/repuestos/c1512.jpg",
+    "imagen_zoom": "/assets/img/products/repuestos/c1512.jpg",
+    "url": "",
+    "descripcion": "Rosca de sujeción para brocas de perforación minera.",
+    "filter": "filter-repuestos"
+  }
+]
