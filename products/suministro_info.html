@@ -26,10 +26,7 @@
           <li><a href="/services.html">Servicios</a></li>
           <li><a href="/quality.html">Calidad</a></li>
           <li class="dropdown">
-            <a href="/products.html">
-              <span>Productos</span>
-              <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
+            <a href="/products.html"><span>Productos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li class="dropdown">
                 <a href="#"><span>Perforadoras</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -84,11 +81,13 @@
             <div class="portfolio-description bg-white p-4 mb-0">
               <h2 id="nombre-suministro">Nombre del suministro</h2>
               <p id="descripcion-suministro">Descripción del producto cargada desde JSON.</p>
+
+              <div id="brochure-suministro" class="mb-4"></div>
+
               <div id="form-status" style="display: none;"></div>
-              <div class="d-flex justify-content-end">
-                <a href="javascript:void(0);" 
-                   class="btn btn-quote"
-                   onclick="abrirCotizacion(document.getElementById('nombre-suministro').textContent)">
+
+              <div>
+                <a id="boton-solicitar" class="btn btn-quote">
                   <i class="bi bi-envelope-fill me-2"></i>
                   Solicitar Cotización
                 </a>
@@ -97,7 +96,6 @@
           </div>
 
           <div class="col-lg-5">
-            <!-- Imagen o slider del suministro -->
             <div class="portfolio-details-slider swiper init-swiper mx-auto mt-0">
               <script type="application/json" class="swiper-config">
                 {
@@ -109,9 +107,7 @@
                   "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
                 }
               </script>
-              <div class="swiper-wrapper align-items-center" id="slider-suministro">
-                <!-- Aquí se inyectan dinámicamente las imágenes -->
-              </div>
+              <div class="swiper-wrapper align-items-center" id="slider-suministro"></div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div>
               <div class="swiper-pagination"></div>
@@ -122,8 +118,8 @@
     </section>
   </main>
 
-  <!-- WhatsApp flotante -->
-  <a href="javascript:void(0);" id="boton-flotante-whatsapp" class="btn-whatsapp-fixed" data-producto="Suministro" aria-label="WhatsApp">
+  <!-- WhatsApp flotante corregido -->
+  <a id="boton-flotante-whatsapp" class="btn-whatsapp-fixed" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="bi bi-whatsapp"></i>
     <span class="tooltip-text">¡Cotiza ya!</span>
   </a>
@@ -131,7 +127,6 @@
   <div id="footer-placeholder"></div>
   <div id="preloader"></div>
 
-  <!-- Scripts -->
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/vendor/php-email-form/validate.js"></script>
   <script src="/assets/vendor/aos/aos.js"></script>
@@ -144,7 +139,7 @@
   <script src="/assets/js/emailjs.js"></script>
   <script src="/assets/js/main.js"></script>
 
-  <!-- Script para cargar suministro -->
+  <!-- Script dinámico -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
@@ -162,26 +157,48 @@
             return;
           }
 
+          // Asignar nombre y descripción
           document.getElementById('titulo-suministro').textContent = prod.nombre;
           document.getElementById('nombre-suministro').textContent = prod.nombre;
           document.getElementById('descripcion-suministro').textContent = prod.descripcion || prod.nombre;
 
+          // WhatsApp flotante
           const whatsappTexto = encodeURIComponent(`Hola, quiero cotizar el producto ${prod.nombre}`);
-          document.getElementById('boton-flotante-whatsapp').href = `https://wa.me/51987654321?text=${whatsappTexto}`;
-          document.getElementById('boton-flotante-whatsapp').setAttribute('data-producto', prod.nombre);
+          const enlaceWS = `https://wa.me/51940824283?text=${whatsappTexto}`;
+          const botonWS = document.getElementById('boton-flotante-whatsapp');
+          botonWS.href = enlaceWS;
+          botonWS.setAttribute('data-producto', prod.nombre);
 
+          // Botón solicitar cotización (opcional por si lo quieres que haga lo mismo)
+          document.getElementById('boton-solicitar').addEventListener('click', () => {
+            window.open(enlaceWS, '_blank');
+          });
+
+          // Cargar slider
           const slider = document.getElementById('slider-suministro');
           slider.innerHTML = '';
-
-          // Si en el futuro agregas más imágenes, puedes usar prod.imagenes_slider
           const imagenes = prod.imagenes_slider || [prod.imagen];
-
           imagenes.forEach(img => {
             const slide = document.createElement('div');
             slide.className = 'swiper-slide';
             slide.innerHTML = `<img src="${img}" alt="${prod.nombre}">`;
             slider.appendChild(slide);
           });
+
+          // Brochure si existe
+          const brochureDiv = document.getElementById('brochure-suministro');
+          if (prod.brochure) {
+            brochureDiv.innerHTML = `
+              <a 
+                href="${prod.brochure}" 
+                download="Brochure_${prod.nombre.replace(/\s+/g, '_')}.pdf"
+                class="text-decoration-underline text-danger d-inline-flex align-items-center"
+                style="cursor: pointer; font-weight: 500;">
+                <i class="bi bi-file-earmark-pdf-fill me-2"></i>
+                Descargar Brochure
+              </a>
+            `;
+          }
         });
     });
   </script>

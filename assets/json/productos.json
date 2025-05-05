@@ -12,7 +12,8 @@
     "imagen_zoom": "/assets/img/products/jackleg-s250/jackleg-s250-2.jpg",
     "url": "/products/jackleg250_info.html",
     "descripcion": "Perforadora neumática de alta resistencia.",
-    "filter": "Perforadoras"
+    "filter": "Perforadoras",
+    "brochure": "/assets/img/products/jackleg-s250/BROCHURE_SECAN_JACKLEG_S250.pdf"
   },
   {
     "id": "stoper-s250",
@@ -25,7 +26,8 @@
     "imagen_zoom": "/assets/img/products/stoper-s250/stoper-s250-2.jpg",
     "url": "/products/stoper250_info.html",
     "descripcion": "Perforadora vertical neumática de alta resistencia.",
-    "filter": "Perforadoras"
+    "filter": "Perforadoras",
+    "brochure": "/assets/img/products/stoper-s250/BROCHURE_SECAN_STOPER_S250.pdf"
   },
   {
     "id": "scoop-minero",
@@ -40,7 +42,8 @@
     "imagen_zoom": "/assets/img/products/scoop/scoop-2.jpg",
     "url": "/products/scoop_info.html",
     "descripcion": "Cargador frontal de bajo perfil para minería subterránea.",
-    "filter": "Maquinas"
+    "filter": "Maquinas",
+    "brochure": ""
   },
   {
     "id": "aceite-eiffel",
@@ -53,7 +56,8 @@
     "imagen_zoom": "/assets/img/products/aceite-eiffel/aceite-eiffel-1.jpg",
     "url": "",
     "descripcion": "Aceite lubricante neumático para herramientas de perforación.",
-    "filter": "Suministros Mineros"
+    "filter": "Suministros Mineros",
+    "brochure": "/assets/img/products/aceite-eiffel/BROCHURE_ACEITE_EIFFEL.pdf"
   },
   {
     "id": "lampara-minera",
@@ -65,7 +69,8 @@
     "imagen_zoom": "/assets/img/products/lampara-roobuk/lampara-roobuk-1.jpg",
     "url": "",
     "descripcion": "Lámpara de casco LED recargable para uso en minería subterránea.",
-    "filter": "Suministros Mineros"
+    "filter": "Suministros Mineros",
+    "brochure": ""
   },
   {
     "id": "manguera-secanflex",
@@ -77,6 +82,7 @@
     "imagen_zoom": "/assets/img/products/manguera-secanflex/manguera-secanflex-1.jpg",
     "url": "",
     "descripcion": "Manguera minera reforzada para conducción de aire a alta presión.",
-    "filter": "Suministros Mineros"
+    "filter": "Suministros Mineros",
+    "brochure": "/assets/img/products/manguera-secanflex/BROCHURE_MANGUERA_SECANFLEX.pdf"
   }
 ]

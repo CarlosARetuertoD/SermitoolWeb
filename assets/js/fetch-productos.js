@@ -16,14 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = [...repuestos, ...productos];
 
       data.forEach(item => {
-        const filtroBase = (item.filter || 'otros').toLowerCase().trim(); // Normaliza el filtro
+        const filtroBase = (item.filter || 'otros').toLowerCase().trim().replace(/\s+/g, '-'); // Normaliza el filtro
         const filtroClase = `filter-${filtroBase.replace(/\s+/g, '-')}`; // Genera clase válida
         categorias.add(filtroClase);
 
         const imagenZoom = item.imagen_zoom || item.imagen;
         const descripcion = item.descripcion || item.nombre;
-        const url = item.url || `/products/${filtroBase === 'repuestos' ? 'repuesto' : 'producto'}.html?id=${item.id}`;
-
+        
+        let url = item.url;
+        if (!url) {
+          if (filtroBase === 'repuestos') {
+            url = `/products/repuesto.html?id=${item.id}`;
+          } else if (filtroBase === 'suministros-mineros') {
+            url = `/products/suministro_info.html?id=${item.id}`;
+          } else {
+            url = `/products/producto.html?id=${item.id}`;
+          }
+        }
         const el = document.createElement('div');
         el.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filtroClase}`;
         el.innerHTML = `
