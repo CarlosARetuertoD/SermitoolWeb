@@ -162,7 +162,6 @@
     }
   });
 
-
 //BTN WHATSAPP
   document.addEventListener('DOMContentLoaded', function () {
     const boton = document.getElementById('boton-flotante-whatsapp');
@@ -177,5 +176,14 @@
       });
     }
   });
+// SCRIPT PARA OCULTAR BOTONES DE NAVEGACION EN GOOGLE
+  const observer = new MutationObserver(() => {
+    const nextBtn = document.querySelector('.gnext');
+    const prevBtn = document.querySelector('.gprev');
+
+    if (nextBtn) nextBtn.style.display = 'none';
+    if (prevBtn) prevBtn.style.display = 'none';
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 
 })();
