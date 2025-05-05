@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.isotope-container');
   const filtrosContainer = document.querySelector('.portfolio-filters');
@@ -17,15 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = [...repuestos, ...productos];
 
       data.forEach(item => {
-        const filtro = item.filter && typeof item.filter === 'string' ? item.filter : 'filter-otros';
-        categorias.add(filtro);
+        const filtroBase = (item.filter || 'otros').toLowerCase().trim(); // Normaliza el filtro
+        const filtroClase = `filter-${filtroBase.replace(/\s+/g, '-')}`; // Genera clase válida
+        categorias.add(filtroClase);
 
         const imagenZoom = item.imagen_zoom || item.imagen;
         const descripcion = item.descripcion || item.nombre;
-        const url = item.url || `/products/${filtro.includes('repuestos') ? 'repuesto' : 'producto'}.html?id=${item.id}`;
+        const url = item.url || `/products/${filtroBase === 'repuestos' ? 'repuesto' : 'producto'}.html?id=${item.id}`;
 
         const el = document.createElement('div');
-        el.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filtro}`;
+        el.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filtroClase}`;
         el.innerHTML = `
           <div class="portfolio-content h-100">
             <img src="${item.imagen}" class="img-fluid" alt="${item.nombre}">
@@ -53,10 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
       btnTodos.textContent = 'Todos';
       filtrosContainer.appendChild(btnTodos);
 
-      categorias.forEach(filtro => {
+      categorias.forEach(filtroClase => {
         const li = document.createElement('li');
-        li.setAttribute('data-filter', `.${filtro}`);
-        li.textContent = filtro.replace('filter-', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        li.setAttribute('data-filter', `.${filtroClase}`);
+        li.textContent = filtroClase
+          .replace('filter-', '')
+          .replace(/-/g, ' ')
+          .replace(/^./, l => l.toUpperCase()); // Solo la primera letra en mayúscula
         filtrosContainer.appendChild(li);
       });
 
@@ -77,4 +80,3 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 });
-

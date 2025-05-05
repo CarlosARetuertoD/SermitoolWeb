@@ -6,7 +6,8 @@
     "imagen_zoom": "/assets/img/products/repuestos/a2598a.jpg",
     "url": "",
     "descripcion": "Repuesto frontal de impacto compatible con taladros neumáticos.",
-    "filter": "filter-repuestos"
+    "filter": "Repuestos",
+    "categoria": "Cabezal"
   },
   {
     "id": "b1170",
@@ -15,7 +16,8 @@
     "imagen_zoom": "/assets/img/products/repuestos/b1170.jpg",
     "url": "",
     "descripcion": "Componente esencial para la transmisión de fuerza del martillo.",
-    "filter": "filter-repuestos"
+    "filter": "Repuestos",
+    "categoria": "Tren de Rotación"
   },
   {
     "id": "c1512",
@@ -24,6 +26,7 @@
     "imagen_zoom": "/assets/img/products/repuestos/c1512.jpg",
     "url": "",
     "descripcion": "Rosca de sujeción para brocas de perforación minera.",
-    "filter": "filter-repuestos"
+    "filter": "Repuestos",
+    "categoria": "Sistema de Sujeción"
   }
 ]

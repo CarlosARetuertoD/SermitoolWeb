@@ -14,15 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const categorias = new Set();
 
       data.forEach(rep => {
-        const filtro = rep.filter && typeof rep.filter === 'string' ? rep.filter : 'filter-otros';
-        categorias.add(filtro);
+        // 🛠 Normalizar categoría
+        const categoria = (rep.categoria || 'otros').toLowerCase().trim();
+        const claseFiltro = `filter-${categoria.replace(/\s+/g, '-')}`;
+        categorias.add(claseFiltro);
 
         const imagenZoom = rep.imagen_zoom || rep.imagen;
         const descripcion = rep.descripcion || rep.nombre;
         const url = rep.url || `/products/repuesto.html?id=${rep.id}`;
 
         const el = document.createElement('div');
-        el.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filtro}`;
+        el.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${claseFiltro}`;
         el.innerHTML = `
           <div class="portfolio-content h-100">
             <img src="${rep.imagen}" class="img-fluid" alt="${rep.nombre}">
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nuevos.push(el);
       });
 
-      // Generar botones de filtro dinámicos
+      // Botones de filtro por categoría
       filtrosContainer.innerHTML = '';
       const btnTodos = document.createElement('li');
       btnTodos.className = 'filter-active';
@@ -50,25 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
       btnTodos.textContent = 'Todos';
       filtrosContainer.appendChild(btnTodos);
 
-      categorias.forEach(filtro => {
+      categorias.forEach(claseFiltro => {
         const li = document.createElement('li');
-        li.setAttribute('data-filter', `.${filtro}`);
-        li.textContent = filtro.replace('filter-', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        li.setAttribute('data-filter', `.${claseFiltro}`);
+        li.textContent = claseFiltro
+          .replace('filter-', '')
+          .replace(/-/g, ' ')
+          .replace(/^./, l => l.toUpperCase()); // Solo la primera letra en mayúscula
         filtrosContainer.appendChild(li);
       });
 
-      // Re-inicializar Glightbox
       GLightbox({ selector: '.glightbox' });
-
-      // Agregar nuevos ítems a Isotope
       iso.appended(nuevos);
 
-      // Esperar a que carguen las imágenes
       imagesLoaded(container, () => {
         iso.arrange();
       });
 
-      // Activar filtros
       filtrosContainer.querySelectorAll('li').forEach(btn => {
         btn.addEventListener('click', () => {
           filtrosContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
