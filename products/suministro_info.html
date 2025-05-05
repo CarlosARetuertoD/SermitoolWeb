@@ -76,26 +76,8 @@
 
     <section id="suministro-detalle" class="item section py-5">
       <div class="container" data-aos="fade-up">
-        <div class="row gy-5 align-items-start">
-          <div class="col-lg-7 d-flex flex-column">
-            <div class="portfolio-description bg-white p-4 mb-0">
-              <h2 id="nombre-suministro">Nombre del suministro</h2>
-              <p id="descripcion-suministro">Descripción del producto cargada desde JSON.</p>
-
-              <div id="brochure-suministro" class="mb-4"></div>
-
-              <div id="form-status" style="display: none;"></div>
-
-              <div>
-                <a id="boton-solicitar" class="btn btn-quote">
-                  <i class="bi bi-envelope-fill me-2"></i>
-                  Solicitar Cotización
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
+        <div class="row justify-content-center align-items-stretch gy-4">
+          <div class="col-md-6">
             <div class="portfolio-details-slider swiper init-swiper mx-auto mt-0">
               <script type="application/json" class="swiper-config">
                 {
@@ -113,9 +95,26 @@
               <div class="swiper-pagination"></div>
             </div>
           </div>
+    
+          <div class="col-md-6 d-flex">
+            <div class="portfolio-description bg-white p-4 w-100 d-flex flex-column gap-3">
+              <div>
+                <h2 id="nombre-suministro">Nombre del suministro</h2>
+                <p id="descripcion-suministro">Descripción del producto cargada desde JSON.</p>
+                <div id="brochure-suministro" class="mb-4"></div>
+              </div>
+              <div>
+                <a id="boton-solicitar" class="btn btn-quote mt-2">
+                  <i class="bi bi-envelope-fill me-2"></i>
+                  Solicitar Cotización
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    
   </main>
 
   <!-- WhatsApp flotante corregido -->
@@ -139,41 +138,40 @@
   <script src="/assets/js/emailjs.js"></script>
   <script src="/assets/js/main.js"></script>
 
-  <!-- Script dinámico -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       const id = params.get('id');
-
+  
       fetch('/assets/json/productos.json')
         .then(res => res.json())
         .then(data => {
           const prod = data.find(item => item.id === id);
-
+  
           if (!prod) {
             document.getElementById('nombre-suministro').textContent = 'Producto no encontrado';
             document.getElementById('descripcion-suministro').textContent = 'Este producto no está disponible en el catálogo.';
             document.getElementById('slider-suministro').innerHTML = '<div class="swiper-slide"><img src="/assets/img/default.jpg" alt="No encontrado"></div>';
             return;
           }
-
-          // Asignar nombre y descripción
+  
+          // Asignar nombre y descripción larga (detalle si existe)
           document.getElementById('titulo-suministro').textContent = prod.nombre;
           document.getElementById('nombre-suministro').textContent = prod.nombre;
-          document.getElementById('descripcion-suministro').textContent = prod.descripcion || prod.nombre;
-
+          document.getElementById('descripcion-suministro').textContent = prod.detalle?.trim() || prod.descripcion || prod.nombre;
+  
           // WhatsApp flotante
           const whatsappTexto = encodeURIComponent(`Hola, quiero cotizar el producto ${prod.nombre}`);
           const enlaceWS = `https://wa.me/51940824283?text=${whatsappTexto}`;
           const botonWS = document.getElementById('boton-flotante-whatsapp');
           botonWS.href = enlaceWS;
           botonWS.setAttribute('data-producto', prod.nombre);
-
-          // Botón solicitar cotización (opcional por si lo quieres que haga lo mismo)
+  
+          // Botón solicitar cotización
           document.getElementById('boton-solicitar').addEventListener('click', () => {
             window.open(enlaceWS, '_blank');
           });
-
+  
           // Cargar slider
           const slider = document.getElementById('slider-suministro');
           slider.innerHTML = '';
@@ -184,7 +182,7 @@
             slide.innerHTML = `<img src="${img}" alt="${prod.nombre}">`;
             slider.appendChild(slide);
           });
-
+  
           // Brochure si existe
           const brochureDiv = document.getElementById('brochure-suministro');
           if (prod.brochure) {

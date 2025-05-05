@@ -87,34 +87,42 @@
 
     <section id="repuesto-details" class="item section py-5">
       <div class="container" data-aos="fade-up">
-        <div class="row gy-5 align-items-start">
-          <!-- DESCRIPCIÓN DEL REPUESTO -->
-          <div class="col-lg-7 d-flex flex-column">
-            <div class="portfolio-description bg-white p-4 mb-0">
-              <h2 id="nombre-repuesto">Nombre del repuesto</h2>
-              <p id="descripcion-repuesto">Descripción del repuesto cargada desde JSON.</p>
-              <div id="form-status" style="display: none;"></div>
-              <a href="#"
-                 id="boton-flotante-whatsapp"
-                 class="btn btn-quote me-3"
-                 target="_blank"
-                 rel="noopener"
-                 data-producto="Repuesto"
-                 onclick="event.preventDefault(); window.open(this.href, '_blank');">
-                <i class="bi bi-envelope-fill me-2"></i>
-                Solicitar Cotización
-              </a>
-            </div>
-          </div>
+        <div class="row justify-content-center align-items-stretch gy-4">
+          
           <!-- IMAGEN -->
-          <div class="col-lg-5">
-            <div class="portfolio-content">
-              <img id="imagen-repuesto" src="/assets/img/default.jpg" class="img-fluid rounded shadow" alt="Repuesto">
+          <div class="col-md-6">
+            <div class="portfolio-content h-100 d-flex align-items-center justify-content-center">
+              <img id="imagen-repuesto" src="/assets/img/default.jpg" class="img-fluid" alt="Repuesto">
             </div>
           </div>
+          
+          <!-- DESCRIPCIÓN DEL REPUESTO -->
+          <div class="col-md-6 d-flex">
+            <div class="portfolio-description bg-white p-4 w-100 d-flex flex-column gap-3">
+              <div>
+                <h2 id="nombre-repuesto">Nombre del repuesto</h2>
+                <p id="descripcion-repuesto">Descripción del repuesto cargada desde JSON.</p>
+                <div id="form-status" style="display: none;"></div>
+              </div>
+              <div>
+                <a href="#"
+                   id="boton-flotante-whatsapp"
+                   class="btn btn-quote mt-3"
+                   target="_blank"
+                   rel="noopener"
+                   data-producto="Repuesto"
+                   onclick="event.preventDefault(); window.open(this.href, '_blank');">
+                  <i class="bi bi-envelope-fill me-2"></i>
+                  Solicitar Cotización
+                </a>
+              </div>
+            </div>
+          </div>
+    
         </div>
       </div>
     </section>
+    
   </main>
 
   <!-- WhatsApp flotante -->

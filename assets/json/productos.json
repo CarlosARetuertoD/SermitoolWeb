@@ -13,7 +13,8 @@
     "url": "/products/jackleg250_info.html",
     "descripcion": "Perforadora neumática de alta resistencia.",
     "filter": "Perforadoras",
-    "brochure": "/assets/img/products/jackleg-s250/BROCHURE_SECAN_JACKLEG_S250.pdf"
+    "brochure": "/assets/img/products/jackleg-s250/BROCHURE_SECAN_JACKLEG_S250.pdf",
+    "detalle": null
   },
   {
     "id": "stoper-s250",
@@ -27,7 +28,8 @@
     "url": "/products/stoper250_info.html",
     "descripcion": "Perforadora vertical neumática de alta resistencia.",
     "filter": "Perforadoras",
-    "brochure": "/assets/img/products/stoper-s250/BROCHURE_SECAN_STOPER_S250.pdf"
+    "brochure": "/assets/img/products/stoper-s250/BROCHURE_SECAN_STOPER_S250.pdf",
+    "detalle": null
   },
   {
     "id": "scoop-minero",
@@ -43,11 +45,12 @@
     "url": "/products/scoop_info.html",
     "descripcion": "Cargador frontal de bajo perfil para minería subterránea.",
     "filter": "Maquinas",
-    "brochure": ""
+    "brochure": "",
+    "detalle": null
   },
   {
     "id": "aceite-eiffel",
-    "nombre": "Aceite Eiffel",
+    "nombre": "Aceite Eiffel Rock Drill",
     "imagenes_slider": [
       "/assets/img/products/aceite-eiffel/aceite-eiffel-1.jpg",
       "/assets/img/products/aceite-eiffel/aceite-eiffel-2.jpg"
@@ -57,7 +60,8 @@
     "url": "",
     "descripcion": "Aceite lubricante neumático para herramientas de perforación.",
     "filter": "Suministros Mineros",
-    "brochure": "/assets/img/products/aceite-eiffel/BROCHURE_ACEITE_EIFFEL.pdf"
+    "brochure": "/assets/img/products/aceite-eiffel/BROCHURE_ACEITE_EIFFEL.pdf",
+    "detalle": "Los lubricantes Eiffel Rock Drill es un aceite neumático de rendimiento supremo para perforadoras de roca y herramientas, formulado con bases de alta calidad fortificadas con un sistema de aditivos de azufre y fósforo. Están diseñados para trabajar de manera eficiente en perforadoras de roca operadas neumáticamente en operaciones de minería subterránea y de superficie. Ofrecen una adhesividad y emulsificación óptimas con agua para evitar efectos adversos de óxido y corrosión. Su excelente propiedad de protección contra el desgaste ayuda a reducir el desgaste de los componentes y mantiene una película lubrcante adecuada para transportar cargas elevadas."
   },
   {
     "id": "lampara-minera",
@@ -70,7 +74,8 @@
     "url": "",
     "descripcion": "Lámpara de casco LED recargable para uso en minería subterránea.",
     "filter": "Suministros Mineros",
-    "brochure": ""
+    "brochure": "",
+    "detalle": null
   },
   {
     "id": "manguera-secanflex",
@@ -83,6 +88,7 @@
     "url": "",
     "descripcion": "Manguera minera reforzada para conducción de aire a alta presión.",
     "filter": "Suministros Mineros",
-    "brochure": "/assets/img/products/manguera-secanflex/BROCHURE_MANGUERA_SECANFLEX.pdf"
+    "brochure": "/assets/img/products/manguera-secanflex/BROCHURE_MANGUERA_SECANFLEX.pdf",
+    "detalle": null
   }
 ]
