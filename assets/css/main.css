@@ -523,7 +523,7 @@ h6 {
 .footer {
   color: var(--default-color); /* Color de texto en el footer usando la variable global */
   background-color: var(--background-color); /* Color de fondo del footer usando la variable global */
-  background: url("../img/backgrounds/footer-bg.jpg") top center no-repeat; 
+  background: url("../img/backgrounds/footer-bg.webp") top center no-repeat; 
       /* Imagen de fondo posicionada arriba y centrada, sin repetir */
   background-size: cover; /* La imagen de fondo se ajusta para cubrir todo el footer */
   font-size: 14px; /* Tamaño de fuente para el contenido del footer */
@@ -1929,12 +1929,16 @@ section#indexproducts .container {
 }
 
 
-/* Loader reutilizable basado en el preloader */
 .custom-loader {
-  border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid orange; /* Color naranja */
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
