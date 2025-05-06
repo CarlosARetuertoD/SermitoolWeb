@@ -2,13 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.isotope-container');
   const filtrosContainer = document.querySelector('.portfolio-filters');
   const preloader = document.querySelector('#preloader');
+  const isotopeLoader = document.querySelector('#isotope-loader');
 
-  // Mostrar preloader global (naranja)
+  // Mostrar preloaders
   if (preloader) {
     preloader.style.display = 'flex';
     preloader.style.opacity = '1';
     preloader.style.transition = 'opacity 0.5s ease';
   }
+  if (isotopeLoader) isotopeLoader.style.display = 'block';
+
+  // Ocultar productos inicialmente
+  container.style.visibility = 'hidden';
 
   const iso = new Isotope(container, {
     itemSelector: '.portfolio-item',
@@ -72,13 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
       GLightbox({ selector: '.glightbox' });
       iso.appended(nuevos);
 
-      // Solo ocultar el preloader después de cargar imágenes
+      // Esperar carga completa de imágenes
       imagesLoaded(container, () => {
         iso.arrange();
+        container.style.visibility = 'visible'; // Mostrar los productos
+
+        // Ocultar preloaders con transición
         if (preloader) {
           preloader.style.opacity = '0';
-          setTimeout(() => preloader.style.display = 'none', 500);
+          setTimeout(() => preloader.remove(), 500);
         }
+        if (isotopeLoader) isotopeLoader.remove();
       });
 
       filtrosContainer.querySelectorAll('li').forEach(btn => {
