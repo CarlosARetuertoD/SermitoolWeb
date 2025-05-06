@@ -3,13 +3,13 @@
     "id": "jackleg-s250",
     "nombre": "Jackleg Secan-S250",
     "imagenes_slider": [
-      "/assets/img/products/jackleg-s250/jackleg-s250-1.jpg",
-      "/assets/img/products/jackleg-s250/jackleg-s250-2.jpg",
-      "/assets/img/products/jackleg-s250/jackleg-s250-3.jpg",
-      "/assets/img/products/jackleg-s250/jackleg-s250-4.jpg"
+      "/assets/img/products/jackleg-s250/jackleg-s250-1.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-2.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-3.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-4.webp"
     ],
-    "imagen": "/assets/img/products/jackleg-s250/jackleg-s250-1.jpg",
-    "imagen_zoom": "/assets/img/products/jackleg-s250/jackleg-s250-2.jpg",
+    "imagen": "/assets/img/products/jackleg-s250/jackleg-s250-1.webp",
+    "imagen_zoom": "/assets/img/products/jackleg-s250/jackleg-s250-2.webp",
     "url": "/products/jackleg250_info.html",
     "descripcion": "Perforadora neumática de alta resistencia.",
     "filter": "Perforadoras",
@@ -20,11 +20,11 @@
     "id": "stoper-s250",
     "nombre": "Stoper Secan-S250",
     "imagenes_slider": [
-      "/assets/img/products/stoper-s250/stoper-s250-1.jpg",
-      "/assets/img/products/stoper-s250/stoper-s250-2.jpg"
+      "/assets/img/products/stoper-s250/stoper-s250-1.webp",
+      "/assets/img/products/stoper-s250/stoper-s250-2.webp"
     ],
-    "imagen": "/assets/img/products/stoper-s250/stoper-s250-1.jpg",
-    "imagen_zoom": "/assets/img/products/stoper-s250/stoper-s250-2.jpg",
+    "imagen": "/assets/img/products/stoper-s250/stoper-s250-1.webp",
+    "imagen_zoom": "/assets/img/products/stoper-s250/stoper-s250-2.webp",
     "url": "/products/stoper250_info.html",
     "descripcion": "Perforadora vertical neumática de alta resistencia.",
     "filter": "Perforadoras",
@@ -35,13 +35,13 @@
     "id": "scoop-minero",
     "nombre": "Scoop Minero",
     "imagenes_slider": [
-      "/assets/img/products/scoop/scoop-1.jpg",
-      "/assets/img/products/scoop/scoop-2.jpg",
-      "/assets/img/products/scoop/scoop-3.jpg",
-      "/assets/img/products/scoop/scoop-4.jpg"
+      "/assets/img/products/scoop/scoop-1.webp",
+      "/assets/img/products/scoop/scoop-2.webp",
+      "/assets/img/products/scoop/scoop-3.webp",
+      "/assets/img/products/scoop/scoop-4.webp"
     ],
-    "imagen": "/assets/img/products/scoop/scoop-1.jpg",
-    "imagen_zoom": "/assets/img/products/scoop/scoop-2.jpg",
+    "imagen": "/assets/img/products/scoop/scoop-1.webp",
+    "imagen_zoom": "/assets/img/products/scoop/scoop-2.webp",
     "url": "/products/scoop_info.html",
     "descripcion": "Cargador frontal de bajo perfil para minería subterránea.",
     "filter": "Maquinas",
@@ -52,11 +52,11 @@
     "id": "aceite-eiffel",
     "nombre": "Aceite Eiffel Rock Drill",
     "imagenes_slider": [
-      "/assets/img/products/aceite-eiffel/aceite-eiffel-1.jpg",
-      "/assets/img/products/aceite-eiffel/aceite-eiffel-2.jpg"
+      "/assets/img/products/aceite-eiffel/aceite-eiffel-1.webp",
+      "/assets/img/products/aceite-eiffel/aceite-eiffel-2.webp"
     ],
-    "imagen": "/assets/img/products/aceite-eiffel/aceite-eiffel-1.jpg",
-    "imagen_zoom": "/assets/img/products/aceite-eiffel/aceite-eiffel-1.jpg",
+    "imagen": "/assets/img/products/aceite-eiffel/aceite-eiffel-1.webp",
+    "imagen_zoom": "/assets/img/products/aceite-eiffel/aceite-eiffel-1.webp",
     "url": "",
     "descripcion": "Aceite lubricante neumático para herramientas de perforación.",
     "filter": "Suministros Mineros",
@@ -67,10 +67,10 @@
     "id": "lampara-minera",
     "nombre": "Lámpara Minera LED",
     "imagenes_slider": [
-      "/assets/img/products/lampara-roobuk/lampara-roobuk-1.jpg"
+      "/assets/img/products/lampara-roobuk/lampara-roobuk-1.webp"
     ],
-    "imagen": "/assets/img/products/lampara-roobuk/lampara-roobuk-1.jpg",
-    "imagen_zoom": "/assets/img/products/lampara-roobuk/lampara-roobuk-1.jpg",
+    "imagen": "/assets/img/products/lampara-roobuk/lampara-roobuk-1.webp",
+    "imagen_zoom": "/assets/img/products/lampara-roobuk/lampara-roobuk-1.webp",
     "url": "",
     "descripcion": "Lámpara de casco LED recargable para uso en minería subterránea.",
     "filter": "Suministros Mineros",
@@ -81,10 +81,10 @@
     "id": "manguera-secanflex",
     "nombre": "Manguera SecanFlex",
     "imagenes_slider": [
-      "/assets/img/products/manguera-secanflex/manguera-secanflex-1.jpg"
+      "/assets/img/products/manguera-secanflex/manguera-secanflex-1.webp"
     ],
-    "imagen": "/assets/img/products/manguera-secanflex/manguera-secanflex-1.jpg",
-    "imagen_zoom": "/assets/img/products/manguera-secanflex/manguera-secanflex-1.jpg",
+    "imagen": "/assets/img/products/manguera-secanflex/manguera-secanflex-1.webp",
+    "imagen_zoom": "/assets/img/products/manguera-secanflex/manguera-secanflex-1.webp",
     "url": "",
     "descripcion": "Manguera minera reforzada para conducción de aire a alta presión.",
     "filter": "Suministros Mineros",
