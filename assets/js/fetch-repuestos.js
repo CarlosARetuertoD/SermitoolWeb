@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.isotope-container');
   const filtrosContainer = document.querySelector('.portfolio-filters');
+  const preloader = document.querySelector('#preloader');
+
+  // Mostrar preloader
+  if (preloader) preloader.style.display = 'flex';
 
   const iso = new Isotope(container, {
     itemSelector: '.portfolio-item',
@@ -14,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const categorias = new Set();
 
       data.forEach(rep => {
-        // 🛠 Normalizar categoría
         const categoria = (rep.categoria || 'otros').toLowerCase().trim();
         const claseFiltro = `filter-${categoria.replace(/\s+/g, '-')}`;
         categorias.add(claseFiltro);
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nuevos.push(el);
       });
 
-      // Botones de filtro por categoría
+      // Botones de filtro
       filtrosContainer.innerHTML = '';
       const btnTodos = document.createElement('li');
       btnTodos.className = 'filter-active';
@@ -58,15 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
         li.textContent = claseFiltro
           .replace('filter-', '')
           .replace(/-/g, ' ')
-          .replace(/^./, l => l.toUpperCase()); // Solo la primera letra en mayúscula
+          .replace(/^./, l => l.toUpperCase());
         filtrosContainer.appendChild(li);
       });
 
       GLightbox({ selector: '.glightbox' });
       iso.appended(nuevos);
 
+      // Esperar carga de imágenes antes de mostrar
       imagesLoaded(container, () => {
         iso.arrange();
+        if (preloader) preloader.remove(); // Ocultar preloader
       });
 
       filtrosContainer.querySelectorAll('li').forEach(btn => {
