@@ -1927,3 +1927,14 @@ section#indexproducts .container {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* Loader reutilizable basado en el preloader */
+.custom-loader {
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
