@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.isotope-container');
   const filtrosContainer = document.querySelector('.portfolio-filters');
-  const preloader = document.getElementById('preloader');
+  const isotopeLoader = document.getElementById('isotope-loader');
 
-  if (preloader) preloader.style.display = 'block'; // Mostrar preloader al inicio
+  if (isotopeLoader) isotopeLoader.style.display = 'block';
+  container.style.visibility = 'hidden'; // Ocultar productos al inicio
 
   const iso = new Isotope(container, {
     itemSelector: '.portfolio-item',
@@ -74,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       imagesLoaded(container, () => {
         iso.arrange();
-        if (preloader) preloader.style.display = 'none';
+        container.style.visibility = 'visible';
+        if (isotopeLoader) isotopeLoader.remove();
       });
 
       filtrosContainer.querySelectorAll('li').forEach(btn => {
@@ -88,6 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => {
       console.error('Error cargando productos.json:', err);
-      if (preloader) preloader.style.display = 'none';
+      if (isotopeLoader) isotopeLoader.remove();
     });
 });
