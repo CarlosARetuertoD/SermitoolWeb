@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.querySelector('#preloader');
 
   // Mostrar preloader
-  if (preloader) preloader.style.display = 'flex';
+  if (preloader) {
+    preloader.style.display = 'flex';
+    preloader.style.opacity = '1';
+    preloader.style.transition = 'opacity 0.5s ease';
+  }
 
   const iso = new Isotope(container, {
     itemSelector: '.portfolio-item',
@@ -68,10 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
       GLightbox({ selector: '.glightbox' });
       iso.appended(nuevos);
 
-      // Esperar carga de imágenes antes de mostrar
+      // Esperar carga completa de imágenes
       imagesLoaded(container, () => {
         iso.arrange();
-        if (preloader) preloader.remove(); // Ocultar preloader
+        if (preloader) {
+          preloader.style.opacity = '0';
+          setTimeout(() => preloader.remove(), 500); // Quitarlo después del fade-out
+        }
       });
 
       filtrosContainer.querySelectorAll('li').forEach(btn => {
