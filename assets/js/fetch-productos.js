@@ -1,38 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.isotope-container');
   const filtrosContainer = document.querySelector('.portfolio-filters');
+  const preloader = document.getElementById('preloader');
+
+  if (preloader) preloader.style.display = 'block'; // Mostrar preloader al inicio
 
   const iso = new Isotope(container, {
     itemSelector: '.portfolio-item',
     layoutMode: 'fitRows'
   });
 
-  const archivos = ['/assets/json/productos.json', '/assets/json/repuestos.json'];
   const nuevos = [];
   const categorias = new Set();
 
-  Promise.all(archivos.map(file => fetch(file).then(r => r.json())))
-    .then(([repuestos, productos]) => {
-      const data = [...repuestos, ...productos];
-
+  fetch('/assets/json/productos.json')
+    .then(r => r.json())
+    .then(data => {
       data.forEach(item => {
-        const filtroBase = (item.filter || 'otros').toLowerCase().trim().replace(/\s+/g, '-'); // Normaliza el filtro
-        const filtroClase = `filter-${filtroBase.replace(/\s+/g, '-')}`; // Genera clase válida
+        const filtroBase = (item.filter || 'otros').toLowerCase().trim().replace(/\s+/g, '-');
+        const filtroClase = `filter-${filtroBase}`;
         categorias.add(filtroClase);
 
         const imagenZoom = item.imagen_zoom || item.imagen;
         const descripcion = item.descripcion || item.nombre;
-        
+
         let url = item.url;
         if (!url) {
-          if (filtroBase === 'repuestos') {
-            url = `/products/repuesto.html?id=${item.id}`;
-          } else if (filtroBase === 'suministros-mineros') {
+          if (filtroBase === 'suministros-mineros') {
             url = `/products/suministro_info.html?id=${item.id}`;
           } else {
             url = `/products/producto.html?id=${item.id}`;
           }
         }
+
         const el = document.createElement('div');
         el.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filtroClase}`;
         el.innerHTML = `
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nuevos.push(el);
       });
 
-      // Botones de filtro
+      // Crear botones de filtro
       filtrosContainer.innerHTML = '';
       const btnTodos = document.createElement('li');
       btnTodos.className = 'filter-active';
@@ -65,10 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categorias.forEach(filtroClase => {
         const li = document.createElement('li');
         li.setAttribute('data-filter', `.${filtroClase}`);
-        li.textContent = filtroClase
-          .replace('filter-', '')
-          .replace(/-/g, ' ')
-          .replace(/^./, l => l.toUpperCase()); // Solo la primera letra en mayúscula
+        li.textContent = filtroClase.replace('filter-', '').replace(/-/g, ' ').replace(/^./, l => l.toUpperCase());
         filtrosContainer.appendChild(li);
       });
 
@@ -77,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       imagesLoaded(container, () => {
         iso.arrange();
+        if (preloader) preloader.style.display = 'none';
       });
 
       filtrosContainer.querySelectorAll('li').forEach(btn => {
@@ -87,5 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
           iso.arrange({ filter: filtro });
         });
       });
+    })
+    .catch(err => {
+      console.error('Error cargando productos.json:', err);
+      if (preloader) preloader.style.display = 'none';
     });
 });

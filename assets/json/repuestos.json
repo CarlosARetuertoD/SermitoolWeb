@@ -1,32 +1,192 @@
 [
   {
+    "id": "b1170",
+    "numero_repuesto": "26",
+    "nombre": "Trinquete (35 dientes)",
+    "imagen": "/assets/img/products/repuestos/b1170.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1170.webp",
+    "descripcion": "Elemento dentado que transmite el giro a otros componentes del tren de rotación.",
+    "filter": "Repuestos",
+    "categoria": "Tren de Rotación"
+  },
+  {
+    "id": "b2334",
+    "numero_repuesto": "16",
+    "nombre": "Pistón",
+    "imagen": "/assets/img/products/repuestos/b2334.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b2334.webp",
+    "descripcion": "Componente de impacto que se mueve dentro del cilindro para golpear el útil de perforación.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Impacto"
+  },
+  {
+    "id": "e393x",
+    "numero_repuesto": "11",
+    "nombre": "Cilindro (Estándar)",
+    "imagen": "/assets/img/products/repuestos/e393x.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/e393x.webp",
+    "descripcion": "Cámara principal donde se desplaza el pistón durante la perforación.",
+    "filter": "Repuestos",
+    "categoria": "Cuerpo Principal"
+  },
+  {
     "id": "a2598a",
+    "numero_repuesto": "5",
     "nombre": "Trompa (Parte delantera)",
-    "imagen": "/assets/img/products/repuestos/a2598a.jpg",
-    "imagen_zoom": "/assets/img/products/repuestos/a2598a.jpg",
-    "url": "",
-    "descripcion": "Repuesto frontal de impacto compatible con taladros neumáticos.",
+    "imagen": "/assets/img/products/repuestos/a2598a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a2598a.webp",
+    "descripcion": "Extremo frontal del taladro que guía la broca y soporta el mayor desgaste.",
     "filter": "Repuestos",
     "categoria": "Cabezal"
   },
   {
-    "id": "b1170",
-    "nombre": "Trinquete (35 Dientes)",
-    "imagen": "/assets/img/products/repuestos/b1170.jpg",
-    "imagen_zoom": "/assets/img/products/repuestos/b1170.jpg",
-    "url": "",
-    "descripcion": "Componente esencial para la transmisión de fuerza del martillo.",
+    "id": "b1178",
+    "numero_repuesto": "8",
+    "nombre": "Buje de Rotación",
+    "imagen": "/assets/img/products/repuestos/b1178.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1178.webp",
+    "descripcion": "Soporta el eje de rotación, permitiendo un giro fluido con mínima fricción.",
     "filter": "Repuestos",
     "categoria": "Tren de Rotación"
   },
   {
     "id": "c1512",
+    "numero_repuesto": "10",
     "nombre": "Tuerca Chuck",
-    "imagen": "/assets/img/products/repuestos/c1512.jpg",
-    "imagen_zoom": "/assets/img/products/repuestos/c1512.jpg",
-    "url": "",
-    "descripcion": "Rosca de sujeción para brocas de perforación minera.",
+    "imagen": "/assets/img/products/repuestos/c1512.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1512.webp",
+    "descripcion": "Rosca que asegura la broca al taladro, garantizando estabilidad y precisión.",
     "filter": "Repuestos",
     "categoria": "Sistema de Sujeción"
+  },
+  {
+    "id": "b1180b",
+    "numero_repuesto": "80",
+    "nombre": "Cuerpo de la válvula",
+    "imagen": "/assets/img/products/repuestos/b1180b.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1180b.webp",
+    "descripcion": "Estructura que aloja y guía la válvula dentro del sistema neumático.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Válvulas"
+  },
+  {
+    "id": "a697b",
+    "numero_repuesto": "69",
+    "nombre": "Maneral",
+    "imagen": "/assets/img/products/repuestos/a697b.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a697b.webp",
+    "descripcion": "Asa de sujeción que brinda control al operador durante la perforación.",
+    "filter": "Repuestos",
+    "categoria": "Estructura Externa"
+  },
+  {
+    "id": "a660",
+    "numero_repuesto": "27",
+    "nombre": "Cabezal",
+    "imagen": "/assets/img/products/repuestos/a660.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a660.webp",
+    "descripcion": "Parte superior del taladro que integra y alinea los componentes internos.",
+    "filter": "Repuestos",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "a745",
+    "numero_repuesto": "20",
+    "nombre": "Caja de válvula",
+    "imagen": "/assets/img/products/repuestos/a745.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a745.webp",
+    "descripcion": "Contenedor que protege y soporta el mecanismo de válvulas.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Válvulas"
+  },
+  {
+    "id": "a744",
+    "numero_repuesto": "18",
+    "nombre": "Tapa de Válvula",
+    "imagen": "/assets/img/products/repuestos/a744.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a744.webp",
+    "descripcion": "Cubre el conjunto de válvulas, evitando la pérdida de presión.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Válvulas"
+  },
+  {
+    "id": "c1648",
+    "numero_repuesto": "19",
+    "nombre": "Válvula automática",
+    "imagen": "/assets/img/products/repuestos/c1648.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1648.webp",
+    "descripcion": "Actúa automáticamente para regular el flujo de aire en el sistema.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Válvulas"
+  },
+  {
+    "id": "b1176",
+    "numero_repuesto": "28",
+    "nombre": "Válvula de estrangulación",
+    "imagen": "/assets/img/products/repuestos/b1176.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1176.webp",
+    "descripcion": "Controla la cantidad de aire que pasa por el circuito neumático.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Válvulas"
+  },
+  {
+    "id": "c1418a",
+    "numero_repuesto": "7",
+    "nombre": "Bocina hexagonal 7/8\"",
+    "imagen": "/assets/img/products/repuestos/c1418a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1418a.webp",
+    "descripcion": "Elemento de conexión entre el taladro y la broca, de sección hexagonal.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Sujeción"
+  },
+  {
+    "id": "a693a",
+    "numero_repuesto": "87",
+    "nombre": "Horquilla",
+    "imagen": "/assets/img/products/repuestos/a693a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a693a.webp",
+    "descripcion": "Permite fijar el maneral al cuerpo del taladro con movilidad controlada.",
+    "filter": "Repuestos",
+    "categoria": "Estructura Externa"
+  },
+  {
+    "id": "a2599",
+    "numero_repuesto": "1",
+    "nombre": "Retenedor",
+    "imagen": "/assets/img/products/repuestos/a2599.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a2599.webp",
+    "descripcion": "Evita que los componentes internos se desplacen fuera de su lugar.",
+    "filter": "Repuestos",
+    "categoria": "Sujeción Interna"
+  },
+  {
+    "id": "c1517",
+    "numero_repuesto": "15",
+    "nombre": "Buje de pistón",
+    "imagen": "/assets/img/products/repuestos/c1517.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1517.webp",
+    "descripcion": "Guía el movimiento del pistón reduciendo el desgaste y la fricción.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Impacto"
+  },
+  {
+    "id": "936658",
+    "numero_repuesto": "49",
+    "nombre": "Válvula de control de agua (Gamarilla)",
+    "imagen": "/assets/img/products/repuestos/936658.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/936658.webp",
+    "descripcion": "Regula el flujo de agua para refrigerar y limpiar durante la perforación.",
+    "filter": "Repuestos",
+    "categoria": "Sistema de Agua"
+  },
+  {
+    "id": "b5053",
+    "numero_repuesto": "22",
+    "nombre": "Barra de rotación",
+    "imagen": "/assets/img/products/repuestos/b5053.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b5053.webp",
+    "descripcion": "Transfiere el movimiento de rotación a través del tren de engranajes.",
+    "filter": "Repuestos",
+    "categoria": "Tren de Rotación"
   }
 ]
