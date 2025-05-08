@@ -2,7 +2,7 @@
   /* Define la fuente predeterminada para el sitio con una lista de respaldo */
   --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* Define la fuente exclusiva para encabezados */
-  --heading-font: "Roboto",  sans-serif;
+  --heading-font: "Playfair Display",  sans-serif;
   /* Define la fuente que usará el menú de navegación */
   --nav-font: "Poppins",  sans-serif;
 }
@@ -183,13 +183,11 @@ h6 {
   z-index: 997; /* Define el nivel de apilamiento (stacking order) para situarlo por encima de otros elementos */
 }
 
-/* Estilos para la imagen dentro del logo ubicado en el header */
 .header .logo img {
-  max-height: 60px; /* Altura máxima de la imagen es 32px */
-  margin-right: 8px; /* Margen a la derecha para separar la imagen del texto del logo */
+  max-height: 70px; 
+  margin-right: 8px; 
 }
 
-/* Estilos para el elemento h1 dentro del logo del header */
 .header .logo h1 {
   font-size: 24px; /* Tamaño de fuente de 24px */
   margin: 0; /* Sin margen */
@@ -867,79 +865,107 @@ section#indexproducts .container {
   text-align: center; /* Centra el texto en la sección hero */
 }
 
-/* Estilos para el contenedor de información dentro de la sección hero (.info) */
 .hero .info {
-  position: relative; /* Posicionamiento relativo para ubicar correctamente su contenido */
-  inset: 0; /* Hace que ocupe todo el espacio del contenedor padre */
-  z-index: 3; /* Se sitúa por encima de otros elementos, como imágenes de fondo */
-  padding: 140px 0 60px 0; /* Padding superior de 140px, inferior de 60px, sin padding lateral */
+  position: relative; 
+  inset: 0; 
+  z-index: 3; 
+  padding: 140px 0 60px 0;
 }
 
-/* Ajuste de padding para .hero .info en dispositivos pequeños o con poca altura */
 @media (max-width: 768px),
 (max-height: 480px) {
   .hero .info {
-    padding: 100px 50px 60px 50px; /* Ajusta el padding para mejorar la visualización en pantallas pequeñas */
+    padding: 100px 50px 60px 50px; 
   }
 }
 
-/* Estilos para el título (h2) dentro de la sección hero */
 .hero .info h2 {
-  margin-bottom: 30px; /* Margen inferior de 30px para separar del siguiente contenido */
-  color: var(--accent-color); /* Aplica el color de acento al texto */
-  padding-bottom: 30px; /* Padding inferior de 30px para dar espacio al pseudo-elemento decorativo */
-  font-size: 75px; /* Tamaño de fuente grande de 56px */
-  font-weight: 800; /* Fuente en negrita */
-  position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+  margin-bottom: 30px; 
+  color: var(--accent-color); 
+  padding-bottom: 30px; 
+  font-size: 55px; 
+  font-weight: 600; 
+  position: relative; 
 }
-
-/* Pseudo-elemento que añade una línea decorativa debajo del título en la sección hero */
-.hero .info h2:after {
-  content: ""; /* Contenido vacío para decoración */
-  position: absolute; /* Posicionamiento absoluto respecto a h2 */
-  display: block; /* Se muestra como bloque para poder definir ancho y alto */
-  width: 300px; /* Ancho de 80px para la línea */
-  height: 4px; /* Altura de 4px para la línea */
-  background: var(--accent-color); /* Color de la línea en acento */
-  left: 0; /* Alineado a la izquierda */
-  right: 0; /* También a la derecha para centrar */
-  bottom: 0; /* Alineado en la parte inferior de h2 */
-  margin: auto; /* Centra el pseudo-elemento horizontalmente */
+.hero .info h2::after {
+  content: ".";
+  animation: blink 1s step-start infinite;
+  color: var(--accent-color);
+  margin-left: 5px;
 }
-
-/* Ajuste del tamaño del h2 en dispositivos con ancho máximo de 768px */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 @media (max-width: 768px) {
   .hero .info h2 {
-    font-size: 36px; /* Reduce el tamaño del título a 36px */
+    font-size: 40px; 
+    min-height: 230px;
   }
-  .hero .info h2:after {
-    width: 80px; /* Ancho de 80px para la línea */
+}
+/* Contenedor para ambos botones si no lo tienes */
+.hero .info .button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 10px; 
+}
+@media (max-width: 480px) {
+  .hero .info .button-group {
+    flex-direction: column; 
+    gap: 12px;
+  }
+  .hero .info .btn-get-started,
+  .hero .info .btn-watch-video {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
 
-/* Estilos para los párrafos (<p>) dentro de .hero .info */
+.hero .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  color: var(--default-color);
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.hero .btn-watch-video i {
+  color: var(--accent-color);
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.hero .btn-watch-video:hover {
+  color: var(--accent-color);
+}
+
+.hero .btn-watch-video:hover i {
+  color: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
 .hero .info p {
   color: color-mix(in srgb, var(--default-color), transparent 20%); 
-      /* Mezcla el color por defecto con algo de transparencia para un efecto más suave */
-  font-size: 20px; /* Tamaño de fuente de 18px */
+  font-size: 20px; 
 }
-
-/* Estilos para el botón de "Get Started" dentro de la sección hero */
 .hero .info .btn-get-started {
-  color: var(--contrast-color); /* Texto en color contrastante (de alto contraste) */
-  font-family: var(--heading-font); /* Usa la fuente de encabezado para el botón */
-  font-weight: 500; /* Peso de fuente medio */
-  font-size: 16px; /* Tamaño de fuente de 16px */
-  letter-spacing: 1px; /* Espaciado entre letras de 1px */
-  display: inline-block; /* Se muestra en línea, pero permite definir ancho y alto */
-  padding: 12px 40px; /* Padding: 12px vertical y 40px horizontal */
-  border-radius: 50px; /* Bordes redondeados para darle forma de botón */
-  transition: 0.5s; /* Transición suave de 0.5s para cambios en hover */
-  margin: 10px; /* Margen de 10px alrededor del botón */
-  border: 4px solid var(--accent-color); /* Borde de 4px con el color de acento */
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;           
+  border-radius: 45px;              
+  transition: 0.4s;
+  margin: 10px;
+  border: 4px solid var(--accent-color);  
 }
-
-/* Hover sobre el botón de "Get Started": cambia el fondo al color de acento */
 .hero .info .btn-get-started:hover {
   background: var(--accent-color);
 }
@@ -1730,6 +1756,9 @@ section#indexproducts .container {
       /* Al pasar el cursor, el fondo se mezcla con 20% de transparencia del color de acento */
 }
 
+/*--------------------------------------------------------------
+# Tabla Ficha Tecnica
+--------------------------------------------------------------*/
 .ficha-tecnica {
   width: 100%;
   border-collapse: collapse;
@@ -1755,7 +1784,9 @@ section#indexproducts .container {
 .ficha-tecnica tr:nth-child(even) td {
   background-color: #dedede;   /* filas pares con gris suave */
 }
-
+/*--------------------------------------------------------------
+# BTN Cotizacion Section
+--------------------------------------------------------------*/
 .btn-quote {
   display: inline-flex;
   align-items: center;
@@ -1787,6 +1818,9 @@ section#indexproducts .container {
   transform: translateY(0);
   box-shadow: 0 2px 6px var(--accent-color) !important;
 }
+/*--------------------------------------------------------------
+# BTN Download Section
+--------------------------------------------------------------*/
 .btn-download {
   display: inline-flex;
   align-items: center;
@@ -1820,7 +1854,9 @@ section#indexproducts .container {
   box-shadow: 0 2px 6px rgba(211, 47, 47, 0.4) !important;
 }
 
-/* modal-cotizacion */
+/*--------------------------------------------------------------
+# Modal Cotizacion
+--------------------------------------------------------------*/
 .modal {
   display: none;
   position: fixed;
@@ -1876,7 +1912,9 @@ section#indexproducts .container {
   border-radius: 4px;
   font-size: 0.95rem;
 }
-/* Botón de WhatsApp dentro de .portfolio-info */
+/*--------------------------------------------------------------
+# BTN whatsapp Section
+--------------------------------------------------------------*/
 .btn-whatsapp-fixed {
   position: fixed;
   bottom: 20px;
@@ -1905,7 +1943,6 @@ section#indexproducts .container {
   font-size: 1.5rem;
 }
 
-/* Tooltip personalizado */
 .btn-whatsapp-fixed .tooltip-text {
   position: absolute;
   right: 60px;
@@ -1927,8 +1964,9 @@ section#indexproducts .container {
   opacity: 1;
   transform: translateY(0);
 }
-
-
+/*--------------------------------------------------------------
+# Loader personalizado
+--------------------------------------------------------------*/
 .custom-loader {
   border: 6px solid #f3f3f3;
   border-top: 6px solid orange; /* Color naranja */
@@ -1941,4 +1979,108 @@ section#indexproducts .container {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/*--------------------------------------------------------------
+# Gallery Section
+--------------------------------------------------------------*/
+.gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery .gallery-item img {
+  transition: 0.3s;
+}
+
+.gallery .gallery-links {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.gallery .gallery-links .preview-link,
+.gallery .gallery-links .details-link {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  line-height: 1.2;
+  margin: 30px 8px 0 8px;
+}
+
+.gallery .gallery-links .preview-link:hover,
+.gallery .gallery-links .details-link:hover {
+  color: #ffffff;
+}
+
+.gallery .gallery-links .details-link {
+  font-size: 30px;
+  line-height: 0;
+}
+
+.gallery .gallery-item:hover .gallery-links {
+  opacity: 1;
+}
+
+.gallery .gallery-item:hover .preview-link,
+.gallery .gallery-item:hover .details-link {
+  margin-top: 0;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.glightbox-clean .gslide-description {
+  background: #272727;
+}
+
+.glightbox-clean .gslide-title {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# BTN Ver video Section
+--------------------------------------------------------------*/
+.btn-watch-video {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 18px; /* Más grande */
+  padding: 0.85rem 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.btn-watch-video:hover {
+  color: #fff;
+}
+
+.custom-play-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--accent-color); /* círculo bordeado si quieres */
+  position: relative;
+  margin-right: 8px;
+}
+
+.custom-play-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid var(--accent-color);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
 }

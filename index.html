@@ -33,8 +33,7 @@
         </a>
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="/services.html">Servicios</a></li>
-            <li><a href="/quality.html">Calidad</a></li>
+            <li><a href="/services.html">Casa</a></li>
             <li class="dropdown">
               <a href="/products.html">
                 <span>Productos</span>
@@ -65,7 +64,8 @@
                 <li><a href="/repuestos.html">Repuestos</a></li>
               </ul>
             </li>
-            <li><a href="/about.html">Nosotros</a></li>
+            <li><a href="/about.html">Sobre Nosotros</a></li>
+            <li><a href="/quality.html">Galeria de Fotos</a></li>
             <li><a href="/contact.html">Contáctanos</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -73,34 +73,38 @@
       </div>
     </header>
     
-    
     <main class="main">   
+
       <section id="hero" class="hero section dark-background">
         <div class="info d-flex align-items-center">
           <div class="container">
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-6 text-center">
-                <h2>SERMITOOL</h2>
-                <p>Equipos, accesorios y repuestos para minería subterránea</p>
-                <a href="#products-section" class="btn-get-started">
-                  Nuestros Productos
-                </a>
+              <div class="col-lg-12 text-center">
+                <h2 id="hero-title">
+                  Equipos<span id="typed-dynamic"></span>
+                </h2>
+                <div class="button-group">
+                  <a href="#products-section" class="btn-get-started">
+                    Nuestros Productos
+                  </a>
+                  <a href="https://www.youtube.com/embed/MoViMMZURtA?autoplay=1"
+                    class="glightbox btn-watch-video d-inline-flex align-items-center">
+                    <i class="bi bi-play-circle"></i>
+                    <span>Ver Video</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+             
+        <!-- Carrusel -->
         <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-          <!-- Diapositiva 1 -->
           <div class="carousel-item active">
             <img src="assets/img/hero-carousel/hero-carousel-1.webp" alt="">
           </div>
-          <!-- Diapositiva 2 -->
           <div class="carousel-item">
             <img src="assets/img/hero-carousel/hero-carousel-2.webp" alt="">
-          </div>
-          <!-- Diapositiva 3 -->
-          <div class="carousel-item">
-            <img src="assets/img/hero-carousel/hero-carousel-3.webp" alt="">
           </div>
           <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
@@ -109,7 +113,91 @@
             <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
           </a>
         </div>
-      </section> 
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="gallery section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Galeria de Fotos</h2>
+        </div>
+        <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 justify-content-center">
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-1.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-2.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-3.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-4.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-5.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-6.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-7.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item h-100">
+                <img src="assets/img/gallery/gallery-8-2.jpg" class="img-fluid" alt="">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-8-2.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <section id="products-section" class="indexcards section">
         <div class="container section-title" data-aos="fade-up">
@@ -229,6 +317,37 @@
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
     <script src="assets/js/main.js"></script>
+    <!-- Writer Tittle Script -->
+    <script>
+      const texto = ", accesorios y repuestos para minería";
+      const span = document.getElementById("typed-dynamic");
+      let i = 0;
+      let borrando = false;
+    
+      function escribirYborrar() {
+        if (!borrando) {
+          if (i <= texto.length) {
+            span.textContent = texto.substring(0, i);
+            i++;
+          } else {
+            borrando = true;
+            setTimeout(escribirYborrar, 1500); // Espera antes de borrar
+            return;
+          }
+        } else {
+          if (i >= 0) {
+            span.textContent = texto.substring(0, i);
+            i--;
+          } else {
+            borrando = false;
+          }
+        }
+        setTimeout(escribirYborrar, borrando ? 100 : 100);
+      }
+    
+      document.addEventListener("DOMContentLoaded", escribirYborrar);
+    </script>
+
   </body>
 
   </html>
