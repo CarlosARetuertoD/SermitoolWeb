@@ -796,48 +796,53 @@ section,
     scroll-margin-top: 76px; /* Disminuye el margen superior de scroll para pantallas más pequeñas */
   }
 }
-
 /*--------------------------------------------------------------*/
 /* Global Section Titles                                       */
 /*--------------------------------------------------------------*/
-
-/* Estilos para los títulos de sección */
 .section-title {
-  text-align: center; /* Centra el texto del título de la sección */
-  padding-bottom: 60px; /* Padding inferior de 60px para separar el título del contenido */
-  position: relative; /* Posicionamiento relativo para pseudo-elementos decorativos */
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
 }
 
-/* Título h2 dentro de .section-title */
 .section-title h2 {
-  font-size: 32px; /* Tamaño de fuente de 32px */
-  font-weight: 700; /* Fuente en negrita */
-  position: relative; /* Permite posicionamiento de pseudo-elementos */
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
 }
 
-/* Pseudo-elementos before y after en h2 para crear líneas decorativas */
 .section-title h2:before,
 .section-title h2:after {
-  content: ""; /* Contenido vacío para el efecto decorativo */
-  width: 50px; /* Ancho de las líneas de 50px */
-  height: 2px; /* Altura de 2px para las líneas */
-  background: var(--accent-color); /* Fondo de las líneas con el color de acento */
-  display: inline-block; /* Se muestran en línea */
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+  display: inline-block;
 }
 
-/* Ajusta el margin del pseudo-elemento before */
 .section-title h2:before {
-  margin: 0 15px 10px 0; /* Margen: 0 arriba, 15px a la derecha, 10px abajo, 0 izquierda */
+  margin: 0 15px 10px 0;
 }
 
-/* Ajusta el margin del pseudo-elemento after */
 .section-title h2:after {
-  margin: 0 0 10px 15px; /* Margen: 0 arriba, 0 derecha, 10px abajo, 15px izquierda */
+  margin: 0 0 10px 15px;
 }
 
-/* Párrafos dentro de .section-title no tienen margen inferior */
 .section-title p {
   margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .section-title h2::before,
+  .section-title h2::after {
+    width: 20px;
+    height: 1.5px;
+    margin: 0 8px 6px 8px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
 }
 
 /*--------------------------------------------------------------*/
@@ -886,6 +891,9 @@ section#indexproducts .container {
   font-size: 55px; 
   font-weight: 600; 
   position: relative; 
+  word-break: normal !important;          /* impide que las palabras se corten a la mitad */
+  overflow-wrap: normal !important;       /* desactiva saltos feos */
+  hyphens: none;    
 }
 .hero .info h2::after {
   content: ".";
@@ -898,10 +906,27 @@ section#indexproducts .container {
     opacity: 0;
   }
 }
-@media (max-width: 768px) {
+/* Teléfonos pequeños: menos de 576px */
+@media (max-width: 575.98px) {
   .hero .info h2 {
-    font-size: 40px; 
-    min-height: 230px;
+    font-size: 36px;
+    min-height: 300px;
+  }
+}
+
+/* Tablets y teléfonos grandes: entre 576px y 991.98px */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero .info h2 {
+    font-size: 38px;
+    min-height: 150px;
+  }
+}
+
+/* Pantallas grandes: desde 992px en adelante */
+@media (min-width: 992px) {
+  .hero .info h2 {
+    font-size: 42px;
+    min-height: auto; /* o puedes usar 0 si no quieres ninguna altura mínima */
   }
 }
 /* Contenedor para ambos botones si no lo tienes */
@@ -949,6 +974,25 @@ section#indexproducts .container {
   color: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
+.hero .info #typed-dynamic {
+  white-space: normal;
+  word-break: break-word;
+  display: inline;
+}
+
+.hero .info #typed-dynamic span {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeIn 0.4s forwards;
+  white-space: pre; /* Esto asegura que el espacio no se colapse visualmente */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .hero .info p {
   color: color-mix(in srgb, var(--default-color), transparent 20%); 
   font-size: 20px; 
@@ -969,111 +1013,39 @@ section#indexproducts .container {
 .hero .info .btn-get-started:hover {
   background: var(--accent-color);
 }
-
-/*--------------------------------------------------------------*/
-/* Estilos para el carrusel dentro de la sección hero           */
-/*--------------------------------------------------------------*/
-
-/* Contenedor del carrusel (.carousel) */
-.hero .carousel {
-  inset: 0; /* Hace que el carrusel ocupe toda el área del contenedor padre */
-  position: absolute; /* Posicionamiento absoluto para estar detrás del contenido */
-  overflow: hidden; /* Oculta cualquier parte de las imágenes que se salgan del contenedor */
+/* HERO estático con misma apariencia del carrusel */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Cada elemento del carrusel (.carousel-item) */
-.hero .carousel-item {
-  position: absolute; /* Posicionamiento absoluto para superponerlos uno encima del otro */
-  inset: 0; /* Ocupa todo el contenedor del carrusel */
-  background-size: cover; /* La imagen de fondo se ajusta para cubrir el elemento */
-  background-position: center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat; /* La imagen de fondo no se repite */
-  overflow: hidden; /* Oculta contenido que se desborda */
-  transition-duration: 0.4s; /* Duración de 0.4 segundos para la transición entre elementos */
+/* Contenedor de la imagen */
+.hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
-/* Estilos para las imágenes dentro de cada elemento del carrusel */
-.hero .carousel-item img {
-  position: absolute; /* Posicionamiento absoluto para ajustar la imagen dentro del contenedor */
-  inset: 0; /* Ocupa todo el espacio del contenedor */
-  display: block; /* Se muestra como bloque */
-  width: 100%; /* Ancho del 100% del contenedor */
-  height: 100%; /* Alto del 100% del contenedor */
-  object-fit: cover; /* La imagen se recorta para cubrir el contenedor sin perder proporción */
-  z-index: 1; /* Se sitúa detrás de otros pseudo-elementos (por ejemplo, la superposición) */
+.hero .hero-bg picture,
+.hero .hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* Pseudo-elemento en cada .carousel-item que añade una capa semitransparente */
-.hero .carousel-item::before {
-  content: ""; /* Contenido vacío para decoración */
-  background-color: color-mix(in srgb, var(--background-color), transparent 30%);
-      /* Mezcla el color de fondo global con 30% de transparencia */
-  position: absolute; /* Posicionamiento absoluto */
-  inset: 0; /* Ocupa todo el contenedor */
-  z-index: 2; /* Se sitúa por encima de la imagen, pero debajo de otros contenidos (como controles) */
+/* Capa oscura encima usando color-mix */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: color-mix(in srgb, black, transparent 25%);
 }
-
-/* Estilos para el control previo del carrusel */
-.hero .carousel-control-prev {
-  justify-content: start; /* Alinea el contenido del control a la izquierda */
-}
-
-/* Ajuste del padding para el control previo en pantallas a partir de 640px */
-@media (min-width: 640px) {
-  .hero .carousel-control-prev {
-    padding-left: 15px; /* Añade 15px de padding a la izquierda */
-  }
-}
-
-/* Estilos para el control siguiente del carrusel */
-.hero .carousel-control-next {
-  justify-content: end; /* Alinea el contenido del control a la derecha */
-}
-
-/* Ajuste del padding para el control siguiente en pantallas a partir de 640px */
-@media (min-width: 640px) {
-  .hero .carousel-control-next {
-    padding-right: 15px; /* Añade 15px de padding a la derecha */
-  }
-}
-
-/* Estilos para los íconos de control (siguiente y anterior) en el carrusel */
-.hero .carousel-control-next-icon,
-.hero .carousel-control-prev-icon {
-  background: none; /* Sin fondo definido */
-  font-size: 26px; /* Tamaño de fuente de 26px para los íconos */
-  line-height: 0; /* Sin interlineado */
-  background: color-mix(in srgb, var(--default-color), transparent 80%);
-      /* Mezcla el color por defecto con 80% de transparencia para el fondo del ícono */
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-      /* Color del ícono, mezclado con 40% de transparencia */
-  border-radius: 50px; /* Bordes redondeados para dar forma circular al ícono */
-  width: 54px; /* Ancho fijo de 54px */
-  height: 54px; /* Alto fijo de 54px */
-  display: flex; /* Uso de Flexbox para centrar el contenido */
-  align-items: center; /* Centrado vertical */
-  justify-content: center; /* Centrado horizontal */
-}
-
-/* Asegura que los controles del carrusel se sitúen por encima del contenido (con z-index) */
-.hero .carousel-control-prev,
-.hero .carousel-control-next {
-  z-index: 3; /* Nivel de apilamiento 3 */
-  transition: 0.3s; /* Transición suave de 0.3s para cambios en foco o hover */
-}
-
-/* Cuando se enfoca un control del carrusel, su opacidad se reduce */
-.hero .carousel-control-prev:focus,
-.hero .carousel-control-next:focus {
-  opacity: 0.5;
-}
-
-/* Al pasar el cursor sobre los controles del carrusel, su opacidad aumenta */
-.hero .carousel-control-prev:hover,
-.hero .carousel-control-next:hover {
-  opacity: 0.9;
-}
-
 
 /*--------------------------------------------------------------*/
 /* indexcards Section                                      */
@@ -1349,7 +1321,66 @@ section#indexproducts .container {
   transform: scale(1.1); /* Aplica un escalado de 1.1 (110%) */
 }
 
+.portfolio .portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
 
+.products .portfolio-content {
+  position: relative; 
+  overflow: hidden;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  background-color: color-mix(in srgb, var(--surface-color), transparent 10%);
+  opacity: 0;
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  padding: 15px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.portfolio .portfolio-info .preview-link,
+.portfolio .portfolio-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 14px);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.portfolio .portfolio-info .details-link {
+  right: 14px;
+  font-size: 28px;
+}
+
+.portfolio .portfolio-info .preview-link:hover,
+.portfolio .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+}
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1634,24 +1665,6 @@ section#indexproducts .container {
   transition: 0.3s; /* Transición de 0.3s para efectos hover */
 }
 
-/* Hover sobre el botón de visita cambia el fondo */
-.item .portfolio-info .btn-quote:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 50%);
-      /* Aplica un fondo mezclado con 20% de transparencia en hover */
-}
-
-/* Selecciona el encabezado <h2> dentro de .portfolio-description en la sección del proyecto */
-.item .portfolio-description h2 {
-  font-size: 26px; /* Tamaño de fuente de 26px */
-  font-weight: 700; /* Texto en negrita (700) */
-  margin-bottom: 20px; /* Aplica 20px de margen inferior */
-}
-
-/* Selecciona los párrafos dentro de .portfolio-description */
-.item .portfolio-description p {
-  padding: 0;
-  text-align: justify; /* Sin padding para mantener el diseño uniforme */
-}
 
 /*--------------------------------------------------------------
 # Contact Section
@@ -2083,4 +2096,140 @@ section#indexproducts .container {
   border-left: 8px solid var(--accent-color);
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
+}
+
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.call-to-action {
+  padding: 120px 0;
+  position: relative;
+  clip-path: inset(0);
+}
+
+.call-to-action img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.call-to-action:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 25%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.call-to-action .container {
+  position: relative;
+  z-index: 3;
+}
+
+.call-to-action h3 {
+  color: var(--default-color);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.call-to-action p {
+  color: var(--default-color);
+}
+
+.call-to-action .cta-btn {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid var(--contrast-color);
+  color: var(--contrast-color);
+}
+
+.call-to-action .cta-btn:hover {
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Whyus Section
+--------------------------------------------------------------*/
+.whyus .whyus-image {
+  position: relative;
+  min-height: 400px;
+}
+
+.whyus .whyus-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.whyus .whyus-item i {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-right: 20px;
+  line-height: 0;
+}
+
+.whyus .whyus-item p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# GalleryScroll Section
+--------------------------------------------------------------*/
+.galleryscroll {
+  overflow: hidden;
+}
+
+.galleryscroll .swiper-wrapper {
+  height: auto;
+}
+
+.galleryscroll .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.galleryscroll .swiper-pagination .swiper-pagination-bullet {
+  background-color: var(--background-color);
+  border: 1px solid var(--accent-color);
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
+
+.galleryscroll .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.galleryscroll .swiper-slide-active {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .galleryscroll .swiper-wrapper {
+    padding: 40px 0;
+  }
+
+  .galleryscroll .swiper-slide-active {
+    background: var(--background-color);
+    border: 6px solid var(--accent-color);
+    padding: 4px;
+    z-index: 1;
+    transform: scale(1.2);
+    transition: none;
+  }
 }

@@ -33,7 +33,8 @@
         </a>
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="/services.html">Casa</a></li>
+            <li><a href="/home.html">Casa</a></li>
+            <li><a href="/gallery.html">Galeria de Fotos</a></li>
             <li class="dropdown">
               <a href="/products.html">
                 <span>Productos</span>
@@ -64,8 +65,7 @@
                 <li><a href="/repuestos.html">Repuestos</a></li>
               </ul>
             </li>
-            <li><a href="/about.html">Sobre Nosotros</a></li>
-            <li><a href="/quality.html">Galeria de Fotos</a></li>
+            <li><a href="/about.html">Sobre Nosotros</a></li>        
             <li><a href="/contact.html">Contáctanos</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -74,15 +74,25 @@
     </header>
     
     <main class="main">   
-
+      <!-- Hero Section -->
       <section id="hero" class="hero section dark-background">
+        <!-- Background Static -->
+        <div class="hero-bg">
+          <picture>
+            <!-- Escritorio: 1920x1080 -->
+            <source media="(min-width: 1200px)" srcset="assets/img/backgrounds/hero-lg.webp">    
+            <!-- Tablet: 1280x1080 -->
+            <source media="(min-width: 768px)" srcset="assets/img/backgrounds/hero-md.webp">       
+            <!-- Móvil: 768x1080 -->
+            <img src="assets/img/backgrounds/hero-sm.webp" alt="Fondo principal de SERMITOOL" loading="lazy">
+          </picture>
+        </div>
+        <!-- Info Hero -->
         <div class="info d-flex align-items-center">
           <div class="container">
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 text-center">
-                <h2 id="hero-title">
-                  Equipos<span id="typed-dynamic"></span>
-                </h2>
+                <h2>Equipos<span id="typed-dynamic"></span></h2>
                 <div class="button-group">
                   <a href="#products-section" class="btn-get-started">
                     Nuestros Productos
@@ -97,108 +107,56 @@
             </div>
           </div>
         </div>
-             
-        <!-- Carrusel -->
-        <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-          <div class="carousel-item active">
-            <img src="assets/img/hero-carousel/hero-carousel-1.webp" alt="">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/hero-carousel/hero-carousel-2.webp" alt="">
-          </div>
-          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-          </a>
-          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-          </a>
-        </div>
       </section>
 
       <!-- Gallery Section -->
       <section id="gallery" class="gallery section">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Galeria de Fotos</h2>
+          <h2>Conócenos más de cerca</h2>
+          <p>Un vistazo a nuestro taller, maquinaria especializada y al equipo humano que da vida a SERMITOOL.</p>
         </div>
         <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4 justify-content-center">
-
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/gallery/gallery-1.webp" class="img-fluid" alt="">
                 <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-1.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="assets/img/gallery/gallery-1.webp" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                 </div>
               </div>
             </div>
 
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/gallery/gallery-2.webp" class="img-fluid" alt="">
                 <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-2.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="assets/img/gallery/gallery-2.webp" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                 </div>
               </div>
             </div>
 
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/gallery/gallery-3.webp" class="img-fluid" alt="">
                 <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-3.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="assets/img/gallery/gallery-3.webp" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                 </div>
               </div>
             </div>
 
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt="">
+                <img src="assets/img/gallery/gallery-4.webp" class="img-fluid" alt="">
                 <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-4.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="assets/img/gallery/gallery-4.webp" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                 </div>
               </div>
             </div>
-
-            <div class="col-xl-3 col-lg-4 col-md-6">
-              <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt="">
-                <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-5.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 col-md-6">
-              <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt="">
-                <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-6.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 col-md-6">
-              <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt="">
-                <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-7.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 col-md-6">
-              <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-8-2.jpg" class="img-fluid" alt="">
-                <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-8-2.jpg" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
 
+      <!-- Products Section -->
       <section id="products-section" class="indexcards section">
         <div class="container section-title" data-aos="fade-up">
           <h2>Nuestros Productos</h2>
@@ -297,6 +255,79 @@
           </div>
         </div>
       </section> 
+      
+      <!-- Call To Action Section 
+      <section id="call-to-action" class="call-to-action section dark-background">
+        <img src="assets/img/hero-carousel/hero-carousel-2.webp" alt="Fondo de llamada a la acción">
+        <div class="container">
+          <div class="row align-items-center" data-aos="zoom-in" data-aos-delay="100">
+            
+            <div class="col-xl-9 text-center text-xl-start">
+              <h3>¿Necesitas cotizar maquinaria o repuestos?</h3>
+              <p>En SERMITOOL fabricamos y suministramos equipos técnicos para minería subterránea. Contáctanos para obtener una cotización personalizada, asesoría directa o conocer nuestros productos disponibles.</p>
+            </div>
+            
+            <div class="col-xl-3 cta-btn-container text-center">
+              <a class="cta-btn align-middle" href="#contacto">Solicitar Cotización</a>
+            </div>
+
+          </div>
+        </div>
+
+      </section>-->
+      
+      <!-- Why us Section 
+      <section id="whyus" class="whyus section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>¿Por qué escoger Sermitool?</h2>
+          <p>Brindamos soluciones confiables, fabricadas con precisión para la industria minera subterránea del Perú.</p>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4 justify-content-between">
+            
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+
+              <div class="whyus-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                <i class="bi bi-award flex-shrink-0"></i>
+                <div>
+                  <h4>Más de 20 años de experiencia</h4>
+                  <p>Con dos décadas en el sector, conocemos a fondo las necesidades de la minería subterránea y ofrecemos soluciones probadas en campo.</p>
+                </div>
+              </div>
+
+              <div class="whyus-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-tools flex-shrink-0"></i>
+                <div>
+                  <h4>Fabricación y suministro especializado</h4>
+                  <p>Diseñamos repuestos técnicos y distribuimos maquinaria minera importada, incluyendo productos de alto rendimiento traídos desde Sudáfrica.</p>
+                </div>
+              </div>
+
+              <div class="whyus-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-shield-check flex-shrink-0"></i>
+                <div>
+                  <h4>Calidad garantizada</h4>
+                  <p>Aplicamos controles de calidad rigurosos en cada proceso, asegurando productos confiables y de alto rendimiento.</p>
+                </div>
+              </div>
+
+              <div class="whyus-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-chat-dots flex-shrink-0"></i>
+                <div>
+                  <h4>Atención personalizada</h4>
+                  <p>Escuchamos tus necesidades y te acompañamos en cada etapa del proyecto, desde la cotización hasta la entrega.</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="whyus-image col-lg-5 order-lg-2 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/img/features.svg" class="img-fluid" alt="Ventajas de Sermitool">
+            </div>
+          </div>
+        </div>
+      </section>-->
+
     </main>
 
     <div id="footer-placeholder"></div>
@@ -317,7 +348,8 @@
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
     <script src="assets/js/main.js"></script>
-    <!-- Writer Tittle Script -->
+
+    <!-- Script Hero Tittle Writer -->
     <script>
       const texto = ", accesorios y repuestos para minería";
       const span = document.getElementById("typed-dynamic");
@@ -331,7 +363,7 @@
             i++;
           } else {
             borrando = true;
-            setTimeout(escribirYborrar, 1500); // Espera antes de borrar
+            setTimeout(escribirYborrar, 2000);
             return;
           }
         } else {
@@ -342,12 +374,11 @@
             borrando = false;
           }
         }
-        setTimeout(escribirYborrar, borrando ? 100 : 100);
+        setTimeout(escribirYborrar, borrando ? 80 : 120);
       }
     
       document.addEventListener("DOMContentLoaded", escribirYborrar);
     </script>
-
   </body>
 
   </html>
