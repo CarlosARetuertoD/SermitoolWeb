@@ -64,6 +64,7 @@
     </header>
 
   <main class="main">
+    <!-- Hero Section -->
     <div class="page-title dark-background" style="background-image: url(/assets/img/backgrounds/page-title-bg.webp);">
       <div class="container position-relative">
         <h1 id="titulo-suministro">Suministro</h1>
@@ -76,7 +77,7 @@
         </nav>
       </div>
     </div>
-
+    <!-- Supplies Section -->
     <section id="suministro-detalle" class="item section py-5">
       <div class="container" data-aos="fade-up">
         <div class="row justify-content-center align-items-stretch gy-4">
@@ -120,7 +121,7 @@
     
   </main>
 
-  <!-- WhatsApp flotante corregido -->
+  <!-- WhatsApp Button -->
   <a id="boton-flotante-whatsapp" class="btn-whatsapp-fixed" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="bi bi-whatsapp"></i>
     <span class="tooltip-text">¡Cotiza ya!</span>
@@ -140,7 +141,7 @@
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="/assets/js/emailjs.js"></script>
   <script src="/assets/js/main.js"></script>
-
+  <!-- Script para cargar suministro -->  
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
@@ -203,5 +204,6 @@
         });
     });
   </script>
+
 </body>
 </html>
