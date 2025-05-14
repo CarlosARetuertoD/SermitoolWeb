@@ -163,19 +163,25 @@
   });
 
 //BTN WHATSAPP
-  document.addEventListener('DOMContentLoaded', function () {
-    const boton = document.getElementById('boton-flotante-whatsapp');
+document.addEventListener('DOMContentLoaded', function () {
+  const boton = document.getElementById('boton-flotante-whatsapp');
 
-    if (boton) {
-      boton.addEventListener('click', function () {
-        const numero = '51940824283';
-        const producto = boton.getAttribute('data-producto') || 'producto';
-        const mensaje = encodeURIComponent(`Hola, quisiera cotizar el ${producto}.`);
-        const url = `https://wa.me/${numero}?text=${mensaje}`;
-        window.open(url, '_blank');
-      });
-    }
-  });
+  if (boton) {
+    boton.addEventListener('click', function (e) {
+      e.preventDefault(); 
+
+      const numero = '51940824283';
+      const producto = boton.getAttribute('data-producto');
+
+      const mensaje = producto
+        ? `Hola, quisiera cotizar el ${producto}.`
+        : `Hola, estoy interesado en obtener más información sobre sus productos.`;
+
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    });
+  }
+});
 // SCRIPT PARA OCULTAR BOTONES DE NAVEGACION EN GOOGLE
   const observer = new MutationObserver(() => {
     const nextBtn = document.querySelector('.gnext');
