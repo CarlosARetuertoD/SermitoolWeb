@@ -1,0 +1,994 @@
+[
+  {
+    "id": "a2599",
+    "numero_repuesto": "1",
+    "nombre": "Retenedor",
+    "imagen": "/assets/img/products/repuestos/a2599.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a2599.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "c6908",
+    "numero_repuesto": "2",
+    "nombre": "Perno de retenedor",
+    "imagen": "/assets/img/products/repuestos/c6908.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c6908.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "128112uf-d1932",
+    "numero_repuesto": "3",
+    "nombre": "Tuerca de retenedor",
+    "imagen": "/assets/img/products/repuestos/128112uf-d1932.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/128112uf-d1932.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "d6205",
+    "numero_repuesto": "4",
+    "nombre": "Buje del freno (hule)",
+    "imagen": "/assets/img/products/repuestos/d6205.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d6205.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "a2598a",
+    "numero_repuesto": "5",
+    "nombre": "Trompa",
+    "imagen": "/assets/img/products/repuestos/a2598a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a2598a.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "snb500",
+    "numero_repuesto": "6",
+    "nombre": "Junta de cobre",
+    "imagen": "/assets/img/products/repuestos/snb500.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/snb500.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "c1418a",
+    "numero_repuesto": "7",
+    "nombre": "Bocina hexagonal 7/8''",
+    "imagen": "/assets/img/products/repuestos/c1418a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1418a.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "b1178",
+    "numero_repuesto": "8",
+    "nombre": "Buje de rotacion",
+    "imagen": "/assets/img/products/repuestos/b1178.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1178.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "c1512",
+    "numero_repuesto": "10",
+    "nombre": "Tuerca chuck",
+    "imagen": "/assets/img/products/repuestos/c1512.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1512.webp",
+    "categoria": "Trompa"
+  },
+  {
+    "id": "e393x",
+    "numero_repuesto": "11",
+    "nombre": "Cilindro estandar",
+    "imagen": "/assets/img/products/repuestos/e393x.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/e393x.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "c1523",
+    "numero_repuesto": "12",
+    "nombre": "Buje de soporte",
+    "imagen": "/assets/img/products/repuestos/c1523.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1523.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d8345",
+    "numero_repuesto": "13",
+    "nombre": "Tapon",
+    "imagen": "/assets/img/products/repuestos/d8345.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d8345.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d1390",
+    "numero_repuesto": "14",
+    "nombre": "Casquillo",
+    "imagen": "/assets/img/products/repuestos/d1390.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1390.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "c1517",
+    "numero_repuesto": "15",
+    "nombre": "Buje del piston",
+    "imagen": "/assets/img/products/repuestos/c1517.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1517.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "b2334",
+    "numero_repuesto": "16",
+    "nombre": "Piston",
+    "imagen": "/assets/img/products/repuestos/b2334.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b2334.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "c1508",
+    "numero_repuesto": "17",
+    "nombre": "Tuerca de rifle",
+    "imagen": "/assets/img/products/repuestos/c1508.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1508.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "a744",
+    "numero_repuesto": "18",
+    "nombre": "Tapa de valvula",
+    "imagen": "/assets/img/products/repuestos/a744.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a744.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "c1648",
+    "numero_repuesto": "19",
+    "nombre": "Valvula automatica",
+    "imagen": "/assets/img/products/repuestos/c1648.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1648.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "a745",
+    "numero_repuesto": "20",
+    "nombre": "Caja de valvula",
+    "imagen": "/assets/img/products/repuestos/a745.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a745.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "s2128",
+    "numero_repuesto": "21",
+    "nombre": "Perno de caja de valvula",
+    "imagen": "/assets/img/products/repuestos/s2128.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/s2128.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "b5053",
+    "numero_repuesto": "22",
+    "nombre": "Barra de rotacion",
+    "imagen": "/assets/img/products/repuestos/b5053.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b5053.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d6177",
+    "numero_repuesto": "23",
+    "nombre": "Aleta reversible",
+    "imagen": "/assets/img/products/repuestos/d6177.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d6177.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "s2134",
+    "numero_repuesto": "24",
+    "nombre": "Perno de aleta",
+    "imagen": "/assets/img/products/repuestos/s2134.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/s2134.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d1611c",
+    "numero_repuesto": "25",
+    "nombre": "Resorte de aleta",
+    "imagen": "/assets/img/products/repuestos/d1611c.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1611c.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "a693a",
+    "numero_repuesto": "87",
+    "nombre": "Horquilla",
+    "imagen": "/assets/img/products/repuestos/a693a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a693a.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d1982",
+    "numero_repuesto": "88",
+    "nombre": "Tuerca del pivote",
+    "imagen": "/assets/img/products/repuestos/d1982.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1982.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "b1182a",
+    "numero_repuesto": "89",
+    "nombre": "Pivote",
+    "imagen": "/assets/img/products/repuestos/b1182a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1182a.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d1398",
+    "numero_repuesto": "90",
+    "nombre": "Cono de pivote",
+    "imagen": "/assets/img/products/repuestos/d1398.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1398.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "30066",
+    "numero_repuesto": "91",
+    "nombre": "Pasador de pivote",
+    "imagen": "/assets/img/products/repuestos/30066.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/30066.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d1426",
+    "numero_repuesto": "92",
+    "nombre": "Cuña",
+    "imagen": "/assets/img/products/repuestos/d1426.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1426.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "d1392",
+    "numero_repuesto": "93",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/d1392.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1392.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "c1571",
+    "numero_repuesto": "94",
+    "nombre": "Resorte",
+    "imagen": "/assets/img/products/repuestos/c1571.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1571.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "c1519",
+    "numero_repuesto": "95",
+    "nombre": "Arandela de seguridad pivote",
+    "imagen": "/assets/img/products/repuestos/c1519.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1519.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "c1527",
+    "numero_repuesto": "96",
+    "nombre": "Tuerca del pivote",
+    "imagen": "/assets/img/products/repuestos/c1527.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1527.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "164231-16439003",
+    "numero_repuesto": "55",
+    "nombre": "Anillo",
+    "imagen": "/assets/img/products/repuestos/164231-16439003.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164231-16439003.webp",
+    "categoria": "Cilindro"
+  },
+  {
+    "id": "b1170",
+    "numero_repuesto": "26",
+    "nombre": "Trinquete",
+    "imagen": "/assets/img/products/repuestos/b1170.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1170.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "a660",
+    "numero_repuesto": "27",
+    "nombre": "Cabezal",
+    "imagen": "/assets/img/products/repuestos/a660.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a660.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "b1176",
+    "numero_repuesto": "28",
+    "nombre": "Valvula de estrangulacion",
+    "imagen": "/assets/img/products/repuestos/b1176.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1176.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1509",
+    "numero_repuesto": "29",
+    "nombre": "Palanca de valvula",
+    "imagen": "/assets/img/products/repuestos/c1509.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1509.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1384",
+    "numero_repuesto": "30",
+    "nombre": "Cuña de valvula",
+    "imagen": "/assets/img/products/repuestos/d1384.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1384.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "149163mt",
+    "numero_repuesto": "31",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/149163mt.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/149163mt.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1385",
+    "numero_repuesto": "32",
+    "nombre": "Tuerca",
+    "imagen": "/assets/img/products/repuestos/d1385.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1385.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1526",
+    "numero_repuesto": "33",
+    "nombre": "Tuerca de codo de aire",
+    "imagen": "/assets/img/products/repuestos/c1526.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1526.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1601",
+    "numero_repuesto": "34",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/d1601.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1601.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "164731-1648114",
+    "numero_repuesto": "35",
+    "nombre": "Oring",
+    "imagen": "/assets/img/products/repuestos/164731-1648114.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164731-1648114.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1525n",
+    "numero_repuesto": "36",
+    "nombre": "Codo de aire",
+    "imagen": "/assets/img/products/repuestos/c1525n.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1525n.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "1356288a",
+    "numero_repuesto": "37",
+    "nombre": "Conector de entrada",
+    "imagen": "/assets/img/products/repuestos/1356288a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/1356288a.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "164999",
+    "numero_repuesto": "38",
+    "nombre": "Oring",
+    "imagen": "/assets/img/products/repuestos/164999.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164999.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "s355538a",
+    "numero_repuesto": "39",
+    "nombre": "Filtro de aire",
+    "imagen": "/assets/img/products/repuestos/s355538a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/s355538a.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "l05",
+    "numero_repuesto": "40",
+    "nombre": "Conexión de aire bushing",
+    "imagen": "/assets/img/products/repuestos/l05.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/l05.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1809-p41a",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Codo de agua (roscado)",
+    "imagen": "/assets/img/products/repuestos/c1809-p41a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1809-p41a.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "s2141",
+    "numero_repuesto": "42",
+    "nombre": "Tuerca de codo entrada de agua",
+    "imagen": "/assets/img/products/repuestos/s2141.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/s2141.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "s48f1w",
+    "numero_repuesto": "43",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/s48f1w.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/s48f1w.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "164811-1646503",
+    "numero_repuesto": "44",
+    "nombre": "Oring",
+    "imagen": "/assets/img/products/repuestos/164811-1646503.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164811-1646503.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "s2487",
+    "numero_repuesto": "45",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/s2487.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/s2487.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1402",
+    "numero_repuesto": "46",
+    "nombre": "Empaque de codo de agua",
+    "imagen": "/assets/img/products/repuestos/d1402.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1402.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1272",
+    "numero_repuesto": "47",
+    "nombre": "Filtro",
+    "imagen": "/assets/img/products/repuestos/c1272.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1272.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d2441",
+    "numero_repuesto": "48",
+    "nombre": "Conector (adaptador)",
+    "imagen": "/assets/img/products/repuestos/d2441.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d2441.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1383",
+    "numero_repuesto": "51",
+    "nombre": "Perno de valvula de estrangulacion",
+    "imagen": "/assets/img/products/repuestos/d1383.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1383.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1382",
+    "numero_repuesto": "52",
+    "nombre": "Resorte de perno",
+    "imagen": "/assets/img/products/repuestos/d1382.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1382.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "2422p",
+    "numero_repuesto": "53",
+    "nombre": "Tapon de allen",
+    "imagen": "/assets/img/products/repuestos/2422p.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/2422p.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1574a",
+    "numero_repuesto": "54",
+    "nombre": "Tubo de agua",
+    "imagen": "/assets/img/products/repuestos/c1574a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1574a.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "164231-16439003",
+    "numero_repuesto": "55",
+    "nombre": "Anillo",
+    "imagen": "/assets/img/products/repuestos/164231-16439003.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164231-16439003.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1675",
+    "numero_repuesto": "56",
+    "nombre": "Empaque del tubo de agua",
+    "imagen": "/assets/img/products/repuestos/d1675.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1675.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1674",
+    "numero_repuesto": "57",
+    "nombre": "Espaciador",
+    "imagen": "/assets/img/products/repuestos/d1674.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1674.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c2144",
+    "numero_repuesto": "58",
+    "nombre": "Reten del asiento",
+    "imagen": "/assets/img/products/repuestos/c2144.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c2144.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1673",
+    "numero_repuesto": "59",
+    "nombre": "Empaque",
+    "imagen": "/assets/img/products/repuestos/d1673.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1673.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "b11181pc4",
+    "numero_repuesto": "60",
+    "nombre": "Glandula de agua",
+    "imagen": "/assets/img/products/repuestos/b11181pc4.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b11181pc4.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "164301-1648102",
+    "numero_repuesto": "61",
+    "nombre": "Oring",
+    "imagen": "/assets/img/products/repuestos/164301-1648102.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164301-1648102.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1522pc1",
+    "numero_repuesto": "62",
+    "nombre": "Valvula de paso",
+    "imagen": "/assets/img/products/repuestos/c1522pc1.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1522pc1.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "164999",
+    "numero_repuesto": "63",
+    "nombre": "Oring",
+    "imagen": "/assets/img/products/repuestos/164999.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164999.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1406",
+    "numero_repuesto": "64",
+    "nombre": "Resorte de valvula",
+    "imagen": "/assets/img/products/repuestos/d1406.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1406.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1521pc1",
+    "numero_repuesto": "65",
+    "nombre": "Reten del resorte",
+    "imagen": "/assets/img/products/repuestos/c1521pc1.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1521pc1.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "20029mn",
+    "numero_repuesto": "66",
+    "nombre": "Seguro",
+    "imagen": "/assets/img/products/repuestos/20029mn.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/20029mn.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "c1572c",
+    "numero_repuesto": "67",
+    "nombre": "Tornillo lateral",
+    "imagen": "/assets/img/products/repuestos/c1572c.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1572c.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "d1388",
+    "numero_repuesto": "68",
+    "nombre": "Tuerca de tornillo lateral",
+    "imagen": "/assets/img/products/repuestos/d1388.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1388.webp",
+    "categoria": "Cabezal"
+  },
+  {
+    "id": "a697b",
+    "numero_repuesto": "69",
+    "nombre": "Maneral",
+    "imagen": "/assets/img/products/repuestos/a697b.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/a697b.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "d1454d",
+    "numero_repuesto": "70",
+    "nombre": "Tuerca de maneral domo",
+    "imagen": "/assets/img/products/repuestos/d1454d.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1454d.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "145m30",
+    "numero_repuesto": "72",
+    "nombre": "Arandela de seguridad",
+    "imagen": "/assets/img/products/repuestos/145m30.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/145m30.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "d8247",
+    "numero_repuesto": "73",
+    "nombre": "Tuerca de cuerpo de valvula",
+    "imagen": "/assets/img/products/repuestos/d8247.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d8247.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "c1514-1515-p7475jt",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Valvula y camisa retractil",
+    "imagen": "/assets/img/products/repuestos/c1514-1515-p7475jt.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1514-1515-p7475jt.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "d1424",
+    "numero_repuesto": "76",
+    "nombre": "Resorte interno de valvula",
+    "imagen": "/assets/img/products/repuestos/d1424.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1424.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "d1425",
+    "numero_repuesto": "77",
+    "nombre": "Resorte exterior de camisa",
+    "imagen": "/assets/img/products/repuestos/d1425.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1425.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "d1427",
+    "numero_repuesto": "78",
+    "nombre": "Tapon allen de valvula",
+    "imagen": "/assets/img/products/repuestos/d1427.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1427.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "b1183b",
+    "numero_repuesto": "79",
+    "nombre": "Valvula",
+    "imagen": "/assets/img/products/repuestos/b1183b.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1183b.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "b1180b",
+    "numero_repuesto": "80",
+    "nombre": "Cuerpo de la valvula",
+    "imagen": "/assets/img/products/repuestos/b1180b.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1180b.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "164631",
+    "numero_repuesto": "81",
+    "nombre": "Empaque de cuerpo de valvula",
+    "imagen": "/assets/img/products/repuestos/164631.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164631.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "c1518",
+    "numero_repuesto": "82",
+    "nombre": "Manija giratoria",
+    "imagen": "/assets/img/products/repuestos/c1518.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1518.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "30088",
+    "numero_repuesto": "83",
+    "nombre": "Pasador de fijacion corto",
+    "imagen": "/assets/img/products/repuestos/30088.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/30088.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "300822",
+    "numero_repuesto": "84",
+    "nombre": "Pasador de fijacion largo",
+    "imagen": "/assets/img/products/repuestos/300822.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/300822.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "149122mt",
+    "numero_repuesto": "85",
+    "nombre": "Arandela de seguridad",
+    "imagen": "/assets/img/products/repuestos/149122mt.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/149122mt.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "d1218uf-d1684",
+    "numero_repuesto": "86",
+    "nombre": "Tuerca de valvula",
+    "imagen": "/assets/img/products/repuestos/d1218uf-d1684.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1218uf-d1684.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "144-m24",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/144-m24.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/144-m24.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "164531-1646014",
+    "numero_repuesto": "97",
+    "nombre": "Anillo",
+    "imagen": "/assets/img/products/repuestos/164531-1646014.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/164531-1646014.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "b1851a",
+    "numero_repuesto": "98",
+    "nombre": "Feed piston 51",
+    "imagen": "/assets/img/products/repuestos/b1851a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1851a.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "c1520",
+    "numero_repuesto": "99",
+    "nombre": "Tuerca adaptadora",
+    "imagen": "/assets/img/products/repuestos/c1520.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1520.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "1973854a",
+    "numero_repuesto": "100",
+    "nombre": "Empaque doble reborde",
+    "imagen": "/assets/img/products/repuestos/1973854a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/1973854a.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "d1069",
+    "numero_repuesto": "101",
+    "nombre": "Buje de la tapa superior",
+    "imagen": "/assets/img/products/repuestos/d1069.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1069.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "b1287",
+    "numero_repuesto": "102",
+    "nombre": "Tapa superior",
+    "imagen": "/assets/img/products/repuestos/b1287.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1287.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "1973854",
+    "numero_repuesto": "103",
+    "nombre": "Empaque",
+    "imagen": "/assets/img/products/repuestos/1973854.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/1973854.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "b1308",
+    "numero_repuesto": "104",
+    "nombre": "Agarradera",
+    "imagen": "/assets/img/products/repuestos/b1308.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/b1308.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "1026w12",
+    "numero_repuesto": "105",
+    "nombre": "Tornillo",
+    "imagen": "/assets/img/products/repuestos/1026w12.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/1026w12.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "143m10",
+    "numero_repuesto": "106",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/143m10.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/143m10.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "1216w",
+    "numero_repuesto": "107",
+    "nombre": "Tuerca",
+    "imagen": "/assets/img/products/repuestos/1216w.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/1216w.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "sb1851rk1",
+    "numero_repuesto": "108",
+    "nombre": "Tubo de plastico con casquillos y oring",
+    "imagen": "/assets/img/products/repuestos/sb1851rk1.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/sb1851rk1.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "c1788a",
+    "numero_repuesto": "109",
+    "nombre": "Cilindro 51",
+    "imagen": "/assets/img/products/repuestos/c1788a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1788a.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "5601773-p134bl",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Porta empaque superior",
+    "imagen": "/assets/img/products/repuestos/5601773-p134bl.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/5601773-p134bl.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "9002661",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Porta empaque inferior",
+    "imagen": "/assets/img/products/repuestos/9002661.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/9002661.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "1796740",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Empaque",
+    "imagen": "/assets/img/products/repuestos/1796740.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/1796740.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "d2038",
+    "numero_repuesto": "115",
+    "nombre": "Arandela",
+    "imagen": "/assets/img/products/repuestos/d2038.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d2038.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "d1073a",
+    "numero_repuesto": "116",
+    "nombre": "Tuerca de seguridad",
+    "imagen": "/assets/img/products/repuestos/d1073a.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/d1073a.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "c1791",
+    "numero_repuesto": "117",
+    "nombre": "Apoyo",
+    "imagen": "/assets/img/products/repuestos/c1791.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1791.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "c1672",
+    "numero_repuesto": "118",
+    "nombre": "Perno de apoyo",
+    "imagen": "/assets/img/products/repuestos/c1672.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/c1672.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "cp-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Cuerpo de lubricadora",
+    "imagen": "/assets/img/products/repuestos/cp-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/cp-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "emb-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Embolo de lub",
+    "imagen": "/assets/img/products/repuestos/emb-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/emb-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "tub-int-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Tubo interno de lub",
+    "imagen": "/assets/img/products/repuestos/tub-int-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/tub-int-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "bro-int-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Bronce interno de lub",
+    "imagen": "/assets/img/products/repuestos/bro-int-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/bro-int-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "res-gr-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Resorte grueso de lub",
+    "imagen": "/assets/img/products/repuestos/res-gr-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/res-gr-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "sg-gr-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Seguro grande de lub",
+    "imagen": "/assets/img/products/repuestos/sg-gr-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/sg-gr-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "sg-pq-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Seguro pequeño de lub",
+    "imagen": "/assets/img/products/repuestos/sg-pq-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/sg-pq-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "arn-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Arandela de lub",
+    "imagen": "/assets/img/products/repuestos/arn-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/arn-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "or-pq-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Oring pequeño de lub",
+    "imagen": "/assets/img/products/repuestos/or-pq-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/or-pq-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "or-gr-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Oring grande de tapa de lub",
+    "imagen": "/assets/img/products/repuestos/or-gr-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/or-gr-lub.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "tap-lub",
+    "numero_repuesto": "Número de parte desconocido",
+    "nombre": "Tapa de lubricadora",
+    "imagen": "/assets/img/products/repuestos/tap-lub.webp",
+    "imagen_zoom": "/assets/img/products/repuestos/tap-lub.webp",
+    "categoria": "Lubricadora"
+  }
+]

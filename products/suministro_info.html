@@ -122,7 +122,10 @@
     </main>
 
     <!-- WhatsApp Button -->
-    <a id="boton-flotante-whatsapp" class="btn-whatsapp-fixed" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <a id="boton-flotante-whatsapp" 
+       class="btn-whatsapp-fixed" 
+       target="_blank" rel="noopener" 
+       aria-label="WhatsApp">
       <i class="bi bi-whatsapp"></i>
       <span class="tooltip-text">¡Cotiza ya!</span>
     </a>
@@ -166,7 +169,7 @@
     
             // WhatsApp flotante
             const whatsappTexto = encodeURIComponent(`Hola, quiero cotizar el producto ${prod.nombre}`);
-            const enlaceWS = `https://wa.me/51940824283?text=${whatsappTexto}`;
+            const enlaceWS = `https://wa.me/51959301020?text=${whatsappTexto}`;
             const botonWS = document.getElementById('boton-flotante-whatsapp');
             botonWS.href = enlaceWS;
             botonWS.setAttribute('data-producto', prod.nombre);
