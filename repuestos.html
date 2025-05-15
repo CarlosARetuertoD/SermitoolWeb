@@ -21,7 +21,56 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> 
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
 
-    <link href="assets/css/main.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <style>
+      /* Estilos para los tooltips */
+      .img-tooltip-container {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .img-hotspot {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(0, 123, 255, 0.5);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 5;
+      }
+      
+      .img-hotspot:hover {
+        background-color: rgba(0, 123, 255, 0.7);
+        transform: scale(1.1);
+      }
+      
+      .img-tooltip {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s;
+        min-width: 150px;
+      }
+      
+      .img-hotspot:hover + .img-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
   </head>
   <body class="replacements-page">
     <!-- Header Section -->
@@ -92,14 +141,14 @@
             <div id="isotope-loader" class="text-center py-5">
               <div class="custom-loader mx-auto" style="width: 60px; height: 60px;"></div>
             </div>
-            <div class="col-lg-7" data-aos="zoom-out" data-aos-delay="20">
-              <img src="assets/img/products/jackleg-s250/partes/barra.webp" alt="Sermitool empresa minera" class="img-fluid w-100">
-              <img src="assets/img/products/jackleg-s250/partes/cabezal.webp" alt="Sermitool empresa minera" class="img-fluid w-100">
-              <img src="assets/img/products/jackleg-s250/partes/cilindro.webp" alt="Sermitool empresa minera" class="img-fluid w-100">
-              <img src="assets/img/products/jackleg-s250/partes/lubricadora.webp" alt="Sermitool empresa minera" class="img-fluid w-100">
-              <img src="assets/img/products/jackleg-s250/partes/maneral.webp" alt="Sermitool empresa minera" class="img-fluid w-100">
-              <img src="assets/img/products/jackleg-s250/partes/trompa.webp" alt="Sermitool empresa minera" class="img-fluid w-100">
-            </div>  
+            <div class="row mb-5 justify-content-center">
+              <div class="col-lg-8 text-center img-tooltip-container" data-aos="zoom-out" data-aos-delay="20">
+                <img id="categoria-imagen" src="assets/img/products/jackleg-s250/partes/barra.webp" alt="Parte de máquina" class="img-fluid">
+                
+                <!-- Puntos interactivos para la imagen - se mostrarán/ocultarán dinámicamente según el filtro -->
+                <div id="hotspots-container"></div>
+              </div>
+            </div>
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200" style="visibility: hidden;">
             </div>     
           </div>

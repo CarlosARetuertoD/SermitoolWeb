@@ -2,6 +2,60 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.isotope-container');
   const filtrosContainer = document.querySelector('.portfolio-filters');
   const isotopeLoader = document.querySelector('#isotope-loader');
+  const categoriaImagen = document.getElementById('categoria-imagen');
+  const hotspotsContainer = document.getElementById('hotspots-container');
+
+  // Mapeo de categorías a imágenes
+  const imagenesCategorias = {
+    '.filter-trompa': '/assets/img/products/jackleg-s250/partes/trompa.webp',
+    '.filter-cilindro': '/assets/img/products/jackleg-s250/partes/cilindro.webp',
+    '.filter-cabezal': '/assets/img/products/jackleg-s250/partes/cabezal.webp',
+    '.filter-maneral': '/assets/img/products/jackleg-s250/partes/maneral.webp',
+    '.filter-barra': '/assets/img/products/jackleg-s250/partes/barra.webp',
+    '.filter-lubricadora': '/assets/img/products/jackleg-s250/partes/lubricadora.webp'
+  };
+
+  // Definir puntos de interés (hotspots) para cada categoría
+  // Formato: [x%, y%, número, código, nombre]
+  const hotspotsPorCategoria = {
+    ".filter-trompa": [
+      [
+      80,
+      31,
+      "1",
+      "a2599",
+      "Retenedor"
+    ],
+    [
+      62,
+      71,
+      "2",
+      "c6908",
+      "Perno de retenedor"
+    ]
+    ],
+    '.filter-cilindro': [
+      [50, 30, "11", "e393x", "Cilindro estándar"],
+      [70, 40, "16", "b2334", "Pistón"],
+      [30, 60, "15", "c1517", "Buje del pistón"]
+    ],
+    '.filter-cabezal': [
+      [45, 25, "27", "a660", "Cabezal"],
+      [65, 40, "10", "c1512", "Tuerca chuck"],
+      [25, 60, "8", "b1178", "Buje de rotación"]
+    ],
+    '.filter-maneral': [
+      [40, 30, "69", "a697b", "Maneral"],
+      [60, 50, "87", "a693a", "Horquilla"]
+    ],
+    '.filter-barra': [
+      [50, 40, "22", "b5053", "Barra de rotación"],
+      [25, 60, "26", "b1170", "Trinquete"]
+    ],
+    '.filter-lubricadora': [
+      [40, 45, "49", "936658", "Válvula de control de agua"]
+    ]
+  };
 
   // Mostrar solo el loader local
   if (isotopeLoader) isotopeLoader.style.display = 'block';
@@ -14,7 +68,47 @@ document.addEventListener('DOMContentLoaded', () => {
     layoutMode: 'fitRows'
   });
 
-  fetch('/assets/json/repuestos.json')
+  // Función para crear y mostrar hotspots según la categoría seleccionada
+  function mostrarHotspots(filtro) {
+    // Limpiar hotspots anteriores
+    if (hotspotsContainer) {
+      hotspotsContainer.innerHTML = '';
+      
+      const hotspots = hotspotsPorCategoria[filtro] || [];
+      
+      // Crear nuevos hotspots
+      hotspots.forEach(([x, y, numero, codigo, nombre]) => {
+        // Crear el punto interactivo
+        const hotspot = document.createElement('div');
+        hotspot.className = 'img-hotspot';
+        // Usar posición exacta tal como se definió en el admin
+        hotspot.style.left = `${x}%`;
+        hotspot.style.top = `${y}%`;
+        // Aumentar el área interactiva aunque sea invisible
+        hotspot.style.width = '30px';
+        hotspot.style.height = '30px';
+        hotspot.textContent = numero;
+        
+        // Crear el tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'img-tooltip';
+        // Usar la misma posición horizontal que el hotspot
+        tooltip.style.left = `${x}%`;
+        // Colocar el tooltip más abajo manteniendo una distancia fija
+        tooltip.style.top = `${y + 5}%`;
+        tooltip.innerHTML = `
+          <strong>${codigo.toUpperCase()}</strong>
+          ${nombre}
+        `;
+        
+        // Añadir elementos al contenedor
+        hotspotsContainer.appendChild(hotspot);
+        hotspotsContainer.appendChild(tooltip);
+      });
+    }
+  }
+
+  fetch('/assets/json/partes-jackleg-s250.json')
     .then(res => res.json())
     .then(data => {
       const nuevos = [];
@@ -52,19 +146,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Botones de filtro
       filtrosContainer.innerHTML = '';
-      const btnTodos = document.createElement('li');
-      btnTodos.className = 'filter-active';
-      btnTodos.setAttribute('data-filter', '*');
-      btnTodos.textContent = 'Todos';
-      filtrosContainer.appendChild(btnTodos);
-
-      categorias.forEach(claseFiltro => {
+      
+      // Lista de categorías principales que queremos mostrar
+      const categoriasPrincipales = ['filter-trompa', 'filter-cilindro', 'filter-cabezal', 'filter-maneral', 'filter-barra', 'filter-lubricadora'];
+      
+      // Define el primer filtro como activo inicialmente
+      let primerFiltro = true;
+      
+      // Muestra sólo las categorías principales y en el orden deseado
+      categoriasPrincipales.forEach(claseFiltro => {
         const li = document.createElement('li');
         li.setAttribute('data-filter', `.${claseFiltro}`);
+        
+        // El primer elemento será el activo por defecto
+        if (primerFiltro) {
+          li.className = 'filter-active';
+          primerFiltro = false;
+          
+          // Establece la imagen inicial según el primer filtro
+          if (categoriaImagen) {
+            categoriaImagen.src = imagenesCategorias[`.${claseFiltro}`];
+            const nombreParte = categoriaImagen.src.split('/').pop().replace('.webp', '');
+            categoriaImagen.alt = `Parte ${nombreParte} de la perforadora`;
+          }
+          
+          // Mostrar hotspots iniciales
+          mostrarHotspots(`.${claseFiltro}`);
+          
+          // Aplicar el filtro inicial
+          setTimeout(() => {
+            iso.arrange({ filter: `.${claseFiltro}` });
+          }, 100);
+        }
+        
         li.textContent = claseFiltro
           .replace('filter-', '')
           .replace(/-/g, ' ')
           .replace(/^./, l => l.toUpperCase());
+        
         filtrosContainer.appendChild(li);
       });
 
@@ -80,10 +199,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       filtrosContainer.querySelectorAll('li').forEach(btn => {
         btn.addEventListener('click', () => {
+          // Actualizar clase activa
           filtrosContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
           btn.classList.add('filter-active');
+          
+          // Aplicar filtro al isotope
           const filtro = btn.getAttribute('data-filter');
           iso.arrange({ filter: filtro });
+          
+          // Cambiar la imagen principal según el filtro seleccionado
+          if (categoriaImagen) {
+            const imagenRuta = imagenesCategorias[filtro] || imagenesCategorias['.filter-trompa'];
+            categoriaImagen.src = imagenRuta;
+            
+            // Extraer el nombre de la parte desde la URL para el texto alt
+            const nombreParte = imagenRuta.split('/').pop().replace('.webp', '');
+            categoriaImagen.alt = `Parte ${nombreParte} de la perforadora`;
+            
+            // Actualizar hotspots según el filtro seleccionado
+            mostrarHotspots(filtro);
+          }
         });
       });
     });
