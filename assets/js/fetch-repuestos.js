@@ -70,45 +70,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Función para crear y mostrar hotspots según la categoría seleccionada
   function mostrarHotspots(filtro) {
-    // Limpiar hotspots anteriores
-    if (hotspotsContainer) {
-      hotspotsContainer.innerHTML = '';
-      
-      const hotspots = hotspotsPorCategoria[filtro] || [];
-      
-      // Crear nuevos hotspots
-      hotspots.forEach(([x, y, numero, codigo, nombre]) => {
-        // Crear el punto interactivo
-        const hotspot = document.createElement('div');
-        hotspot.className = 'img-hotspot';
-        // Usar posición exacta tal como se definió en el admin
-        hotspot.style.left = `${x}%`;
-        hotspot.style.top = `${y}%`;
-        // Aumentar el área interactiva aunque sea invisible
-        hotspot.style.width = '30px';
-        hotspot.style.height = '30px';
-        hotspot.textContent = numero;
-        
-        // Crear el tooltip
-        const tooltip = document.createElement('div');
-        tooltip.className = 'img-tooltip';
-        // Usar la misma posición horizontal que el hotspot
-        tooltip.style.left = `${x}%`;
-        // Colocar el tooltip más abajo manteniendo una distancia fija
-        tooltip.style.top = `${y + 5}%`;
-        tooltip.innerHTML = `
-          <strong>${codigo.toUpperCase()}</strong>
-          ${nombre}
-        `;
-        
-        // Añadir elementos al contenedor
-        hotspotsContainer.appendChild(hotspot);
-        hotspotsContainer.appendChild(tooltip);
-      });
+    if (!hotspotsContainer) return;
+    
+    // Limpiar hotspots anteriores de manera más eficiente
+    while (hotspotsContainer.firstChild) {
+      hotspotsContainer.removeChild(hotspotsContainer.firstChild);
     }
+    
+    const hotspots = hotspotsPorCategoria[filtro] || [];
+    const fragment = document.createDocumentFragment();
+    
+    hotspots.forEach(([x, y, numero, codigo, nombre]) => {
+      // Crear el punto interactivo
+      const hotspot = document.createElement('div');
+      hotspot.className = 'img-hotspot';
+      hotspot.style.left = `${x}%`;
+      hotspot.style.top = `${y}%`;
+      hotspot.textContent = numero;
+      
+      // Crear el tooltip
+      const tooltip = document.createElement('div');
+      tooltip.className = 'img-tooltip';
+      tooltip.style.left = `${x}%`;
+      tooltip.style.top = `${y + 5}%`;
+      tooltip.innerHTML = `
+        <strong>${codigo.toUpperCase()}</strong>
+        ${nombre}
+      `;
+      
+      fragment.appendChild(hotspot);
+      fragment.appendChild(tooltip);
+    });
+    
+    hotspotsContainer.appendChild(fragment);
   }
 
-  fetch('/assets/json/partes-jackleg-s250.json')
+  fetch('/assets/json/repuestos.json')
     .then(res => res.json())
     .then(data => {
       const nuevos = [];
