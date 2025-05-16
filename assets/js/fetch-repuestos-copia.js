@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Asegurar que la página comience desde arriba
+  window.scrollTo(0, 0);
+  
   const categoriaImagen = document.getElementById('categoria-imagen');
   const hotspotsContainer = document.getElementById('hotspots-container');
   const repuestoContainer = document.getElementById('repuesto-container');
   const mainContent = document.querySelector('.main-content');
   const imgTooltipContainer = document.querySelector('.img-tooltip-container');
   const botonesContainer = document.querySelector('.portfolio-filters');
+  const logo = document.querySelector('.logo');
+  const sectionTitle = document.querySelector('.section-title');
   let repuestosData = null;
 
   console.log('Contenedores encontrados:', {
@@ -15,10 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Función para mostrar todos los elementos
   function mostrarElementos() {
+    // Asegurar que la página esté en la parte superior
+    window.scrollTo(0, 0);
+    
     // Esperar un poco más antes de mostrar los elementos
     setTimeout(() => {
       if (botonesContainer) botonesContainer.classList.add('visible');
       if (imgTooltipContainer) imgTooltipContainer.classList.add('visible');
+      if (logo) logo.classList.add('visible');
+      if (sectionTitle) sectionTitle.classList.add('visible');
+      
+      // Inicializar AOS para los elementos con data-aos
+      AOS.init({
+        duration: 800,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        once: true
+      });
     }, 300);
   }
 
@@ -182,8 +199,18 @@ document.addEventListener('DOMContentLoaded', () => {
             `<img src="${imagen}" alt="${repuesto.nombre}" class="img-fluid">` : 
             `<div class="no-image">Imagen no disponible</div>`
           }
+          <a href="#" id="boton-flotante-whatsapp" class="btn btn-whatsapp" data-producto="${repuesto.id}-${repuesto.nombre}" onclick="event.preventDefault(); window.open(this.href, '_blank');">
+            <i class="bi bi-whatsapp"></i> ¡Cotiza ahora!
+          </a>
         </div>
       `;
+
+      // Configurar el botón de WhatsApp
+      const wsBtn = document.getElementById('boton-flotante-whatsapp');
+      if (wsBtn) {
+        const nombreEncoded = encodeURIComponent(`Hola, quiero cotizar el Repuesto Numero ${repuesto.numero_repuesto} - ${repuesto.id.toUpperCase()}, ${repuesto.nombre}`);
+        wsBtn.href = `https://wa.me/51959301020?text=${nombreEncoded}`;
+      }
 
       // Remover estado inicial y agregar clase visible
       if (mainContent) {
@@ -193,6 +220,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const repuestoInfo = repuestoContainer.querySelector('.repuesto-info');
         if (repuestoInfo) {
           repuestoInfo.classList.add('visible');
+          
+          // Scroll automático solo en móviles y solo si no estamos ya en la sección de información
+          if (window.innerWidth <= 576) {
+            const infoSection = document.querySelector('.info-section');
+            const infoRect = infoSection.getBoundingClientRect();
+            const isInfoVisible = infoRect.top >= 0 && infoRect.bottom <= window.innerHeight;
+            
+            if (!isInfoVisible) {
+              setTimeout(() => {
+                infoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 100);
+            }
+          }
         }
       }, 50);
     } else {

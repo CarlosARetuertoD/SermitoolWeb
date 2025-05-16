@@ -2,6 +2,17 @@
   --accent-color: #f27237;
 }
 
+[data-aos] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .img-tooltip-container {
   position: relative;
   margin-bottom: 0;
@@ -123,6 +134,40 @@
   font-weight: 500;
 }
 
+.logo {
+  position: relative;
+  margin: 20px 0 20px 40px;
+  z-index: 997;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo img {
+  max-height: 80px;
+  width: auto;
+}
+
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 996;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .portfolio-filters {
   display: flex;
   justify-content: center;
@@ -131,6 +176,10 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-wrap: wrap;
+  padding: 0 15px;
+  position: relative;
+  z-index: 996;
 }
 
 .portfolio-filters.visible {
@@ -163,6 +212,8 @@
   margin: 0 auto;
   padding: 2rem;
   transition: all 0.5s ease;
+  position: relative;
+  z-index: 995;
 }
 
 .main-content.initial-state {
@@ -211,7 +262,9 @@
 }
 
 .main-content:not(.initial-state) .image-section {
-  transform: translateX(-30px);
+  transform: none;
+  max-width: 1100px;
+  width: 100%;
 }
 
 .main-content:not(.initial-state) .info-section {
@@ -272,35 +325,140 @@
 }
 
 @media (max-width: 992px) {
+  .logo {
+    margin: 15px 0 15px 20px;
+  }
+
+  .logo img {
+    max-height: 60px;
+  }
+
+  .section-title {
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .portfolio-filters {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .portfolio-filters li {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
   .main-content {
     flex-direction: column;
     padding: 1rem;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+  }
+
+  .img-tooltip-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .main-content:not(.initial-state) {
+    flex-direction: column;
   }
 
   .main-content:not(.initial-state) .image-section {
-    transform: translateX(0);
-    max-width: 100%;
-    min-width: auto;
+    transform: none;
+    max-width: 800px;
+    width: 100%;
   }
 
   .main-content:not(.initial-state) .info-section {
-    transform: translateY(20px);
-    opacity: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .main-content:not(.initial-state) .info-section.visible {
     transform: translateY(0);
     opacity: 1;
-  }
-
-  .image-section, .info-section {
     width: 100%;
-    min-width: auto;
+    max-width: 500px;
+    margin: 1rem auto 0;
+    order: 2;
+    display: flex;
+    pointer-events: auto;
   }
 
   .info-section {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 500px;
   }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    margin: 10px 0 10px 15px;
+  }
+
+  .logo img {
+    max-height: 50px;
+  }
+
+  .section-title {
+    margin-top: 10px;
+  }
+
+  .section-title h2 {
+    font-size: 1.3rem;
+  }
+
+  .portfolio-filters {
+    gap: 10px;
+  }
+
+  .portfolio-filters li {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .main-content {
+    padding: 0.5rem;
+    max-width: 500px;
+  }
+
+  .img-tooltip-container {
+    max-width: 450px;
+  }
+
+  .main-content:not(.initial-state) .image-section {
+    max-width: 450px;
+  }
+
+  .main-content:not(.initial-state) .info-section {
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  .info-section {
+    max-width: 350px;
+  }
+
+  .repuesto-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .repuesto-info h4 {
+    font-size: 1.1rem;
+  }
+}
+
+.products.section {
+  padding-top: 0;
 } 
