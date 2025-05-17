@@ -56,6 +56,13 @@
     "categoria": "Trompa"
   },
   {
+    "id": "c1516",
+    "numero_repuesto": "9",
+    "nombre": "Espaciador Tuerca",
+    "imagen": "/assets/img/products/repuestos/c1516.webp",
+    "categoria": "Trompa"
+  },
+  {
     "id": "c1512",
     "numero_repuesto": "10",
     "nombre": "Tuerca chuck",
@@ -240,7 +247,7 @@
   {
     "id": "164231-16439003",
     "numero_repuesto": "55",
-    "nombre": "Anillo",
+    "nombre": "Anillo (6)",
     "imagen": "/assets/img/products/repuestos/164231-16439003.webp",
     "categoria": "Cilindro"
   },
@@ -350,8 +357,8 @@
     "categoria": "Cabezal"
   },
   {
-    "id": "c1809-p41a",
-    "numero_repuesto": "Número de parte desconocido",
+    "id": "c1809",
+    "numero_repuesto": "41A",
     "nombre": "Codo de agua (roscado)",
     "imagen": "/assets/img/products/repuestos/c1809-p41a.webp",
     "categoria": "Cabezal"
@@ -490,7 +497,7 @@
     "categoria": "Cabezal"
   },
   {
-    "id": "164999",
+    "id": "164999, 16452-1645704",
     "numero_repuesto": "63",
     "nombre": "Oring",
     "imagen": "/assets/img/products/repuestos/164999.webp",
@@ -560,9 +567,16 @@
     "categoria": "Maneral"
   },
   {
-    "id": "c1514-1515-p7475jt",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Valvula y camisa retractil",
+    "id": "c1514-1515",
+    "numero_repuesto": "74",
+    "nombre": "Válvula retráctil",
+    "imagen": "/assets/img/products/repuestos/c1514-1515-p7475jt.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "c1514-1515",
+    "numero_repuesto": "75",
+    "nombre": "Camisa de válvula retractil",
     "imagen": "/assets/img/products/repuestos/c1514-1515-p7475jt.webp",
     "categoria": "Maneral"
   },
@@ -648,6 +662,13 @@
     "numero_repuesto": "Número de parte desconocido",
     "nombre": "Arandela",
     "imagen": "/assets/img/products/repuestos/144-m24.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "164811-1646503",
+    "numero_repuesto": "44",
+    "nombre": "O'ring",
+    "imagen": "/assets/img/products/repuestos/164811-1646503.webp",
     "categoria": "Maneral"
   },
   {
@@ -743,22 +764,36 @@
   },
   {
     "id": "5601773-p134bl",
-    "numero_repuesto": "Número de parte desconocido",
+    "numero_repuesto": "110",
     "nombre": "Porta empaque superior",
     "imagen": "/assets/img/products/repuestos/5601773-p134bl.webp",
     "categoria": "Barra"
   },
   {
     "id": "9002661",
-    "numero_repuesto": "Número de parte desconocido",
+    "numero_repuesto": "111",
     "nombre": "Porta empaque inferior",
     "imagen": "/assets/img/products/repuestos/9002661.webp",
     "categoria": "Barra"
   },
   {
     "id": "1796740",
-    "numero_repuesto": "Número de parte desconocido",
+    "numero_repuesto": "112",
     "nombre": "Empaque",
+    "imagen": "/assets/img/products/repuestos/1796740.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "c10119",
+    "numero_repuesto": "113",
+    "nombre": "Espaciador del vástago del pistón",
+    "imagen": "/assets/img/products/repuestos/1796740.webp",
+    "categoria": "Barra"
+  },
+  {
+    "id": "c10120",
+    "numero_repuesto": "114",
+    "nombre": "Espaciador",
     "imagen": "/assets/img/products/repuestos/1796740.webp",
     "categoria": "Barra"
   },
@@ -791,80 +826,45 @@
     "categoria": "Barra"
   },
   {
-    "id": "cp-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Cuerpo de lubricadora",
-    "imagen": "/assets/img/products/repuestos/cp-lub.webp",
+    "id": "936658",
+    "numero_repuesto": "49",
+    "nombre": "Válvula de control de agua",
+    "imagen": "/assets/img/products/repuestos/936658.webp",
     "categoria": "Lubricadora"
   },
   {
-    "id": "emb-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Embolo de lub",
-    "imagen": "/assets/img/products/repuestos/emb-lub.webp",
+    "id": "76001",
+    "numero_repuesto": "50",
+    "nombre": "Conexión de agua",
+    "imagen": "/assets/img/products/repuestos/76001.webp",
     "categoria": "Lubricadora"
   },
   {
-    "id": "tub-int-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Tubo interno de lub",
-    "imagen": "/assets/img/products/repuestos/tub-int-lub.webp",
+    "id": "L07",
+    "numero_repuesto": "121",
+    "nombre": "Lubricador",
+    "imagen": "/assets/img/products/repuestos/l07.webp",
     "categoria": "Lubricadora"
   },
   {
-    "id": "bro-int-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Bronce interno de lub",
-    "imagen": "/assets/img/products/repuestos/bro-int-lub.webp",
+    "id": "L06",
+    "numero_repuesto": "123",
+    "nombre": "Adaptador de Lubricador",
+    "imagen": "/assets/img/products/repuestos/l06.webp",
     "categoria": "Lubricadora"
   },
   {
-    "id": "res-gr-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Resorte grueso de lub",
-    "imagen": "/assets/img/products/repuestos/res-gr-lub.webp",
+    "id": "L08",
+    "numero_repuesto": "124",
+    "nombre": "Conexión de salida de lubricador",
+    "imagen": "/assets/img/products/repuestos/l08.webp",
     "categoria": "Lubricadora"
   },
   {
-    "id": "sg-gr-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Seguro grande de lub",
-    "imagen": "/assets/img/products/repuestos/sg-gr-lub.webp",
-    "categoria": "Lubricadora"
-  },
-  {
-    "id": "sg-pq-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Seguro pequeño de lub",
-    "imagen": "/assets/img/products/repuestos/sg-pq-lub.webp",
-    "categoria": "Lubricadora"
-  },
-  {
-    "id": "arn-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Arandela de lub",
-    "imagen": "/assets/img/products/repuestos/arn-lub.webp",
-    "categoria": "Lubricadora"
-  },
-  {
-    "id": "or-pq-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Oring pequeño de lub",
-    "imagen": "/assets/img/products/repuestos/or-pq-lub.webp",
-    "categoria": "Lubricadora"
-  },
-  {
-    "id": "or-gr-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Oring grande de tapa de lub",
-    "imagen": "/assets/img/products/repuestos/or-gr-lub.webp",
-    "categoria": "Lubricadora"
-  },
-  {
-    "id": "tap-lub",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Tapa de lubricadora",
-    "imagen": "/assets/img/products/repuestos/tap-lub.webp",
+    "id": "lub-adap",
+    "numero_repuesto": "40",
+    "nombre": "Reductor Adaptador de lubricador",
+    "imagen": "/assets/img/products/repuestos/lub-adap.webp",
     "categoria": "Lubricadora"
   }
 ]
