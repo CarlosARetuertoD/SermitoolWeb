@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '.filter-lubricadora': '/assets/img/products/jackleg-s250/partes/lubricadora.webp'
   };
 
-  // Definir puntos de interés (hotspots) para cada categoría
-  // Formato: [x%, y%, número, código, nombre]
+ // Definir puntos de interés (hotspots) para cada categoría
   const hotspotsPorCategoria = {
     ".filter-trompa": [
       [80,31,"1","a2599","Retenedor"],

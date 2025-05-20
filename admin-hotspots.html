@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Administrar Puntos de Interés - Sermitool</title>
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body { padding-top: 20px; }
     .img-container {
@@ -45,6 +46,43 @@
       border-radius: 4px;
       max-height: 400px;
       overflow: auto;
+    }
+    #repuestos-container {
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+    #repuestos-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    #repuestos-container::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    #repuestos-container::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+    #repuestos-container::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .checkbox-container input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+    }
+    .select-all-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .add-selected-btn {
+      margin-top: 10px;
+      width: 100%;
     }
   </style>
 </head>
@@ -90,7 +128,15 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-header">
-            <h5 class="mb-0">Repuestos</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="mb-0">Repuestos</h5>
+              <div class="select-all-container">
+                <input class="form-check-input" type="checkbox" id="select-all-repuestos">
+                <label class="form-check-label" for="select-all-repuestos">
+                  Seleccionar Todos
+                </label>
+              </div>
+            </div>
           </div>
           <div class="card-body">
             <div id="repuestos-container">
@@ -98,22 +144,31 @@
                 Cargando repuestos...
               </div>
             </div>
+            <button id="add-selected-btn" class="btn btn-primary add-selected-btn" disabled>
+              Agregar Puntos Seleccionados
+            </button>
           </div>
         </div>
         
         <div class="card">
           <div class="card-header">
-            <h5 class="mb-0">Agregar Punto</h5>
+            <h5 class="mb-0">Agregar Punto Personalizado</h5>
           </div>
           <div class="card-body">
-            <form id="add-hotspot-form">
+            <form id="add-custom-hotspot-form">
               <div class="mb-3">
-                <label for="repuesto-id" class="form-label">Repuesto</label>
-                <select id="repuesto-id" class="form-select">
-                  <!-- Opciones se cargarán dinámicamente -->
-                </select>
+                <label for="custom-number" class="form-label">Número de Repuesto</label>
+                <input type="text" id="custom-number" class="form-control" required>
               </div>
-              <button type="submit" class="btn btn-success">Agregar Punto</button>
+              <div class="mb-3">
+                <label for="custom-id" class="form-label">ID</label>
+                <input type="text" id="custom-id" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="custom-name" class="form-label">Nombre</label>
+                <input type="text" id="custom-name" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-warning">Agregar Punto</button>
             </form>
           </div>
         </div>
@@ -121,277 +176,347 @@
     </div>
   </div>
 
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Elementos del DOM
-      const currentImage = document.getElementById('current-image');
-      const imgContainer = document.querySelector('.img-container');
-      const jsonOutput = document.getElementById('json-output');
-      const repuestosContainer = document.getElementById('repuestos-container');
-      const repuestoSelect = document.getElementById('repuesto-id');
-      const addHotspotForm = document.getElementById('add-hotspot-form');
-      const copyJsonBtn = document.getElementById('copy-json');
+  document.addEventListener('DOMContentLoaded', () => {
+    // Elementos del DOM
+    const currentImage = document.getElementById('current-image');
+    const imgContainer = document.querySelector('.img-container');
+    const jsonOutput = document.getElementById('json-output');
+    const repuestosContainer = document.getElementById('repuestos-container');
+    const addCustomHotspotForm = document.getElementById('add-custom-hotspot-form');
+    const copyJsonBtn = document.getElementById('copy-json');
+    
+    // Botones de categoría
+    const btnTrompa = document.getElementById('btn-trompa');
+    const btnCilindro = document.getElementById('btn-cilindro');
+    const btnCabezal = document.getElementById('btn-cabezal');
+    const btnManeral = document.getElementById('btn-maneral');
+    const btnBarra = document.getElementById('btn-barra');
+    const btnLubricadora = document.getElementById('btn-lubricadora');
+    
+    let currentCategory = 'trompa';
+    let allRepuestos = [];
+    
+    // Almacenamiento de hotspots por categoría
+    const hotspotsPorCategoria = {
+      'trompa': [],
+      'cilindro': [],
+      'cabezal': [],
+      'maneral': [],
+      'barra': [],
+      'lubricadora': []
+    };
+    
+    // Cargar los repuestos desde el JSON
+    fetch('/assets/json/partes-jackleg-s250.json')
+      .then(res => res.json())
+      .then(data => {
+        allRepuestos = data;
+        renderRepuestosList();
+      });
+    
+    // Cambiar imagen y hotspots al hacer clic en los botones de categoría
+    btnTrompa.addEventListener('click', () => changeCategory('trompa'));
+    btnCilindro.addEventListener('click', () => changeCategory('cilindro'));
+    btnCabezal.addEventListener('click', () => changeCategory('cabezal'));
+    btnManeral.addEventListener('click', () => changeCategory('maneral'));
+    btnBarra.addEventListener('click', () => changeCategory('barra'));
+    btnLubricadora.addEventListener('click', () => changeCategory('lubricadora'));
+    
+    // Establecer la categoría activa
+    function changeCategory(category) {
+      currentCategory = category;
+      currentImage.src = `assets/img/products/jackleg-s250/partes/${category}.webp`;
       
-      // Botones de categoría
-      const btnTrompa = document.getElementById('btn-trompa');
-      const btnCilindro = document.getElementById('btn-cilindro');
-      const btnCabezal = document.getElementById('btn-cabezal');
-      const btnManeral = document.getElementById('btn-maneral');
-      const btnBarra = document.getElementById('btn-barra');
-      const btnLubricadora = document.getElementById('btn-lubricadora');
+      // Actualizar UI
+      [btnTrompa, btnCilindro, btnCabezal, btnManeral, btnBarra, btnLubricadora].forEach(btn => {
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-outline-primary');
+      });
       
-      let currentCategory = 'trompa';
-      let allRepuestos = [];
+      document.getElementById(`btn-${category}`).classList.remove('btn-outline-primary');
+      document.getElementById(`btn-${category}`).classList.add('btn-primary');
       
-      // Almacenamiento de hotspots por categoría
-      const hotspotsPorCategoria = {
-        'trompa': [],
-        'cilindro': [],
-        'cabezal': [],
-        'maneral': [],
-        'barra': [],
-        'lubricadora': []
-      };
+      // Actualizar select de repuestos
+      updateRepuestosSelect();
       
-      // Cargar los repuestos desde el JSON
-      fetch('/assets/json/partes-jackleg-s250.json')
-        .then(res => res.json())
-        .then(data => {
-          allRepuestos = data;
-          
-          // Rellenar el select con los repuestos filtrados por categoría
-          updateRepuestosSelect();
-          
-          // Mostrar la lista de repuestos
-          renderRepuestosList();
-        });
+      // Actualizar lista de repuestos
+      renderRepuestosList();
       
-      // Cambiar imagen y hotspots al hacer clic en los botones de categoría
-      btnTrompa.addEventListener('click', () => changeCategory('trompa'));
-      btnCilindro.addEventListener('click', () => changeCategory('cilindro'));
-      btnCabezal.addEventListener('click', () => changeCategory('cabezal'));
-      btnManeral.addEventListener('click', () => changeCategory('maneral'));
-      btnBarra.addEventListener('click', () => changeCategory('barra'));
-      btnLubricadora.addEventListener('click', () => changeCategory('lubricadora'));
+      // Renderizar hotspots actuales
+      renderHotspots();
       
-      // Establecer la categoría activa
-      function changeCategory(category) {
-        currentCategory = category;
-        currentImage.src = `assets/img/products/jackleg-s250/partes/${category}.webp`;
-        
-        // Actualizar UI
-        [btnTrompa, btnCilindro, btnCabezal, btnManeral, btnBarra, btnLubricadora].forEach(btn => {
-          btn.classList.remove('btn-primary');
-          btn.classList.add('btn-outline-primary');
-        });
-        
-        document.getElementById(`btn-${category}`).classList.remove('btn-outline-primary');
-        document.getElementById(`btn-${category}`).classList.add('btn-primary');
-        
-        // Actualizar select de repuestos
-        updateRepuestosSelect();
-        
-        // Renderizar hotspots actuales
-        renderHotspots();
-        
-        // Actualizar JSON
-        updateJsonOutput();
+      // Actualizar JSON
+      updateJsonOutput();
+    }
+    
+    // Filtrar repuestos por categoría actual
+    function updateRepuestosSelect() {
+      const filteredRepuestos = allRepuestos.filter(r => 
+        r.categoria && r.categoria.toLowerCase() === currentCategory
+      );
+      renderRepuestosList();
+    }
+    
+    // Mostrar lista de repuestos de la categoría actual
+    function renderRepuestosList() {
+      repuestosContainer.innerHTML = '';
+      
+      const filteredRepuestos = allRepuestos.filter(r => 
+        r.categoria && r.categoria.toLowerCase() === currentCategory
+      );
+      
+      if (filteredRepuestos.length === 0) {
+        repuestosContainer.innerHTML = '<div class="alert alert-warning">No hay repuestos en esta categoría</div>';
+        return;
       }
       
-      // Filtrar repuestos por categoría actual
-      function updateRepuestosSelect() {
-        const filteredRepuestos = allRepuestos.filter(r => 
-          r.categoria && r.categoria.toLowerCase() === currentCategory
-        );
-        
-        repuestoSelect.innerHTML = '';
-        filteredRepuestos.forEach(r => {
-          const option = document.createElement('option');
-          option.value = r.id;
-          option.textContent = `${r.id.toUpperCase()} - ${r.nombre} (#${r.numero_repuesto})`;
-          repuestoSelect.appendChild(option);
-        });
-      }
-      
-      // Mostrar lista de repuestos de la categoría actual
-      function renderRepuestosList() {
-        repuestosContainer.innerHTML = '';
-        
-        const filteredRepuestos = allRepuestos.filter(r => 
-          r.categoria && r.categoria.toLowerCase() === currentCategory
-        );
-        
-        if (filteredRepuestos.length === 0) {
-          repuestosContainer.innerHTML = '<div class="alert alert-warning">No hay repuestos en esta categoría</div>';
-          return;
-        }
-        
-        filteredRepuestos.forEach(r => {
-          const div = document.createElement('div');
-          div.className = 'mb-2';
-          div.innerHTML = `
-            <div class="d-flex align-items-center">
-              <span class="badge bg-primary me-2">${r.numero_repuesto}</span>
-              <div>
-                <strong>${r.id.toUpperCase()}</strong> - ${r.nombre}
-              </div>
+      filteredRepuestos.forEach(r => {
+        const div = document.createElement('div');
+        div.className = 'mb-2';
+        div.innerHTML = `
+          <div class="d-flex align-items-center p-2 border rounded">
+            <span class="badge bg-primary me-2">${r.numero_repuesto}</span>
+            <div class="flex-grow-1">
+              <strong>${r.id.toUpperCase()}</strong> - ${r.nombre}
             </div>
-          `;
-          repuestosContainer.appendChild(div);
+            <div class="checkbox-container">
+              <input type="checkbox" class="form-check-input repuesto-checkbox" 
+                     data-id="${r.id}" 
+                     data-numero="${r.numero_repuesto}"
+                     data-nombre="${r.nombre}">
+            </div>
+          </div>
+        `;
+        repuestosContainer.appendChild(div);
+      });
+
+      // Agregar evento para el checkbox de "Seleccionar Todos"
+      const selectAllCheckbox = document.getElementById('select-all-repuestos');
+      selectAllCheckbox.addEventListener('change', (e) => {
+        const checkboxes = document.querySelectorAll('.repuesto-checkbox');
+        checkboxes.forEach(checkbox => {
+          checkbox.checked = e.target.checked;
         });
-      }
+        updateAddSelectedButton();
+      });
+
+      // Agregar eventos para los checkboxes individuales
+      const checkboxes = document.querySelectorAll('.repuesto-checkbox');
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateAddSelectedButton);
+      });
+    }
+    
+    // Actualizar estado del botón de agregar seleccionados
+    function updateAddSelectedButton() {
+      const selectedCheckboxes = document.querySelectorAll('.repuesto-checkbox:checked');
+      const addSelectedBtn = document.getElementById('add-selected-btn');
+      addSelectedBtn.disabled = selectedCheckboxes.length === 0;
+    }
+
+    // Agregar puntos seleccionados
+    document.getElementById('add-selected-btn').addEventListener('click', () => {
+      const selectedCheckboxes = document.querySelectorAll('.repuesto-checkbox:checked');
       
-      // Agregar un nuevo hotspot
-      addHotspotForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const repuestoId = repuestoSelect.value;
-        if (!repuestoId) return;
-        
-        const repuesto = allRepuestos.find(r => r.id === repuestoId);
-        if (!repuesto) return;
+      if (selectedCheckboxes.length === 0) return;
+      
+      selectedCheckboxes.forEach(checkbox => {
+        const numero = checkbox.dataset.numero;
+        const id = checkbox.dataset.id;
+        const nombre = checkbox.dataset.nombre;
         
         // Posición centrada por defecto
         const x = 50;
         const y = 50;
         
-        // Verificar si ya existe un hotspot para este repuesto
-        const existingIndex = hotspotsPorCategoria[currentCategory].findIndex(h => h[3] === repuestoId);
-        
-        if (existingIndex >= 0) {
-          // Si ya existe, actualizar sus coordenadas
-          hotspotsPorCategoria[currentCategory][existingIndex] = [x, y, repuesto.numero_repuesto, repuestoId, repuesto.nombre];
-        } else {
-          // Si no existe, agregar nuevo
-          hotspotsPorCategoria[currentCategory].push([x, y, repuesto.numero_repuesto, repuestoId, repuesto.nombre]);
-        }
-        
-        // Renderizar y actualizar
-        renderHotspots();
-        updateJsonOutput();
+        // Agregar nuevo punto sin verificar duplicados
+        hotspotsPorCategoria[currentCategory].push([x, y, numero, id, nombre]);
       });
       
-      // Renderizar los hotspots en la imagen
-      function renderHotspots() {
-        // Eliminar hotspots anteriores
-        document.querySelectorAll('.hotspot').forEach(el => el.remove());
-        
-        // Crear nuevos hotspots
-        hotspotsPorCategoria[currentCategory].forEach((hotspot, index) => {
-          const [x, y, numero, id, nombre] = hotspot;
-          
-          const el = document.createElement('div');
-          el.className = 'hotspot';
-          el.textContent = numero;
-          el.style.left = `${x}%`;
-          el.style.top = `${y}%`;
-          el.setAttribute('data-index', index);
-          
-          // Hacer que los hotspots sean arrastrables
-          makeDraggable(el);
-          
-          imgContainer.appendChild(el);
-        });
-      }
-      
-      // Hacer que un elemento sea arrastrable
-      function makeDraggable(el) {
-        let isDragging = false;
-        let offsetX, offsetY;
-        
-        el.addEventListener('mousedown', startDrag);
-        el.addEventListener('touchstart', startDrag);
-        
-        function startDrag(e) {
-          e.preventDefault();
-          
-          isDragging = true;
-          
-          // Eventos de movimiento
-          document.addEventListener('mousemove', drag);
-          document.addEventListener('touchmove', drag);
-          
-          // Eventos de finalización
-          document.addEventListener('mouseup', endDrag);
-          document.addEventListener('touchend', endDrag);
-        }
-        
-        function drag(e) {
-          if (!isDragging) return;
-          
-          const rect = imgContainer.getBoundingClientRect();
-          let clientX, clientY;
-          
-          if (e.type === 'touchmove') {
-            clientX = e.touches[0].clientX;
-            clientY = e.touches[0].clientY;
-          } else {
-            clientX = e.clientX;
-            clientY = e.clientY;
-          }
-          
-          // Calcular posición relativa en porcentaje
-          const x = ((clientX - rect.left) / rect.width) * 100;
-          const y = ((clientY - rect.top) / rect.height) * 100;
-          
-          // Limitar dentro de la imagen
-          const boundedX = Math.max(0, Math.min(100, x));
-          const boundedY = Math.max(0, Math.min(100, y));
-          
-          // Actualizar posición visual
-          el.style.left = `${boundedX}%`;
-          el.style.top = `${boundedY}%`;
-          
-          // Actualizar datos
-          const index = parseInt(el.getAttribute('data-index'));
-          hotspotsPorCategoria[currentCategory][index][0] = Math.round(boundedX);
-          hotspotsPorCategoria[currentCategory][index][1] = Math.round(boundedY);
-          
-          // Actualizar JSON
-          updateJsonOutput();
-        }
-        
-        function endDrag() {
-          isDragging = false;
-          document.removeEventListener('mousemove', drag);
-          document.removeEventListener('touchmove', drag);
-          document.removeEventListener('mouseup', endDrag);
-          document.removeEventListener('touchend', endDrag);
-        }
-      }
-      
-      // Actualizar salida JSON
-      function updateJsonOutput() {
-        // Convertir a formato para el archivo fetch-repuestos.js
-        const outputJson = {};
-        
-        for (const [category, hotspots] of Object.entries(hotspotsPorCategoria)) {
-          outputJson[`.filter-${category}`] = hotspots;
-        }
-        
-        const jsonStr = JSON.stringify(outputJson, null, 2)
-          .replace(/"\.filter-/g, '    ".filter-')
-          .replace(/\[\n\s+/g, '[\n      ')
-          .replace(/\n\s+\]/g, '\n    ]');
-        
-        jsonOutput.textContent = 
-`const hotspotsPorCategoria = {
-${jsonStr.slice(1, -1)}
-};`;
-      }
-      
-      // Copiar JSON al portapapeles
-      copyJsonBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(jsonOutput.textContent).then(() => {
-          alert('JSON copiado al portapapeles');
-        });
+      // Desmarcar todos los checkboxes
+      document.getElementById('select-all-repuestos').checked = false;
+      document.querySelectorAll('.repuesto-checkbox').forEach(checkbox => {
+        checkbox.checked = false;
       });
       
-      // Inicialización
-      changeCategory('trompa');
+      // Actualizar UI
+      updateAddSelectedButton();
       renderHotspots();
       updateJsonOutput();
     });
+
+    // Agregar un nuevo hotspot
+    const addHotspotForm = document.getElementById('add-hotspot-form');
+    
+    addHotspotForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const repuestoId = document.getElementById('repuesto-id').value;
+      if (!repuestoId) return;
+      
+      const repuesto = allRepuestos.find(r => r.id === repuestoId);
+      if (!repuesto) return;
+      
+      // Posición centrada por defecto
+      const x = 50;
+      const y = 50;
+      
+      // Agregar nuevo punto sin verificar duplicados
+      hotspotsPorCategoria[currentCategory].push([x, y, repuesto.numero_repuesto, repuestoId, repuesto.nombre]);
+      
+      // Renderizar y actualizar
+      renderHotspots();
+      updateJsonOutput();
+    });
+
+    // Agregar un nuevo hotspot personalizado
+    addCustomHotspotForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const numero = document.getElementById('custom-number').value;
+      const id = document.getElementById('custom-id').value;
+      const nombre = document.getElementById('custom-name').value;
+      
+      // Posición centrada por defecto
+      const x = 50;
+      const y = 50;
+      
+      // Agregar nuevo punto sin verificar duplicados
+      hotspotsPorCategoria[currentCategory].push([x, y, numero, id, nombre]);
+      
+      // Limpiar el formulario
+      addCustomHotspotForm.reset();
+      
+      // Renderizar y actualizar
+      renderHotspots();
+      updateJsonOutput();
+    });
+    
+    // Renderizar los hotspots en la imagen
+    function renderHotspots() {
+      // Eliminar hotspots anteriores
+      document.querySelectorAll('.hotspot').forEach(el => el.remove());
+      
+      // Crear nuevos hotspots
+      hotspotsPorCategoria[currentCategory].forEach((hotspot, index) => {
+        const [x, y, numero, id, nombre] = hotspot;
+        
+        const el = document.createElement('div');
+        el.className = 'hotspot';
+        el.textContent = numero;
+        el.style.left = `${x}%`;
+        el.style.top = `${y}%`;
+        el.setAttribute('data-index', index);
+        
+        // Hacer que los hotspots sean arrastrables
+        makeDraggable(el);
+        
+        imgContainer.appendChild(el);
+      });
+    }
+    
+    // Hacer que un elemento sea arrastrable
+    function makeDraggable(el) {
+      let isDragging = false;
+      let offsetX, offsetY;
+      
+      el.addEventListener('mousedown', startDrag);
+      el.addEventListener('touchstart', startDrag);
+      
+      function startDrag(e) {
+        e.preventDefault();
+        
+        isDragging = true;
+        
+        // Eventos de movimiento
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', drag);
+        
+        // Eventos de finalización
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchend', endDrag);
+      }
+      
+      function drag(e) {
+        if (!isDragging) return;
+        
+        const rect = imgContainer.getBoundingClientRect();
+        let clientX, clientY;
+        
+        if (e.type === 'touchmove') {
+          clientX = e.touches[0].clientX;
+          clientY = e.touches[0].clientY;
+        } else {
+          clientX = e.clientX;
+          clientY = e.clientY;
+        }
+        
+        // Calcular posición relativa en porcentaje
+        const x = ((clientX - rect.left) / rect.width) * 100;
+        const y = ((clientY - rect.top) / rect.height) * 100;
+        
+        // Limitar dentro de la imagen
+        const boundedX = Math.max(0, Math.min(100, x));
+        const boundedY = Math.max(0, Math.min(100, y));
+        
+        // Actualizar posición visual
+        el.style.left = `${boundedX}%`;
+        el.style.top = `${boundedY}%`;
+        
+        // Actualizar datos
+        const index = parseInt(el.getAttribute('data-index'));
+        hotspotsPorCategoria[currentCategory][index][0] = Math.round(boundedX);
+        hotspotsPorCategoria[currentCategory][index][1] = Math.round(boundedY);
+        
+        // Actualizar JSON
+        updateJsonOutput();
+      }
+      
+      function endDrag() {
+        isDragging = false;
+        document.removeEventListener('mousemove', drag);
+        document.removeEventListener('touchmove', drag);
+        document.removeEventListener('mouseup', endDrag);
+        document.removeEventListener('touchend', endDrag);
+      }
+    }
+    
+    // Actualizar salida JSON
+    function updateJsonOutput() {
+      // Convertir a formato para el archivo fetch-repuestos.js
+      const outputJson = {};
+      
+      for (const [category, hotspots] of Object.entries(hotspotsPorCategoria)) {
+        outputJson[`.filter-${category}`] = hotspots;
+      }
+      
+      const jsonStr = JSON.stringify(outputJson, null, 2)
+        .replace(/"\.filter-/g, '    ".filter-')
+        .replace(/\[\n\s+\[/g, '[')
+        .replace(/\]\n\s+\]/g, ']')
+        .replace(/,\n\s+\[/g, ', [')
+        .replace(/(\d+),\n\s+(\d+),\n\s+"([^"]+)",\n\s+"([^"]+)",\n\s+"([^"]+)"/g, '$1, $2, "$3", "$4", "$5"');
+      
+      jsonOutput.textContent = 
+`const hotspotsPorCategoria = {
+${jsonStr.slice(1, -1)}
+};`;
+    }
+    
+    // Copiar JSON al portapapeles
+    copyJsonBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(jsonOutput.textContent).then(() => {
+        alert('JSON copiado al portapapeles');
+      });
+    });
+    
+    // Inicialización
+    changeCategory('trompa');
+    renderHotspots();
+    updateJsonOutput();
+  });
   </script>
 </body>
 </html> 

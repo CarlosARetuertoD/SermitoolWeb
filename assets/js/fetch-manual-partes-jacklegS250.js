@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'lubricadora': '/assets/img/products/jackleg-s250/partes/lubricadora.webp'
   };
 
-  // Definir puntos de interés (hotspots) para cada categoría
+ // Definir puntos de interés (hotspots) para cada categoría
   const hotspotsPorCategoria = {
     "trompa": [
       [80,31,"1","a2599","Retenedor"],
@@ -286,11 +286,11 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('No se encontró el contenedor de repuestos');
       return;
     }
-    repuestoContainer.innerHTML = `
-      <div class="default-message">
-        Selecciona una parte para ver más información
-      </div>
-    `;
+      repuestoContainer.innerHTML = `
+        <div class="default-message">
+          Selecciona una parte para ver más información
+        </div>
+      `;
     if (mainContent) {
       mainContent.classList.add('initial-state');
     }
