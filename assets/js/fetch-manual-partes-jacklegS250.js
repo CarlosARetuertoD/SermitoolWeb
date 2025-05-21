@@ -387,11 +387,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const preloader = document.getElementById('preloader');
         if (preloader) {
           preloader.style.display = 'block';
+          // Forzar un reflow para que la transición funcione
+          void preloader.offsetHeight;
           preloader.style.opacity = '1';
         }
         
         // Cambiar imagen
         if (categoriaImagen) {
+          // Ocultar la imagen actual
+          categoriaImagen.style.opacity = '0';
+          
           // Crear una nueva imagen para precargar
           const tempImg = new Image();
           tempImg.src = imagenesCategorias[categoria];
@@ -403,25 +408,34 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriaImagen.loading = 'lazy';
             categoriaImagen.decoding = 'async';
             
+            // Mostrar la nueva imagen con una transición suave
+            setTimeout(() => {
+              categoriaImagen.style.opacity = '1';
+            }, 50);
+            
             // Mostrar hotspots después de que la imagen esté cargada
             mostrarHotspots(categoria);
+            
+            // Ocultar loader con una transición suave
+            if (preloader) {
+              preloader.style.opacity = '0';
+              setTimeout(() => {
+                preloader.style.display = 'none';
+              }, 300);
+            }
+          };
+          
+          tempImg.onerror = () => {
+            console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
+            // Restaurar la opacidad de la imagen actual
+            categoriaImagen.style.opacity = '1';
             
             // Ocultar loader
             if (preloader) {
               preloader.style.opacity = '0';
               setTimeout(() => {
                 preloader.style.display = 'none';
-              }, 600);
-            }
-          };
-          
-          tempImg.onerror = () => {
-            console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
-            if (preloader) {
-              preloader.style.opacity = '0';
-              setTimeout(() => {
-                preloader.style.display = 'none';
-              }, 600);
+              }, 300);
             }
           };
         }
