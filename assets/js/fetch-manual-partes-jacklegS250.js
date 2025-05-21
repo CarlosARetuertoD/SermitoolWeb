@@ -403,6 +403,9 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriaImagen.loading = 'lazy';
             categoriaImagen.decoding = 'async';
             
+            // Mostrar hotspots después de que la imagen esté cargada
+            mostrarHotspots(categoria);
+            
             // Ocultar loader
             if (preloader) {
               preloader.style.opacity = '0';
@@ -422,9 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           };
         }
-        
-        // Mostrar hotspots
-        mostrarHotspots(categoria);
         
         // Mostrar mensaje por defecto
         mostrarMensajePorDefecto();
