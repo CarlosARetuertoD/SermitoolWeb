@@ -399,9 +399,9 @@ document.addEventListener('DOMContentLoaded', () => {
         li.classList.add('filter-active');
         
         // Mostrar loader local y ocultar imagen actual
-        const preloader = document.querySelector('.img-tooltip-container .preloader');
-        if (preloader) {
-          preloader.style.display = 'block';
+        const loader = document.querySelector('.img-tooltip-container .loader');
+        if (loader) {
+          loader.style.display = 'block';
         }
         if (categoriaImagen) {
           categoriaImagen.classList.add('loading');
@@ -427,8 +427,8 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarHotspots(categoria);
             
             // Ocultar loader
-            if (preloader) {
-              preloader.style.display = 'none';
+            if (loader) {
+              loader.style.display = 'none';
             }
           };
           
@@ -439,8 +439,8 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriaImagen.classList.remove('loading');
             
             // Ocultar loader
-            if (preloader) {
-              preloader.style.display = 'none';
+            if (loader) {
+              loader.style.display = 'none';
             }
           };
         }

@@ -21,7 +21,7 @@
   transform: none;
 }
 
-.img-tooltip-container .preloader {
+.img-tooltip-container .loader {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,7 +32,7 @@
   z-index: 1000;
 }
 
-.img-tooltip-container .preloader:before {
+.img-tooltip-container .loader:before {
   content: "";
   position: absolute;
   top: calc(50% - 30px);
