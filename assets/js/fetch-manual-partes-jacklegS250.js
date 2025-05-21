@@ -383,13 +383,12 @@ document.addEventListener('DOMContentLoaded', () => {
         botonesContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
         li.classList.add('filter-active');
         
-        // Mostrar loader
+        // Mostrar loader inmediatamente
         const preloader = document.getElementById('preloader');
         if (preloader) {
           preloader.style.display = 'block';
-          // Forzar un reflow para que la transición funcione
-          void preloader.offsetHeight;
           preloader.style.opacity = '1';
+          preloader.style.visibility = 'visible';
         }
         
         // Cambiar imagen
@@ -421,6 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
               preloader.style.opacity = '0';
               setTimeout(() => {
                 preloader.style.display = 'none';
+                preloader.style.visibility = 'hidden';
               }, 300);
             }
           };
@@ -435,6 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
               preloader.style.opacity = '0';
               setTimeout(() => {
                 preloader.style.display = 'none';
+                preloader.style.visibility = 'hidden';
               }, 300);
             }
           };
