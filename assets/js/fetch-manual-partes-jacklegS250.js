@@ -296,34 +296,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Función para verificar si la sección de información está debajo de la imagen
-  function isInfoSectionBelow() {
-    const imageSection = document.querySelector('.image-section');
-    const infoSection = document.querySelector('.info-section');
-    
-    if (!imageSection || !infoSection) return false;
-    
-    const imageRect = imageSection.getBoundingClientRect();
-    const infoRect = infoSection.getBoundingClientRect();
-    
-    // Si la parte superior de la sección de info está por debajo de la parte inferior de la imagen
-    return infoRect.top > imageRect.bottom;
-  }
-
-  // Función para hacer scroll suave a un elemento
-  function scrollToElement(element) {
-    if (!element) return;
-    
-    const headerOffset = 20; // Ajustar según el espacio que quieras dejar arriba
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  }
-
   // Función para mostrar el repuesto seleccionado
   function mostrarRepuesto(codigo) {
     if (!repuestoContainer) {
@@ -344,10 +316,10 @@ document.addEventListener('DOMContentLoaded', () => {
       
       repuestoContainer.innerHTML = `
         <div class="repuesto-info">
-          <h3>${repuesto.id.toUpperCase()} <span class="numero-repuesto">#${repuesto.numero_repuesto}</span></h3>
+          <h3>${repuesto.id.toUpperCase()} #${repuesto.numero_repuesto}</h3>
           <h4>${repuesto.nombre}</h4>
           ${imagen ? 
-            `<img src="${imagen}" alt="${repuesto.nombre}" class="img-fluid" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.onerror=null; this.src='assets/img/no-image-available.jpg';">` : 
+            `<img src="${imagen}" alt="${repuesto.nombre}" class="img-fluid" loading="lazy" decoding="async">` : 
             `<div class="no-image">Imagen no disponible</div>`
           }
           <a href="#" id="boton-flotante-whatsapp" class="btn btn-whatsapp" data-producto="${repuesto.id}-${repuesto.nombre}" onclick="event.preventDefault(); window.open(this.href, '_blank');">
@@ -367,16 +339,28 @@ document.addEventListener('DOMContentLoaded', () => {
       if (mainContent) {
         mainContent.classList.remove('initial-state');
       }
-      
       setTimeout(() => {
         const repuestoInfo = repuestoContainer.querySelector('.repuesto-info');
         if (repuestoInfo) {
           repuestoInfo.classList.add('visible');
           
-          // Verificar si la sección de información está debajo y hacer scroll si es necesario
-          if (isInfoSectionBelow()) {
-            const infoSection = document.querySelector('.info-section');
-            scrollToElement(infoSection);
+          // Scroll automático solo cuando la información está debajo
+          const infoSection = document.querySelector('.info-section');
+          if (infoSection) {
+            // Esperar a que el contenido se renderice
+            setTimeout(() => {
+              const infoRect = infoSection.getBoundingClientRect();
+              const viewportHeight = window.innerHeight;
+              const isInfoVisible = infoRect.top >= 0 && infoRect.bottom <= viewportHeight;
+              
+              // Solo hacer scroll si la información está debajo y no es completamente visible
+              if (!isInfoVisible && infoRect.top > 0 && window.innerWidth <= 992) {
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: 'smooth'
+                });
+              }
+            }, 100);
           }
         }
       }, 50);
@@ -399,48 +383,16 @@ document.addEventListener('DOMContentLoaded', () => {
         botonesContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
         li.classList.add('filter-active');
         
-        // Mostrar preloader en el contenedor de la imagen
-        const imgContainer = document.querySelector('.img-tooltip-container');
-        if (imgContainer) {
-          const preloader = document.createElement('div');
-          preloader.id = 'preloader';
-          preloader.style.position = 'absolute';
-          preloader.style.top = '0';
-          preloader.style.left = '0';
-          preloader.style.width = '100%';
-          preloader.style.height = '100%';
-          preloader.style.zIndex = '999';
-          imgContainer.appendChild(preloader);
+        // Cambiar imagen
+        if (categoriaImagen) {
+          categoriaImagen.src = imagenesCategorias[categoria];
+          categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
+          categoriaImagen.loading = 'lazy';
+          categoriaImagen.decoding = 'async';
         }
         
-        // Precargar la nueva imagen
-        const newImage = new Image();
-        newImage.onload = () => {
-          // Cambiar imagen
-          if (categoriaImagen) {
-            categoriaImagen.src = imagenesCategorias[categoria];
-            categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
-          }
-          
-          // Mostrar hotspots
-          mostrarHotspots(categoria);
-          
-          // Remover preloader
-          const preloader = imgContainer.querySelector('#preloader');
-          if (preloader) {
-            preloader.remove();
-          }
-        };
-        
-        newImage.onerror = () => {
-          console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
-          const preloader = imgContainer.querySelector('#preloader');
-          if (preloader) {
-            preloader.remove();
-          }
-        };
-        
-        newImage.src = imagenesCategorias[categoria];
+        // Mostrar hotspots
+        mostrarHotspots(categoria);
         
         // Mostrar mensaje por defecto
         mostrarMensajePorDefecto();
