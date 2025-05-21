@@ -383,12 +383,27 @@ document.addEventListener('DOMContentLoaded', () => {
         botonesContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
         li.classList.add('filter-active');
         
+        // Mostrar loader
+        const preloader = document.getElementById('preloader');
+        if (preloader) preloader.style.display = 'block';
+        
         // Cambiar imagen
         if (categoriaImagen) {
           categoriaImagen.src = imagenesCategorias[categoria];
           categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
           categoriaImagen.loading = 'lazy';
           categoriaImagen.decoding = 'async';
+          
+          // Ocultar loader cuando la imagen se cargue
+          categoriaImagen.onload = () => {
+            if (preloader) preloader.style.display = 'none';
+          };
+          
+          // Por si hay error en la carga
+          categoriaImagen.onerror = () => {
+            if (preloader) preloader.style.display = 'none';
+            console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
+          };
         }
         
         // Mostrar hotspots
