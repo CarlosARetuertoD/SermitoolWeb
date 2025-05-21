@@ -383,8 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
         botonesContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
         li.classList.add('filter-active');
         
-        // Mostrar loader
-        const preloader = document.getElementById('preloader');
+        // Mostrar loader local
+        const preloader = document.querySelector('.img-tooltip-container .preloader');
         if (preloader) {
           preloader.style.display = 'block';
         }
