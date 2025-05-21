@@ -201,12 +201,28 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   };
 
+  // Función para precargar imágenes
+  function precargarImagenes(repuestos) {
+    repuestos.forEach(repuesto => {
+      if (repuesto.imagen) {
+        const img = new Image();
+        img.src = repuesto.imagen;
+      }
+      if (repuesto.imagen_zoom) {
+        const img = new Image();
+        img.src = repuesto.imagen_zoom;
+      }
+    });
+  }
+
   // Cargar datos de repuestos
   fetch('/assets/json/partes-jackleg-s250.json')
     .then(res => res.json())
     .then(data => {
       console.log('Datos cargados:', data);
       repuestosData = data;
+      // Precargar imágenes
+      precargarImagenes(data);
       // Mostrar elementos después de cargar los datos
       mostrarElementos();
     })
@@ -366,7 +382,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 50);
     } else {
       console.log('No se encontró el repuesto');
-      mostrarMensajePorDefecto();
     }
   }
 
