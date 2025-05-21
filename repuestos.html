@@ -22,7 +22,7 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
 
     <link href="assets/css/main.css" rel="stylesheet">
-    
+    <link href="assets/css/manual-partes.css" rel="stylesheet">
   </head>
   <body class="replacements-page">
     <!-- Header Section -->
@@ -85,24 +85,35 @@
           </nav>
         </div>
       </div>
-      <!-- Replacement Section -->
+      <!-- Repuestos Section -->
       <section id="products" class="products section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Manual de Partes Jackleg Secan S250</h2>
+          <p>Haz click en el repuesto para ver más información.</p>
+        </div>
         <div class="container">
           <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">        
             <ul class="portfolio-filters"></ul>
-            <div id="isotope-loader" class="text-center py-5">
-              <div class="custom-loader mx-auto" style="width: 60px; height: 60px;"></div>
-            </div>
-            <div class="row mb-5 justify-content-center">
-              <div class="col-lg-8 text-center img-tooltip-container" data-aos="zoom-out" data-aos-delay="20">
-                <img id="categoria-imagen" src="assets/img/products/jackleg-s250/partes/barra.webp" alt="Parte de máquina" class="img-fluid">
-                
-                <!-- Puntos interactivos para la imagen - se mostrarán/ocultarán dinámicamente según el filtro -->
-                <div id="hotspots-container"></div>
+            
+            <div class="main-content">
+              <div class="image-section">
+                <div class="img-tooltip-container" data-aos="zoom-out" data-aos-delay="20">
+                  <img id="categoria-imagen" src="assets/img/products/jackleg-s250/partes/barra.webp" alt="Parte de máquina" class="img-fluid">
+                  <div id="hotspots-container"></div>
+                </div>
+              </div>
+              
+              <div class="info-section">
+                <div id="repuesto-container">
+                  <div class="default-message">
+                    Selecciona un repuesto para ver más información.
+                  </div>
+                </div>
+                <button id="boton-flotante-whatsapp" class="btn btn-whatsapp d-none" data-producto="">
+                  <i class="bi bi-whatsapp"></i> ¡Cotiza ahora!
+                </button>
               </div>
             </div>
-            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200" style="visibility: hidden;">
-            </div>     
           </div>
         </div>
       </section>
@@ -120,7 +131,7 @@
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/js/fetch-repuestos.js"></script>
+    <script src="assets/js/fetch-manual-partes-jacklegS250.js"></script>
     <script src="assets/js/main.js"></script>
 
   </body>

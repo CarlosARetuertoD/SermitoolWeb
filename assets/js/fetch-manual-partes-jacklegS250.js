@@ -316,10 +316,10 @@ document.addEventListener('DOMContentLoaded', () => {
       
       repuestoContainer.innerHTML = `
         <div class="repuesto-info">
-          <h3>${repuesto.id.toUpperCase()}</h3>
+          <h3>${repuesto.id.toUpperCase()} <span class="numero-repuesto">#${repuesto.numero_repuesto}</span></h3>
           <h4>${repuesto.nombre}</h4>
           ${imagen ? 
-            `<img src="${imagen}" alt="${repuesto.nombre}" class="img-fluid">` : 
+            `<img src="${imagen}" alt="${repuesto.nombre}" class="img-fluid" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.onerror=null; this.src='assets/img/no-image-available.jpg';">` : 
             `<div class="no-image">Imagen no disponible</div>`
           }
           <a href="#" id="boton-flotante-whatsapp" class="btn btn-whatsapp" data-producto="${repuesto.id}-${repuesto.nombre}" onclick="event.preventDefault(); window.open(this.href, '_blank');">
