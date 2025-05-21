@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
         once: true
       });
+
+      // Mostrar mensaje por defecto después de que todo esté cargado
+      mostrarMensajePorDefecto();
     }, 300);
   }
 
@@ -460,7 +463,4 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error('No se encontró el contenedor de botones');
   }
-
-  // Mostrar mensaje por defecto al cargar la página
-  mostrarMensajePorDefecto();
 });
