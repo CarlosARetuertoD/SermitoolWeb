@@ -385,24 +385,41 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Mostrar loader
         const preloader = document.getElementById('preloader');
-        if (preloader) preloader.style.display = 'block';
+        if (preloader) {
+          preloader.style.display = 'block';
+          preloader.style.opacity = '1';
+        }
         
         // Cambiar imagen
         if (categoriaImagen) {
-          categoriaImagen.src = imagenesCategorias[categoria];
-          categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
-          categoriaImagen.loading = 'lazy';
-          categoriaImagen.decoding = 'async';
+          // Crear una nueva imagen para precargar
+          const tempImg = new Image();
+          tempImg.src = imagenesCategorias[categoria];
           
-          // Ocultar loader cuando la imagen se cargue
-          categoriaImagen.onload = () => {
-            if (preloader) preloader.style.display = 'none';
+          tempImg.onload = () => {
+            // Una vez que la imagen está cargada, actualizar la imagen principal
+            categoriaImagen.src = imagenesCategorias[categoria];
+            categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
+            categoriaImagen.loading = 'lazy';
+            categoriaImagen.decoding = 'async';
+            
+            // Ocultar loader
+            if (preloader) {
+              preloader.style.opacity = '0';
+              setTimeout(() => {
+                preloader.style.display = 'none';
+              }, 600);
+            }
           };
           
-          // Por si hay error en la carga
-          categoriaImagen.onerror = () => {
-            if (preloader) preloader.style.display = 'none';
+          tempImg.onerror = () => {
             console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
+            if (preloader) {
+              preloader.style.opacity = '0';
+              setTimeout(() => {
+                preloader.style.display = 'none';
+              }, 600);
+            }
           };
         }
         
