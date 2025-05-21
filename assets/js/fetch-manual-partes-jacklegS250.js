@@ -383,60 +383,38 @@ document.addEventListener('DOMContentLoaded', () => {
         botonesContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
         li.classList.add('filter-active');
         
-        // Mostrar loader inmediatamente
+        // Mostrar loader
         const preloader = document.getElementById('preloader');
         if (preloader) {
           preloader.style.display = 'block';
-          preloader.style.opacity = '1';
-          preloader.style.visibility = 'visible';
         }
         
         // Cambiar imagen
         if (categoriaImagen) {
-          // Ocultar la imagen actual
-          categoriaImagen.style.opacity = '0';
-          
           // Crear una nueva imagen para precargar
           const tempImg = new Image();
           tempImg.src = imagenesCategorias[categoria];
           
           tempImg.onload = () => {
-            // Una vez que la imagen está cargada, actualizar la imagen principal
+            // Actualizar la imagen principal
             categoriaImagen.src = imagenesCategorias[categoria];
             categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
-            categoriaImagen.loading = 'lazy';
-            categoriaImagen.decoding = 'async';
-            
-            // Mostrar la nueva imagen con una transición suave
-            setTimeout(() => {
-              categoriaImagen.style.opacity = '1';
-            }, 50);
             
             // Mostrar hotspots después de que la imagen esté cargada
             mostrarHotspots(categoria);
             
-            // Ocultar loader con una transición suave
+            // Ocultar loader
             if (preloader) {
-              preloader.style.opacity = '0';
-              setTimeout(() => {
-                preloader.style.display = 'none';
-                preloader.style.visibility = 'hidden';
-              }, 300);
+              preloader.style.display = 'none';
             }
           };
           
           tempImg.onerror = () => {
             console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
-            // Restaurar la opacidad de la imagen actual
-            categoriaImagen.style.opacity = '1';
             
             // Ocultar loader
             if (preloader) {
-              preloader.style.opacity = '0';
-              setTimeout(() => {
-                preloader.style.display = 'none';
-                preloader.style.visibility = 'hidden';
-              }, 300);
+              preloader.style.display = 'none';
             }
           };
         }

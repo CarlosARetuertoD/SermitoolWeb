@@ -17,14 +17,9 @@
   position: relative;
   margin-bottom: 0;
   width: 100%;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.img-tooltip-container.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  transition: none;
 }
 
 .img-hotspot {
@@ -469,40 +464,39 @@
 
 #preloader {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 9999;
-  overflow: hidden;
   background: rgba(255, 255, 255, 0.95);
-  transition: opacity 0.3s ease-out;
   display: none;
-  opacity: 0;
-  visibility: hidden;
 }
 
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
+#preloader .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
   border: 6px solid var(--accent-color);
   border-color: var(--accent-color) transparent var(--accent-color) transparent;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
   animation: animate-preloader 1s linear infinite;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 @keyframes animate-preloader {
   0% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
 #categoria-imagen {
-  transition: opacity 0.3s ease-in-out;
-  opacity: 1;
+  max-width: 100%;
+  height: auto;
+  display: block;
 } 
