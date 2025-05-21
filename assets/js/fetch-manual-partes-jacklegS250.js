@@ -383,10 +383,13 @@ document.addEventListener('DOMContentLoaded', () => {
         botonesContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
         li.classList.add('filter-active');
         
-        // Mostrar loader local
+        // Mostrar loader local y ocultar imagen actual
         const preloader = document.querySelector('.img-tooltip-container .preloader');
         if (preloader) {
           preloader.style.display = 'block';
+        }
+        if (categoriaImagen) {
+          categoriaImagen.classList.add('loading');
         }
         
         // Cambiar imagen
@@ -400,6 +403,11 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriaImagen.src = imagenesCategorias[categoria];
             categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
             
+            // Mostrar la nueva imagen
+            setTimeout(() => {
+              categoriaImagen.classList.remove('loading');
+            }, 50);
+            
             // Mostrar hotspots después de que la imagen esté cargada
             mostrarHotspots(categoria);
             
@@ -411,6 +419,9 @@ document.addEventListener('DOMContentLoaded', () => {
           
           tempImg.onerror = () => {
             console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
+            
+            // Restaurar la imagen anterior
+            categoriaImagen.classList.remove('loading');
             
             // Ocultar loader
             if (preloader) {
