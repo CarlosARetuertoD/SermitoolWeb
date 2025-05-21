@@ -296,6 +296,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Función para verificar si la sección de información está debajo de la imagen
+  function isInfoSectionBelow() {
+    const imageSection = document.querySelector('.image-section');
+    const infoSection = document.querySelector('.info-section');
+    
+    if (!imageSection || !infoSection) return false;
+    
+    const imageRect = imageSection.getBoundingClientRect();
+    const infoRect = infoSection.getBoundingClientRect();
+    
+    // Si la parte superior de la sección de info está por debajo de la parte inferior de la imagen
+    return infoRect.top > imageRect.bottom;
+  }
+
+  // Función para hacer scroll suave a un elemento
+  function scrollToElement(element) {
+    if (!element) return;
+    
+    const headerOffset = 20; // Ajustar según el espacio que quieras dejar arriba
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
   // Función para mostrar el repuesto seleccionado
   function mostrarRepuesto(codigo) {
     if (!repuestoContainer) {
@@ -339,22 +367,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (mainContent) {
         mainContent.classList.remove('initial-state');
       }
+      
       setTimeout(() => {
         const repuestoInfo = repuestoContainer.querySelector('.repuesto-info');
         if (repuestoInfo) {
           repuestoInfo.classList.add('visible');
           
-          // Scroll automático solo en móviles y solo si no estamos ya en la sección de información
-          if (window.innerWidth <= 576) {
+          // Verificar si la sección de información está debajo y hacer scroll si es necesario
+          if (isInfoSectionBelow()) {
             const infoSection = document.querySelector('.info-section');
-            const infoRect = infoSection.getBoundingClientRect();
-            const isInfoVisible = infoRect.top >= 0 && infoRect.bottom <= window.innerHeight;
-            
-            if (!isInfoVisible) {
-              setTimeout(() => {
-                infoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }, 100);
-            }
+            scrollToElement(infoSection);
           }
         }
       }, 50);
@@ -377,14 +399,48 @@ document.addEventListener('DOMContentLoaded', () => {
         botonesContainer.querySelectorAll('li').forEach(b => b.classList.remove('filter-active'));
         li.classList.add('filter-active');
         
-        // Cambiar imagen
-        if (categoriaImagen) {
-          categoriaImagen.src = imagenesCategorias[categoria];
-          categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
+        // Mostrar preloader en el contenedor de la imagen
+        const imgContainer = document.querySelector('.img-tooltip-container');
+        if (imgContainer) {
+          const preloader = document.createElement('div');
+          preloader.id = 'preloader';
+          preloader.style.position = 'absolute';
+          preloader.style.top = '0';
+          preloader.style.left = '0';
+          preloader.style.width = '100%';
+          preloader.style.height = '100%';
+          preloader.style.zIndex = '999';
+          imgContainer.appendChild(preloader);
         }
         
-        // Mostrar hotspots
-        mostrarHotspots(categoria);
+        // Precargar la nueva imagen
+        const newImage = new Image();
+        newImage.onload = () => {
+          // Cambiar imagen
+          if (categoriaImagen) {
+            categoriaImagen.src = imagenesCategorias[categoria];
+            categoriaImagen.alt = `Parte ${categoria} de la perforadora`;
+          }
+          
+          // Mostrar hotspots
+          mostrarHotspots(categoria);
+          
+          // Remover preloader
+          const preloader = imgContainer.querySelector('#preloader');
+          if (preloader) {
+            preloader.remove();
+          }
+        };
+        
+        newImage.onerror = () => {
+          console.error('Error al cargar la imagen:', imagenesCategorias[categoria]);
+          const preloader = imgContainer.querySelector('#preloader');
+          if (preloader) {
+            preloader.remove();
+          }
+        };
+        
+        newImage.src = imagenesCategorias[categoria];
         
         // Mostrar mensaje por defecto
         mostrarMensajePorDefecto();
