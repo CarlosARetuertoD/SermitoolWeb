@@ -90,5 +90,22 @@
     "filter": "Suministros Mineros",
     "brochure": "/assets/img/products/manguera-secanflex/BROCHURE_MANGUERA_SECANFLEX.pdf",
     "detalle": null
+  },
+  {
+    "id": "adaptador-split-set",
+    "nombre": "Adaptador de Split Set",
+    "imagenes_slider": [
+      "/assets/img/products/adaptador-split-set/adaptador-split-set-1.webp",
+      "/assets/img/products/adaptador-split-set/adaptador-split-set-2.webp",
+      "/assets/img/products/adaptador-split-set/adaptador-split-set-3.webp",
+      "/assets/img/products/adaptador-split-set/adaptador-split-set-4.webp"
+    ],
+    "imagen": "/assets/img/products/adaptador-split-set/adaptador-split-set-1.webp",
+    "imagen_zoom": "/assets/img/products/adaptador-split-set/adaptador-split-set-4.webp",
+    "url": "",
+    "descripcion": "Adaptador robusto para fijación segura en sistemas Split Set, ideal para sostenimiento en minería subterránea.",
+    "filter": "Suministros Mineros",
+    "brochure": "/assets/img/products/adaptador-split-set/BROCHURE_ADAPTADOR_SPLIT_SET.pdf",
+    "detalle": "Herramienta de conducción diseñada para adaptarse al perno Split Set. Fabricada con acero de aleación de alta resistencia y tratada térmicamente para mayor durabilidad. Su diseño preciso garantiza un acople perfecto y una larga vida útil en condiciones exigentes de trabajo subterráneo."
   }
 ]

@@ -502,7 +502,7 @@
   bottom: 0;
   z-index: 9999;
   background: rgba(255, 255, 255, 0.95);
-  display: none;
+  display: block;
 }
 
 #preloader .spinner {

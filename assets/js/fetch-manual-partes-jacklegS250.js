@@ -36,9 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
         once: true
       });
-
-      // Mostrar mensaje por defecto después de que todo esté cargado
-      mostrarMensajePorDefecto();
     }, 300);
   }
 
@@ -305,15 +302,23 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('No se encontró el contenedor de repuestos');
       return;
     }
-      repuestoContainer.innerHTML = `
-        <div class="default-message">
-          Selecciona una parte para ver más información
-        </div>
-      `;
+    repuestoContainer.innerHTML = `
+      <div class="default-message">
+        Selecciona una parte para ver más información
+      </div>
+    `;
     if (mainContent) {
       mainContent.classList.add('initial-state');
     }
   }
+
+  // Esperar a que la página esté completamente cargada
+  window.addEventListener('load', () => {
+    // Esperar a que el preloader se haya ocultado
+    setTimeout(() => {
+      mostrarMensajePorDefecto();
+    }, 1100); // 500ms del preloader + 600ms de la transición
+  });
 
   // Función para mostrar el repuesto seleccionado
   function mostrarRepuesto(codigo) {
