@@ -32,8 +32,25 @@
     "detalle": null
   },
   {
+    "id": "yt29a",
+    "nombre": "Perforadora YT29A",
+    "imagenes_slider": [
+      "/assets/img/products/yt29a/yt29a-1.webp",
+      "/assets/img/products/yt29a/yt29a-2.webp",
+      "/assets/img/products/yt29a/yt29a-3.webp",
+      "/assets/img/products/yt29a/yt29a-4.webp"
+    ],
+    "imagen": "/assets/img/products/yt29a/yt29a-1.webp",
+    "imagen_zoom": "/assets/img/products/yt29a/yt29a-2.webp",
+    "url": "/products/yt29a_info.html",
+    "descripcion": "Perforadora neumática con barra de avance de 1.20 m, ideal para minería subterránea.",
+    "filter": "Perforadoras",
+    "brochure": "", 
+    "detalle": null
+  },
+  {
     "id": "scoop-minero",
-    "nombre": "Scoop Minero",
+    "nombre": "Scooptram Minero WJ-0.8A",
     "imagenes_slider": [
       "/assets/img/products/scoop/scoop-1.webp",
       "/assets/img/products/scoop/scoop-2.webp",
@@ -49,14 +66,32 @@
     "detalle": null
   },
   {
+    "id": "dumper-minero",
+    "nombre": "Dumper Minero UQ-3",
+    "imagenes_slider": [
+      "/assets/img/products/dumper/dumper-1.webp",
+      "/assets/img/products/dumper/dumper-2.webp",
+      "/assets/img/products/dumper/dumper-3.webp",
+      "/assets/img/products/dumper/dumper-4.webp"
+    ],
+    "imagen": "/assets/img/products/dumper/dumper-1.webp",
+    "imagen_zoom": "/assets/img/products/dumper/dumper-2.webp",
+    "url": "/products/dumper_info.html",
+    "descripcion": "Volquete 4x4 con freno neumático y sistema de descarga hidráulica para minería subterránea.",
+    "filter": "Maquinas",
+    "brochure": "",
+    "detalle": null
+  },
+  {
     "id": "aceite-eiffel",
     "nombre": "Aceite Eiffel Rock Drill",
     "imagenes_slider": [
       "/assets/img/products/aceite-eiffel/aceite-eiffel-1.webp",
-      "/assets/img/products/aceite-eiffel/aceite-eiffel-2.webp"
+      "/assets/img/products/aceite-eiffel/aceite-eiffel-2.webp",
+      "/assets/img/products/aceite-eiffel/aceite-eiffel-3.webp"
     ],
     "imagen": "/assets/img/products/aceite-eiffel/aceite-eiffel-1.webp",
-    "imagen_zoom": "/assets/img/products/aceite-eiffel/aceite-eiffel-1.webp",
+    "imagen_zoom": "/assets/img/products/aceite-eiffel/aceite-eiffel-2.webp",
     "url": "",
     "descripcion": "Aceite lubricante neumático para herramientas de perforación.",
     "filter": "Suministros Mineros",
@@ -67,10 +102,12 @@
     "id": "lampara-minera",
     "nombre": "Lámpara Minera LED",
     "imagenes_slider": [
-      "/assets/img/products/lampara-roobuk/lampara-roobuk-1.webp"
+      "/assets/img/products/lampara-roobuk/lampara-roobuk-1.webp",
+      "/assets/img/products/lampara-roobuk/lampara-roobuk-2.webp",
+      "/assets/img/products/lampara-roobuk/lampara-roobuk-3.webp"
     ],
     "imagen": "/assets/img/products/lampara-roobuk/lampara-roobuk-1.webp",
-    "imagen_zoom": "/assets/img/products/lampara-roobuk/lampara-roobuk-1.webp",
+    "imagen_zoom": "/assets/img/products/lampara-roobuk/lampara-roobuk-2.webp",
     "url": "",
     "descripcion": "Lámpara de casco LED recargable para uso en minería subterránea.",
     "filter": "Suministros Mineros",
