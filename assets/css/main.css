@@ -869,12 +869,36 @@ section#indexproducts .container {
   overflow: hidden; /* Oculta cualquier contenido que se desborde */
   text-align: center; /* Centra el texto en la sección hero */
 }
+.hero .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
+.hero .video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--background-color), transparent 100%);
+  z-index: 2;
+}
 .hero .info {
-  position: relative; 
-  inset: 0; 
-  z-index: 3; 
-  padding: 140px 0 60px 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 3;
 }
 
 @media (max-width: 768px),
