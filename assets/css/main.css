@@ -572,41 +572,40 @@ h6 {
   font-size: 14px; /* Tamaño de fuente de 14px */
   font-family: var(--heading-font); /* Usa la fuente para encabezados */
 }
-
-/* Estilos para los enlaces de redes sociales en el footer */
 .footer .social-links a {
-  display: flex; /* Usa Flexbox para centrar el contenido */
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-  width: 40px; /* Ancho fijo de 40px */
-  height: 40px; /* Alto fijo de 40px */
-  border-radius: 5px; /* Bordes redondeados de 5px */
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%); 
-      /* Borde sutil usando color-mix */
-  font-size: 16px; /* Tamaño de fuente de 16px */
-  color: color-mix(in srgb, var(--default-color), transparent 20%); 
-      /* Color del enlace con transparencia */
-  margin-right: 10px; /* Margen a la derecha de 10px */
-  transition: 0.3s; /* Transición suave */
+  color: var(--heading-color);
+  padding: 0 8px;
+  display: inline-block;
+  font-size: 30px;
+  transition: 0.3s;
 }
 
-/* Hover sobre enlaces de redes sociales en el footer cambia color y borde */
 .footer .social-links a:hover {
-  color: var(--accent-color); /* Cambia a color de acento */
-  border-color: var(--accent-color); /* El borde también cambia a acento */
+  color: var(--accent-color);
 }
 
-/* Estilos para encabezados h4 en el footer */
+@media (max-width: 1200px) {
+  .footer .social-links {
+    padding-right: 40px;
+  }
+}
+
 .footer h4 {
   font-size: 20px; /* Tamaño de fuente de 20px */
   font-weight: bold; /* Fuente en negrita */
   position: relative; /* Posicionamiento relativo */
-  padding-bottom: 12px; /* Padding inferior de 12px */
+  padding-top: 10px;
 }
-
+.footer h3 {
+  font-size: 15px; /* Tamaño de fuente de 20px */
+  font-weight: bold; /* Fuente en negrita */
+  position: relative; /* Posicionamiento relativo */
+  padding-bottom: 2px; /* Padding inferior de 12px */
+  padding-top: 10px;
+}
 /* Párrafos en la sección de contacto del footer */
 .footer .footer-contact p {
-  margin-bottom: 5px; /* Margen inferior de 5px */
+  margin-bottom: 2px; /* Margen inferior de 5px */
 }
 
 /* Sección de copyright en el footer */
@@ -617,14 +616,8 @@ h6 {
       /* Borde superior sutil usando color-mix */
 }
 
-/* Párrafo de copyright sin margen inferior */
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
 /* Créditos en el footer con un tamaño de fuente más pequeño */
 .footer .credits {
-  margin-top: 8px;
   font-size: 13px;
 }
 
