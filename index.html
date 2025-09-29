@@ -79,35 +79,34 @@
     
     <main class="main">   
       <!-- Hero Section -->
-      <section id="hero" class="hero section dark-background">
+      <section id="hero" class="hero section">
         <div class="video-background">
           <video autoplay="" muted="" loop="" playsinline="">
             <source src="assets/img/backgrounds/hero-bg.mp4" type="video/mp4">
           </video>
           <div class="video-overlay"></div>
         </div>
-        <!-- Info Hero -->
-        <div class="info d-flex align-items-center">
-          <div class="container">
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 text-center">
-                <h2>Equipos<span id="typed-dynamic"></span></h2>
-                <div class="button-group">
-                  <a href="#products-section" class="btn-get-started">
-                    Nuestros Productos
-                  </a>
-                  <a href="https://www.youtube.com/embed/MoViMMZURtA?autoplay=1"
-                    class="glightbox btn-watch-video d-inline-flex align-items-center">
-                    <i class="bi bi-play-circle"></i>
-                    <span>Ver Video</span>
-                  </a>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">       
+          <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+              <div class="hero-content">
+                <h1 data-aos="fade-up" data-aos-delay="200">Equipos, Accesorios y Repuestos para <span class="highlight">Minería Subterránea.</span></h1>
+                <h2 data-aos="fade-up" data-aos-delay="200">Distribuidores de <span class="typed" data-typed-items="Perforadoras Neumáticas, Equipos de Carga y Acarreo, Repuestos Técnicos S250"></span></h2>  
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                  <a href="#products-section" class="btn btn-primary">Nuestros Productos</a>
+                  <a href="/contact.html" class="btn btn-outline">Contáctanos</a>
+                </div>
+                <div class="social-links" data-aos="fade-up" data-aos-delay="300">
+                  <a href="https://web.facebook.com/Sermitool" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/sermitool/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.tiktok.com/@sermitool" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
+      </section>
       <!-- Gallery Section -->
       <section id="gallery" class="gallery section">
         <div class="container section-title" data-aos="fade-up">
@@ -273,7 +272,7 @@
                 </div>
               </div>
             </div>   
-            <!-- === ADAPTADOR SPLIT SET === -->
+            <!-- === ADAPTADOR SPLIT SET === 
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="card-item">
                 <div class="row">
@@ -294,7 +293,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             <!-- === ACEITE EIFFEL === -->
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="card-item">
@@ -413,39 +412,47 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script> 
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
     <script src="assets/js/main.js"></script>
 
-    <!-- Script Hero Tittle Writer -->
+    <!-- Script Typed Simple -->
     <script>
-      const texto = ", accesorios y repuestos para minería";
-      const span = document.getElementById("typed-dynamic");
-      let i = 0;
-      let borrando = false;
-    
-      function escribirYborrar() {
-        if (!borrando) {
-          if (i <= texto.length) {
-            span.textContent = texto.substring(0, i);
-            i++;
-          } else {
-            borrando = true;
-            setTimeout(escribirYborrar, 2000);
-            return;
+      document.addEventListener('DOMContentLoaded', function() {
+        const typedElement = document.querySelector('.typed');
+        if (typedElement) {
+          const strings = typedElement.getAttribute('data-typed-items').split(',');
+          let currentStringIndex = 0;
+          let currentCharIndex = 0;
+          let isDeleting = false;
+          
+          function typeText() {
+            const currentString = strings[currentStringIndex].trim();
+            
+            if (isDeleting) {
+              typedElement.textContent = currentString.substring(0, currentCharIndex - 1);
+              currentCharIndex--;
+            } else {
+              typedElement.textContent = currentString.substring(0, currentCharIndex + 1);
+              currentCharIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && currentCharIndex === currentString.length) {
+              typeSpeed = 2000; // Pausa al final
+              isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+              isDeleting = false;
+              currentStringIndex = (currentStringIndex + 1) % strings.length;
+            }
+            
+            setTimeout(typeText, typeSpeed);
           }
-        } else {
-          if (i >= 0) {
-            span.textContent = texto.substring(0, i);
-            i--;
-          } else {
-            borrando = false;
-          }
+          
+          typeText();
         }
-        setTimeout(escribirYborrar, borrando ? 80 : 120);
-      }
-    
-      document.addEventListener("DOMContentLoaded", escribirYborrar);
+      });
     </script>
+
   </body>
 
   </html>

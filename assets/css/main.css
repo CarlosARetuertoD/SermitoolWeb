@@ -18,11 +18,11 @@
   /* Color para encabezados, subencabezados y títulos */
   --heading-color: #52565e;
   /* Color de acento que se aplica a botones, enlaces y elementos destacados */
-  --accent-color: #f27237;
+  --accent-color: #c24b14;
   /* Color de superficie para fondos de tarjetas y otros elementos que se separan visualmente del fondo general */
   --surface-color: #ffffff;
   /* Color contrastante que se utiliza para textos sobre fondos oscuros o acentuados */
-  --contrast-color: #ffffff;
+  --contrast-color: #ececec;
 }
 
 /*--------------------------------------------------------------*/
@@ -841,27 +841,18 @@ section,
 /*--------------------------------------------------------------*/
 /* Hero Section                                               */
 /*--------------------------------------------------------------*/
-section#indexproducts {
-  padding: 2rem 1rem;            /* espacio arriba/abajo y algo de holgura lateral */
-  background: #f9f9f9;
-}
-
-section#indexproducts .container {
-  max-width: 1200px;             /* no crece sin límite */
-  margin: 0 auto;                /* centra */
-}
-/* Estilos para la sección hero, que es la primera sección visual y de bienvenida */
 .hero {
   width: 100%; /* Ocupa el ancho completo */
   min-height: 100vh; /* Altura mínima de la ventana (100vh) */
   position: relative; /* Permite posicionamiento absoluto para elementos internos */
-  padding-top: 100px; /* Padding superior de 100px para dejar espacio */
-  display: block; /* Se muestra como bloque */
-  justify-content: center; /* Centra horizontalmente (aunque en block se ignora, se utiliza en flex) */
-  align-items: center; /* Centra verticalmente (aunque en block se ignora, se utiliza en flex) */
+  display: flex; /* Usa flexbox para centrar */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
   overflow: hidden; /* Oculta cualquier contenido que se desborde */
   text-align: center; /* Centra el texto en la sección hero */
+  padding-top: 120px; /* Agrega más espacio superior para separar del navbar */
 }
+
 .hero .video-background {
   position: absolute;
   top: 0;
@@ -883,186 +874,236 @@ section#indexproducts .container {
   left: 0;
   width: 100%;
   height: 100%;
-  background: color-mix(in srgb, var(--background-color), transparent 100%);
+  background: color-mix(in srgb, black, transparent 40%);
   z-index: 2;
 }
-.hero .info {
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  z-index: 3;
-}
 
-@media (max-width: 768px),
-(max-height: 480px) {
-  .hero .info {
-    padding: 100px 50px 60px 50px; 
-  }
-}
-
-.hero .info h2 {
-  margin-bottom: 30px; 
-  color: var(--accent-color); 
-  padding-bottom: 30px; 
-  font-size: 55px; 
-  font-weight: 600; 
-  position: relative; 
-  word-break: normal !important;          /* impide que las palabras se corten a la mitad */
-  overflow-wrap: normal !important;       /* desactiva saltos feos */
-  hyphens: none;    
-}
-.hero .info h2::after {
-  content: ".";
-  animation: blink 1s step-start infinite;
-  color: var(--accent-color);
-  margin-left: 5px;
-}
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-/* Teléfonos pequeños: menos de 576px */
-@media (max-width: 575.98px) {
-  .hero .info h2 {
-    font-size: 36px;
-    min-height: 300px;
-  }
-}
-
-/* Tablets y teléfonos grandes: entre 576px y 991.98px */
-@media (min-width: 576px) and (max-width: 991.98px) {
-  .hero .info h2 {
-    font-size: 38px;
-    min-height: 150px;
-  }
-}
-
-/* Pantallas grandes: desde 992px en adelante */
-@media (min-width: 992px) {
-  .hero .info h2 {
-    font-size: 42px;
-    min-height: auto; /* o puedes usar 0 si no quieres ninguna altura mínima */
-  }
-}
-/* Contenedor para ambos botones si no lo tienes */
-.hero .info .button-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; 
-  gap: 10px; 
-}
-@media (max-width: 480px) {
-  .hero .info .button-group {
-    flex-direction: column; 
-    gap: 12px;
-  }
-  .hero .info .btn-get-started,
-  .hero .info .btn-watch-video {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-}
-
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  color: var(--default-color);
-  font-weight: 500;
-  vertical-align: middle;
-}
-
-.hero .btn-watch-video i {
-  color: var(--accent-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
-}
-
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
-}
-
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-.hero .info #typed-dynamic {
-  white-space: normal;
-  word-break: break-word;
-  display: inline;
-}
-
-.hero .info #typed-dynamic span {
-  opacity: 0;
-  display: inline-block;
-  animation: fadeIn 0.4s forwards;
-  white-space: pre; /* Esto asegura que el espacio no se colapse visualmente */
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.hero .info p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%); 
-  font-size: 20px; 
-}
-.hero .info .btn-get-started {
+.hero .hero-content h1 {
   color: var(--contrast-color);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 32px;           
-  border-radius: 45px;              
-  transition: 0.4s;
-  margin: 10px;
-  border: 4px solid var(--accent-color);  
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.hero .info .btn-get-started:hover {
-  background: var(--accent-color);
-}
-/* HERO estático con misma apariencia del carrusel */
-.hero {
+
+.hero .hero-content h1 .highlight {
+  color: var(--accent-color);
   position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Contenedor de la imagen */
-.hero .hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.hero .hero-bg picture,
-.hero .hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Capa oscura encima usando color-mix */
-.hero::before {
+.hero .hero-content h1 .highlight::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: color-mix(in srgb, black, transparent 25%);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 50%));
+  border-radius: 2px;
 }
+
+@media (max-width: 768px) {
+  .hero .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.hero .hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: var(--contrast-color);
+  text-align: center;
+}
+
+.hero .hero-content h2 .typed {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero .hero-content h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.hero .hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.hero .hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .hero-actions .btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid;
+}
+
+.hero .hero-actions .btn.btn-primary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+.hero .hero-actions .btn.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), black 15%);
+  border-color: color-mix(in srgb, var(--accent-color), black 15%);
+  transform: translateY(-2px);
+}
+
+.hero .hero-actions .btn.btn-outline {
+  background: transparent;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.hero .hero-actions .btn.btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .hero .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero .hero-actions .btn {
+    text-align: center;
+  }
+}
+
+.hero .social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .social-links a {
+  width: 45px;
+  height: 45px;
+  background: var(--surface-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-color);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.hero .social-links a:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.hero .hero-image {
+  position: relative;
+}
+
+.hero .hero-image .image-wrapper {
+  position: relative;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.hero .hero-image .image-wrapper img {
+  border-radius: 20px;
+  box-shadow: 0 5px 15px color-mix(in srgb, var(--default-color), transparent 95%);
+  transition: transform 0.3s ease;
+}
+
+.hero .hero-image .image-wrapper img:hover {
+  transform: scale(1.02);
+}
+
+.hero .hero-image .floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.hero .hero-image .floating-elements .floating-card {
+  position: absolute;
+  background: var(--surface-color);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 90%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero .hero-image .floating-elements .floating-card i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.hero .hero-image .floating-elements .floating-card.design {
+  top: 10%;
+  right: -10%;
+  animation-delay: 0s;
+}
+
+.hero .hero-image .floating-elements .floating-card.code {
+  bottom: 30%;
+  left: -15%;
+  animation-delay: 1s;
+}
+
+.hero .hero-image .floating-elements .floating-card.creativity {
+  top: 60%;
+  right: -5%;
+  animation-delay: 2s;
+}
+
+@media (max-width: 992px) {
+  .hero .hero-image .floating-elements .floating-card {
+    display: none;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero .hero-content {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
 
 /*--------------------------------------------------------------*/
 /* indexcards Section                                      */
@@ -2130,6 +2171,11 @@ section#indexproducts .container {
 .call-to-action .container {
   position: relative;
   z-index: 3;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 10;
 }
 
 .call-to-action h3 {
