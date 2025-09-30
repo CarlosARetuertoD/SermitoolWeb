@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
     boton.addEventListener('click', function (e) {
       e.preventDefault(); 
 
-      const numero = '51959301020';
+      const numero = '51942057470';
       const producto = boton.getAttribute('data-producto');
 
       const mensaje = producto

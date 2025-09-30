@@ -23,6 +23,7 @@
   --surface-color: #ffffff;
   /* Color contrastante que se utiliza para textos sobre fondos oscuros o acentuados */
   --contrast-color: #ececec;
+  --hero-color: #c9c9c9;
 }
 
 /*--------------------------------------------------------------*/
@@ -874,12 +875,12 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: color-mix(in srgb, black, transparent 40%);
+  background: color-mix(in srgb, black, transparent 15%);
   z-index: 2;
 }
 
 .hero .hero-content h1 {
-  color: var(--contrast-color);
+  color: var(--hero-color);
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -916,7 +917,7 @@ section,
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 2rem;
-  color: var(--contrast-color);
+  color: var(--hero-color);
   text-align: center;
 }
 
