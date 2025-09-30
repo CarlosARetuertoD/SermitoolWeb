@@ -83,6 +83,21 @@
     "detalle": null
   },
   {
+    "id": "mucking-loader",
+    "nombre": "Mucking Loader ZWY-60",
+    "imagenes_slider": [
+      "/assets/img/products/muckingloader/muckingloader-1.webp",
+      "/assets/img/products/muckingloader/muckingloader-2.webp"
+    ],
+    "imagen": "/assets/img/products/muckingloader/mucking-1.webp",
+    "imagen_zoom": "/assets/img/products/muckingloader/mucking-2.webp",
+    "url": "/products/mucking_info.html",
+    "descripcion": "Mucking Loader ZWY-60 para carga y acarreo en minería subterránea.",
+    "filter": "Maquinas",
+    "brochure": "",
+    "detalle": null
+  },
+  {
     "id": "aceite-eiffel",
     "nombre": "Aceite Eiffel Rock Drill",
     "imagenes_slider": [

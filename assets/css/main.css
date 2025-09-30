@@ -683,7 +683,7 @@ h6 {
 /* Estilos para el ícono dentro del botón de scroll */
 .scroll-top i {
   font-size: 24px; /* Tamaño de fuente de 24px para el ícono */
-  color: var(--default-color); /* Color del ícono usando el color por defecto */
+  color: var(--contrast-color); /* Color del ícono usando el color por defecto */
   line-height: 0; /* Sin interlineado para centrar el ícono */
 }
 

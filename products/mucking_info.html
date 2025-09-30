@@ -3,15 +3,24 @@
   <head>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Sermitool - Suministro</title>
+    <title>Sermitool</title>
+    <meta name="description" content="Conoce más sobre el Mucking Loader ZWY-60/18.5T, equipo especializado para minería subterránea."> 
+    <meta name="keywords" content="Sermitool, minería, mucking loader, cargadora excavadora, equipos mineros, túneles, Komatsu"> 
 
     <link href="/assets/img/favicon.png" rel="icon"> 
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"> 
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
     <link href="/assets/vendor/aos/aos.css" rel="stylesheet"> 
     <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> 
     <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> 
     <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+
     <link href="/assets/css/main.css" rel="stylesheet">
   </head>
 
@@ -72,21 +81,54 @@
       <!-- Hero Section -->
       <div class="page-title dark-background" style="background-image: url(/assets/img/backgrounds/page-title-bg.webp);">
         <div class="container position-relative">
-          <h1 id="titulo-suministro">Suministro</h1>
+          <h1>Mucking Loader ZWY-60</h1>
           <nav class="breadcrumbs">
             <ol>
               <li><a href="/index.html">Inicio</a></li>
-              <li><a href="/products.html">Productos</a></li>
-              <li class="current">Suministro</li>
+              <li><a href="/productos.html">Productos</a></li>
+              <li class="current">Mucking Loader ZWY-60</li>
             </ol>
           </nav>
         </div>
       </div>
-      <!-- Supplies Section -->
-      <section id="suministro-detalle" class="item section py-5">
+
+      <!-- Product Section -->
+      <section id="project-details" class="item section py-5">
         <div class="container" data-aos="fade-up">
-          <div class="row justify-content-center align-items-stretch gy-4">
-            <div class="col-md-6">
+          <div class="row gy-5 align-items-start">
+            <!-- DESCRIPCIÓN -->
+            <div class="col-lg-7 d-flex flex-column">
+              <div class="portfolio-description bg-white p-4 mb-0">
+                <h2>Cargadora Excavadora Subterránea ZWY-60/18.5T</h2>
+                <p>
+                  Diseñada para galerías angostas y túneles de baja altura, esta máquina compacta y eficiente ofrece una capacidad de carga continua de hasta <b>60 m³/h</b>.
+                </p>
+                <p>
+                  Equipada con un motor eléctrico antiexplosivo de <b>18.5 kW</b> y un sistema hidráulico tipo Komatsu PC80, garantiza productividad y seguridad en espacios reducidos.
+                </p>
+                <p>
+                  Su chasis deslizante sobre ruedas, transportador de doble cadena y cabina ergonómica aseguran maniobrabilidad, operación estable y mantenimiento sencillo.
+                </p>
+                <ul class="mb-4">
+                  <li>Alta productividad: carga continua de 60 m³/h.</li>
+                  <li>Compacta y maniobrable: ideal para túneles de 2.2 m de altura.</li>
+                  <li>Motor eléctrico a prueba de explosiones (18.5 kW).</li>
+                  <li>Sistema hidráulico tipo Komatsu, confiable y seguro.</li>
+                  <li>Capacidad de trabajo en pendientes hasta 15°.</li>
+                  <li>Mantenimiento fácil con repuestos estándar.</li>
+                </ul>
+                <div id="form-status" style="display: none;"></div>
+                <div class="d-flex justify-content-end">
+                  <a href="javascript:void(0);" 
+                    class="btn btn-quote mt-3" 
+                    onclick="abrirCotizacion('Mucking Loader ZWY-60/18.5T')">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    Solicitar Cotización
+                  </a>
+                </div>
+              </div>
+
+              <!-- SLIDER DE IMÁGENES -->
               <div class="portfolio-details-slider swiper init-swiper mx-auto mt-0">
                 <script type="application/json" class="swiper-config">
                   {
@@ -98,39 +140,53 @@
                     "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
                   }
                 </script>
-                <div class="swiper-wrapper align-items-center" id="slider-suministro"></div>
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide"><img src="/assets/img/products/muckingloader/mucking-1.webp" alt="Mucking Loader vista 1"></div>
+                  <div class="swiper-slide"><img src="/assets/img/products/muckingloader/mucking-2.webp" alt="Mucking Loader vista 2"></div>
+                </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-pagination"></div>
               </div>
-            </div>
-      
-            <div class="col-md-6 d-flex">
-              <div class="portfolio-description bg-white p-4 w-100 d-flex flex-column gap-3">
-                <div>
-                  <h2 id="nombre-suministro">Nombre del suministro</h2>
-                  <p id="descripcion-suministro">Descripción del producto cargada desde JSON.</p>
-                  <div id="brochure-suministro" class="mb-4"></div>
-                </div>
-                <div>
-                  <a id="boton-solicitar" class="btn btn-quote mt-2">
-                    <i class="bi bi-envelope-fill me-2"></i>
-                    Solicitar Cotización
-                  </a>
-                </div>
+            </div>     
+
+            <!-- FICHA TÉCNICA -->
+            <div class="col-lg-5">
+              <div class="portfolio-info bg-white p-4">
+                <h3>Ficha Técnica</h3>
+                <table class="ficha-tecnica w-100">
+                  <tbody>
+                    <tr><th>Capacidad de carga</th><td>≥ 60 m³/h</td></tr>
+                    <tr><th>Peso operativo</th><td>3500 ± 200 kg</td></tr>
+                    <tr><th>Dimensiones (L × A × H)</th><td>5600 × 1550 × 1850 mm</td></tr>
+                    <tr><th>Radio mínimo de giro</th><td>≤ 6000 mm</td></tr>
+                    <tr><th>Distancia mínima al suelo</th><td>≥ 150 mm</td></tr>
+                    <tr><th>Capacidad de escalada</th><td>± 15°</td></tr>
+                    <tr><th>Motor eléctrico</th><td>YBK antiexplosión</td></tr>
+                    <tr><th>Potencia nominal</th><td>18.5 kW</td></tr>
+                    <tr><th>Voltaje</th><td>660/380 V o 1140/660 V</td></tr>
+                    <tr><th>Sistema hidráulico</th><td>Tipo Komatsu PC80</td></tr>
+                    <tr><th>Presión de trabajo principal</th><td>20 MPa</td></tr>
+                    <tr><th>Presión de bomba de carga</th><td>11 MPa</td></tr>
+                    <tr><th>Presión de control piloto</th><td>4 MPa</td></tr>
+                    <tr><th>Sección mínima de galería</th><td>2.2 × 2.2 m</td></tr>
+                    <tr><th>Dureza de roca admisible</th><td>≤ f 12</td></tr>
+                    <tr><th>Tamaño máximo de bloque</th><td>≤ 500 mm</td></tr>
+                  </tbody>
+                </table>        
               </div>
             </div>
           </div>
         </div>
       </section>
-      
     </main>
 
     <!-- WhatsApp Button -->
-    <a id="boton-flotante-whatsapp" 
-       class="btn-whatsapp-fixed" 
-       target="_blank" rel="noopener" 
-       aria-label="WhatsApp">
+    <a href="javascript:void(0);" 
+        id="boton-flotante-whatsapp" 
+        class="btn-whatsapp-fixed" 
+        data-producto="Mucking Loader ZWY-60/18.5T"
+        aria-label="WhatsApp">
       <i class="bi bi-whatsapp"></i>
       <span class="tooltip-text">¡Cotiza ya!</span>
     </a>
@@ -149,69 +205,5 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="/assets/js/emailjs.js"></script>
     <script src="/assets/js/main.js"></script>
-    <!-- Script para cargar suministro -->  
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
-    
-        fetch('/assets/json/productos.json')
-          .then(res => res.json())
-          .then(data => {
-            const prod = data.find(item => item.id === id);
-    
-            if (!prod) {
-              document.getElementById('nombre-suministro').textContent = 'Producto no encontrado';
-              document.getElementById('descripcion-suministro').textContent = 'Este producto no está disponible en el catálogo.';
-              document.getElementById('slider-suministro').innerHTML = '<div class="swiper-slide"><img src="/assets/img/default.webp" alt="No encontrado"></div>';
-              return;
-            }
-    
-            // Asignar nombre y descripción larga (detalle si existe)
-            document.getElementById('titulo-suministro').textContent = prod.nombre;
-            document.getElementById('nombre-suministro').textContent = prod.nombre;
-            document.getElementById('descripcion-suministro').textContent = prod.detalle?.trim() || prod.descripcion || prod.nombre;
-    
-            // WhatsApp flotante
-            const whatsappTexto = encodeURIComponent(`Hola, quiero cotizar el producto ${prod.nombre}`);
-            const enlaceWS = `https://wa.me/51959301020?text=${whatsappTexto}`;
-            const botonWS = document.getElementById('boton-flotante-whatsapp');
-            botonWS.href = enlaceWS;
-            botonWS.setAttribute('data-producto', prod.nombre);
-    
-            // Botón solicitar cotización
-            document.getElementById('boton-solicitar').addEventListener('click', () => {
-              window.open(enlaceWS, '_blank');
-            });
-    
-            // Cargar slider
-            const slider = document.getElementById('slider-suministro');
-            slider.innerHTML = '';
-            const imagenes = prod.imagenes_slider || [prod.imagen];
-            imagenes.forEach(img => {
-              const slide = document.createElement('div');
-              slide.className = 'swiper-slide';
-              slide.innerHTML = `<img src="${img}" alt="${prod.nombre}">`;
-              slider.appendChild(slide);
-            });
-    
-            // Brochure si existe
-            const brochureDiv = document.getElementById('brochure-suministro');
-            if (prod.brochure) {
-              brochureDiv.innerHTML = `
-                <a 
-                  href="${prod.brochure}" 
-                  download="Brochure_${prod.nombre.replace(/\s+/g, '_')}.pdf"
-                  class="text-decoration-underline text-danger d-inline-flex align-items-center"
-                  style="cursor: pointer; font-weight: 500;">
-                  <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-                  Descargar Brochure
-                </a>
-              `;
-            }
-          });
-      });
-    </script>
-
   </body>
 </html>
