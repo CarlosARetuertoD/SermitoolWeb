@@ -854,29 +854,28 @@ section,
   padding-top: 120px; /* Agrega más espacio superior para separar del navbar */
 }
 
-.hero .video-background {
+/* Contenedor de la imagen de fondo */
+.hero .hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 1;
 }
 
-.hero .video-background video {
+.hero .hero-bg picture,
+.hero .hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.hero .video-overlay {
+/* Capa oscura encima usando color-mix */
+.hero::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: color-mix(in srgb, black, transparent 15%);
+  inset: 0;
   z-index: 2;
+  background: color-mix(in srgb, black, transparent 25%);
 }
 
 .hero .hero-content h1 {
@@ -3015,6 +3014,9 @@ section,
 .service .service-item {
   position: relative;
   margin-top: 45px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .service .service-inner {
@@ -3023,6 +3025,8 @@ section,
   margin-top: 45px;
   background: var(--bs-white);
   box-shadow: 0 0 45px rgba(0, 0, 0, .05);
+  display: flex;
+  flex-direction: column;
 }
 
 .service .service-inner::before {
@@ -3059,6 +3063,31 @@ section,
 
 .service .service-item:hover a {
   padding-left: 45px !important;
+}
+
+.service .service-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service .service-text p {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+.service .service-text .btn {
+  margin-top: auto;
+}
+
+.service .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service .row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
 }
 
 

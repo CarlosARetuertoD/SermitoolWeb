@@ -80,11 +80,16 @@
     <main class="main">   
       <!-- Hero Section -->
       <section id="hero" class="hero section">
-        <div class="video-background">
-          <video autoplay="" muted="" loop="" playsinline="">
-            <source src="assets/img/backgrounds/hero-bg.mp4" type="video/mp4">
-          </video>
-          <div class="video-overlay"></div>
+        <!-- Background Static -->
+        <div class="hero-bg">
+          <picture>
+            <!-- Escritorio: 1920x1080 -->
+            <source media="(min-width: 1200px)" srcset="assets/img/backgrounds/hero-lg.webp">    
+            <!-- Tablet: 1280x1080 -->
+            <source media="(min-width: 768px)" srcset="assets/img/backgrounds/hero-md.webp">       
+            <!-- Móvil: 768x1080 -->
+            <img src="assets/img/backgrounds/hero-sm.webp" alt="Fondo principal de SERMITOOL" loading="lazy">
+          </picture>
         </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">       
           <div class="row justify-content-center">
@@ -109,7 +114,7 @@
         </div>
 
       </section>
-      <!-- About Index Section 
+      <!-- About Index Section -->
       <section class="container-fluid about-index bg-light py-5">
         <div class="container section-title" data-aos="fade-up">
           <h2>Sobre Nosotros</h2>
@@ -118,11 +123,11 @@
               <div class="row g-5 align-items-center">
                   <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
                       <div class="about-img pb-2 ps-5" style="padding-left: 150px; padding-bottom: 20px;">
-                          <img src="assets/img/about-section/nosotros-img.webp" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Equipos Sermitool">
+                          <img src="assets/img/about-section/about-index.webp" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Equipos Sermitool">
                           <div class="about-img-inner">
-                              <img src="assets/img/about-section/information-1.webp" class="img-fluid rounded-circle w-100 h-100" alt="Taller Sermitool">
+                              <img src="assets/img/about-section/subAbout-index.webp" class="img-fluid rounded-circle w-100 h-100" alt="Taller Sermitool">
                           </div>
-                          <div class="about-experience"> +30 años de experiencia</div>
+                          <div class="about-experience"> +34 años de experiencia</div>
                       </div>
                   </div>
                   <div class="col-lg-7" data-aos="fade-left" data-aos-delay="400">
@@ -139,8 +144,8 @@
                   </div>
               </div>
           </div>
-      </section>-->
-      <!-- Partners Section 
+      </section>
+      <!-- Partners Section -->
       <section id="partners" class="partners section">
         <div data-aos="fade-up" data-aos-delay="100">
           <div class="partners-slider swiper init-swiper">
@@ -200,6 +205,11 @@
               </div>
               <div class="swiper-slide">
                 <div class="partner-logo">
+                  <img src="assets/img/partners/partner-1.webp" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partner-logo">
                   <img src="assets/img/partners/partner-5.webp" class="img-fluid" alt="">
                 </div>
               </div>
@@ -230,6 +240,11 @@
               </div>
               <div class="swiper-slide">
                 <div class="partner-logo">
+                  <img src="assets/img/partners/partner-1.webp" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partner-logo">
                   <img src="assets/img/partners/partner-5.webp" class="img-fluid" alt="">
                 </div>
               </div>
@@ -242,7 +257,7 @@
 
           </div>
         </div>
-      </section>-->
+      </section>
       <!-- Gallery Section -->
       <section id="gallery" class="gallery section">
         <div class="container section-title" data-aos="fade-up">
@@ -279,9 +294,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="gallery-item h-100">
-                <img src="assets/img/gallery/gallery-4.webp" class="img-fluid" alt="">
+                <img src="assets/img/gallery/gallery-15.webp" class="img-fluid" alt="">
                 <div class="gallery-links d-flex align-items-center justify-content-center">
-                  <a href="assets/img/gallery/gallery-4.webp" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="assets/img/gallery/gallery-15.webp" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                 </div>
               </div>
             </div>
