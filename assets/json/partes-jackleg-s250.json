@@ -358,9 +358,9 @@
   },
   {
     "id": "c1809",
-    "numero_repuesto": "41A",
+    "numero_repuesto": "41",
     "nombre": "Codo de agua (roscado)",
-    "imagen": "/assets/img/products/repuestos/c1809-p41a.webp",
+    "imagen": "/assets/img/products/repuestos/c1809.webp",
     "categoria": "Cabezal"
   },
   {
@@ -548,8 +548,15 @@
   {
     "id": "d1454d",
     "numero_repuesto": "70",
-    "nombre": "Tuerca de maneral domo",
+    "nombre": "Tuerca de maneral (Domo)",
     "imagen": "/assets/img/products/repuestos/d1454d.webp",
+    "categoria": "Maneral"
+  },
+  {
+    "id": "d1454",
+    "numero_repuesto": "71",
+    "nombre": "Tuerca de maneral",
+    "imagen": "/assets/img/products/repuestos/d1454.webp",
     "categoria": "Maneral"
   },
   {
@@ -570,14 +577,14 @@
     "id": "c1514-1515",
     "numero_repuesto": "74",
     "nombre": "Válvula retráctil",
-    "imagen": "/assets/img/products/repuestos/c1514-1515-p7475jt.webp",
+    "imagen": "/assets/img/products/repuestos/c1514-1515.webp",
     "categoria": "Maneral"
   },
   {
-    "id": "c1514-1515",
+    "id": "c1514-1515-2",
     "numero_repuesto": "75",
     "nombre": "Camisa de válvula retractil",
-    "imagen": "/assets/img/products/repuestos/c1514-1515-p7475jt.webp",
+    "imagen": "/assets/img/products/repuestos/c1514-1515-2.webp",
     "categoria": "Maneral"
   },
   {
@@ -655,13 +662,6 @@
     "numero_repuesto": "86",
     "nombre": "Tuerca de valvula",
     "imagen": "/assets/img/products/repuestos/d1218uf-d1684.webp",
-    "categoria": "Maneral"
-  },
-  {
-    "id": "144-m24",
-    "numero_repuesto": "Número de parte desconocido",
-    "nombre": "Arandela",
-    "imagen": "/assets/img/products/repuestos/144-m24.webp",
     "categoria": "Maneral"
   },
   {
@@ -787,7 +787,7 @@
     "id": "c10119",
     "numero_repuesto": "113",
     "nombre": "Espaciador del vástago del pistón",
-    "imagen": "/assets/img/products/repuestos/1796740.webp",
+    "imagen": "/assets/img/products/repuestos/c10119.webp",
     "categoria": "Barra"
   },
   {
@@ -844,6 +844,13 @@
     "numero_repuesto": "121",
     "nombre": "Lubricador",
     "imagen": "/assets/img/products/repuestos/l07.webp",
+    "categoria": "Lubricadora"
+  },
+  {
+    "id": "LFIL-L07",
+    "numero_repuesto": "122",
+    "nombre": "Adaptador de Lubricador",
+    "imagen": "/assets/img/products/repuestos/lfil-l07.webp",
     "categoria": "Lubricadora"
   },
   {

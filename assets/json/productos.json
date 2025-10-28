@@ -1,15 +1,20 @@
 [
   {
     "id": "jackleg-s250",
-    "nombre": "Jackleg Secan-S250",
+    "nombre": "SECAN - Jackleg S250",
     "imagenes_slider": [
       "/assets/img/products/jackleg-s250/jackleg-s250-1.webp",
       "/assets/img/products/jackleg-s250/jackleg-s250-2.webp",
       "/assets/img/products/jackleg-s250/jackleg-s250-3.webp",
-      "/assets/img/products/jackleg-s250/jackleg-s250-4.webp"
+      "/assets/img/products/jackleg-s250/jackleg-s250-4.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-5.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-6.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-7.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-8.webp",
+      "/assets/img/products/jackleg-s250/jackleg-s250-9.webp"
     ],
-    "imagen": "/assets/img/products/jackleg-s250/jackleg-s250-1.webp",
-    "imagen_zoom": "/assets/img/products/jackleg-s250/jackleg-s250-2.webp",
+    "imagen": "/assets/img/products/jackleg-s250/jackleg-portada.webp",
+    "imagen_zoom": "/assets/img/products/jackleg-s250/jackleg-s250-9.webp",
     "url": "/products/jackleg250_info.html",
     "descripcion": "Perforadora neumática de alta resistencia.",
     "filter": "Perforadoras",
@@ -18,7 +23,7 @@
   },
   {
     "id": "stoper-s250",
-    "nombre": "Stoper Secan-S250",
+    "nombre": "SECAN - Stoper S250",
     "imagenes_slider": [
       "/assets/img/products/stoper-s250/stoper-s250-1.webp",
       "/assets/img/products/stoper-s250/stoper-s250-2.webp"
@@ -29,6 +34,23 @@
     "descripcion": "Perforadora vertical neumática de alta resistencia.",
     "filter": "Perforadoras",
     "brochure": "/assets/img/products/stoper-s250/BROCHURE_SECAN_STOPER_S250.pdf",
+    "detalle": null
+  },
+  {
+    "id": "seco-s250",
+    "nombre": "SECO Jackleg S250",
+    "imagenes_slider": [
+      "/assets/img/products/seco-s250/seco-s250-1.webp",
+      "/assets/img/products/seco-s250/seco-s250-2.webp",
+      "/assets/img/products/seco-s250/seco-s250-3.webp",
+      "/assets/img/products/seco-s250/seco-s250-4.webp"
+    ],
+    "imagen": "/assets/img/products/seco-s250/seco-s250-1.webp",
+    "imagen_zoom": "/assets/img/products/seco-s250/seco-s250-2.webp",
+    "url": "/products/seco250_info.html",
+    "descripcion": "Perforadora neumática para mineria subterranea.",
+    "filter": "Perforadoras",
+    "brochure": "",
     "detalle": null
   },
   {
@@ -112,6 +134,22 @@
     "filter": "Suministros Mineros",
     "brochure": "/assets/img/products/aceite-eiffel/BROCHURE_ACEITE_EIFFEL.pdf",
     "detalle": "Los lubricantes Eiffel Rock Drill es un aceite neumático de rendimiento supremo para perforadoras de roca y herramientas, formulado con bases de alta calidad fortificadas con un sistema de aditivos de azufre y fósforo. Están diseñados para trabajar de manera eficiente en perforadoras de roca operadas neumáticamente en operaciones de minería subterránea y de superficie. Ofrecen una adhesividad y emulsificación óptimas con agua para evitar efectos adversos de óxido y corrosión. Su excelente propiedad de protección contra el desgaste ayuda a reducir el desgaste de los componentes y mantiene una película lubrcante adecuada para transportar cargas elevadas."
+  },
+  {
+    "id": "cargador-anfo",
+    "nombre": "Cargador de Anfo",
+    "imagenes_slider": [
+      "/assets/img/products/cargador-anfo/cargador-anfo-1.webp",
+      "/assets/img/products/cargador-anfo/cargador-anfo-2.webp",
+      "/assets/img/products/cargador-anfo/cargador-anfo-3.webp"
+    ],
+    "imagen": "/assets/img/products/cargador-anfo/cargador-anfo-1.webp",
+    "imagen_zoom": "/assets/img/products/cargador-anfo/cargador-anfo-2.webp",
+    "url": "",
+    "descripcion": "Cargador de Anfo para minería subterránea.",
+    "filter": "Suministros Mineros",
+    "brochure": "",
+    "detalle": null
   },
   {
     "id": "lampara-minera",

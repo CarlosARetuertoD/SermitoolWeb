@@ -11,9 +11,18 @@
       !selectHeader.classList.contains("fixed-top")
     )
       return;
+    
+    // Para páginas normales
     window.scrollY > 100
       ? selectBody.classList.add("scrolled")
       : selectBody.classList.remove("scrolled");
+    
+    // Para la página de manual de partes (replacements-page)
+    if (selectBody.classList.contains("replacements-page")) {
+      window.scrollY > 50
+        ? selectHeader.classList.add("scrolled")
+        : selectHeader.classList.remove("scrolled");
+    }
   }
 
   document.addEventListener("scroll", toggleScrolled);
@@ -87,7 +96,52 @@
     });
   }
 
+  // Función para forzar la activación de AOS en elementos específicos
+  function forceAOSRefresh() {
+    // Buscar elementos con AOS que puedan estar fuera del viewport
+    const aosElements = document.querySelectorAll('[data-aos]');
+    aosElements.forEach(element => {
+      // Forzar el refresh de AOS para este elemento
+      AOS.refresh();
+    });
+  }
+
+  // Función específica para activar la sección del catálogo
+  function activateCatalogSection() {
+    const catalogSection = document.querySelector('.catalogo');
+    if (catalogSection) {
+      // Remover clases AOS existentes y volver a agregarlas
+      const aosElements = catalogSection.querySelectorAll('[data-aos]');
+      aosElements.forEach(element => {
+        element.classList.remove('aos-animate');
+        // Forzar la activación inmediata
+        setTimeout(() => {
+          element.classList.add('aos-animate');
+        }, 50);
+      });
+    }
+  }
+
   window.addEventListener("load", aosInit);
+
+  // Listener adicional para asegurar que el catálogo se active
+  window.addEventListener("resize", () => {
+    setTimeout(() => {
+      activateCatalogSection();
+    }, 200);
+  });
+
+  // Listener para scroll que active el catálogo si está visible
+  window.addEventListener("scroll", () => {
+    const catalogSection = document.querySelector('.catalogo');
+    if (catalogSection) {
+      const rect = catalogSection.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        activateCatalogSection();
+      }
+    }
+  });
 
   const glightbox = GLightbox({
     selector: ".glightbox",
@@ -127,6 +181,11 @@
             if (typeof aosInit === "function") {
               aosInit();
             }
+            // Forzar refresh de AOS después de cambiar filtros
+            setTimeout(() => {
+              forceAOSRefresh();
+              activateCatalogSection();
+            }, 100);
           },
           false
         );
@@ -164,23 +223,32 @@
 
 // BTN WHATSAPP
 document.addEventListener('DOMContentLoaded', function () {
-  const boton = document.getElementById('boton-flotante-whatsapp');
+  const botonWhatsapp = document.getElementById('boton-flotante-whatsapp');
+  const botonCta = document.getElementById('boton-cta-whatsapp');
+  const botonHero = document.getElementById('boton-hero-whatsapp');
+  function configurarBotonWhatsApp(boton, producto) {
+    if (boton) {
+      boton.addEventListener('click', function (e) {
+        e.preventDefault(); 
 
-  if (boton) {
-    boton.addEventListener('click', function (e) {
-      e.preventDefault(); 
+        const numero = '51942057470';
+        const mensaje = producto
+          ? `Hola, quisiera cotizar el ${producto}.`
+          : `Hola, estoy interesado en obtener más información sobre sus productos.`;
 
-      const numero = '51942057470';
-      const producto = boton.getAttribute('data-producto');
-
-      const mensaje = producto
-        ? `Hola, quisiera cotizar el ${producto}.`
-        : `Hola, estoy interesado en obtener más información sobre sus productos.`;
-
-      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
-    });
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+      });
+    }
   }
+  // Configurar botón del Hero
+  configurarBotonWhatsApp(botonHero, null);
+  
+  // Configurar botón del Flotante
+  configurarBotonWhatsApp(botonWhatsapp, botonWhatsapp?.getAttribute('data-producto'));
+  
+  // Configurar botón del CTA
+  configurarBotonWhatsApp(botonCta, null);
 });
 
 // SCRIPT PARA OCULTAR BOTONES DE NAVEGACION EN GOOGLE

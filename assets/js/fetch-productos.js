@@ -57,18 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Crear botones de filtro
       filtrosContainer.innerHTML = '';
-      const btnTodos = document.createElement('li');
-      btnTodos.className = 'filter-active';
-      btnTodos.setAttribute('data-filter', '*');
-      btnTodos.textContent = 'Todos';
-      filtrosContainer.appendChild(btnTodos);
-
+      
+      // Primero añadir todas las categorías específicas
       categorias.forEach(filtroClase => {
         const li = document.createElement('li');
         li.setAttribute('data-filter', `.${filtroClase}`);
         li.textContent = filtroClase.replace('filter-', '').replace(/-/g, ' ').replace(/^./, l => l.toUpperCase());
         filtrosContainer.appendChild(li);
       });
+
+      // Luego añadir "Todos" al final pero manteniendo como activo
+      const btnTodos = document.createElement('li');
+      btnTodos.className = 'filter-active';
+      btnTodos.setAttribute('data-filter', '*');
+      btnTodos.textContent = 'Todos';
+      filtrosContainer.appendChild(btnTodos);
 
       GLightbox({ selector: '.glightbox' });
       iso.appended(nuevos);

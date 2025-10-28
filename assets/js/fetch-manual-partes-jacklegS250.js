@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.logo');
   const sectionTitle = document.querySelector('.section-title');
   let repuestosData = null;
+  
+  // Inicializar GLightbox globalmente
+  let glightboxInstance = null;
 
   console.log('Contenedores encontrados:', {
     categoriaImagen: !!categoriaImagen,
@@ -112,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       [58,62,"38","164999","Oring"],
       [57,73,"39","s355538a","Filtro de aire"],
       [62,62,"40","l05","Conexión de aire bushing"],
-      [79,79,"41A","c1809","Codo de agua (roscado)"],
+      [79,79,"41","c1809","Codo de agua (roscado)"],
       [70,88,"42","s2141","Tuerca de codo entrada de agua"],
       [76,76,"43","s48f1w","Arandela"],
       [68,83,"44","164811-1646503","Oring"],
@@ -162,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       [49, 22, "85", "149122mt", "Arandela de seguridad"],
       [44, 18, "86", "d1218uf-d1684", "Tuerca de valvula"],
       [63, 76, "44", "164811-1646503", "Oring"],
-      [60, 73, "75", "c1514-1515", "Camisa de válvula retractil"],
+      [60, 73, "75", "c1514-1515-2", "Camisa de válvula retractil"],
       [45, 79, "44", "164811-1646503", "Oring"],
       [52, 20, "71", "71", "Desconocido"]
     ],
@@ -180,21 +183,22 @@ document.addEventListener('DOMContentLoaded', () => {
       [50,25,"107","1216w","Tuerca"],
       [40,30,"108","sb1851rk1","Tubo de plastico con casquillos y oring"],
       [26,30,"109","c1788a","Cilindro 51"],
-      [69,71,"110","5601773-p134bl","Porta empaque superior"],
-      [65,71,"111","9002661","Porta empaque inferior"],
-      [58,60,"112","1796740","Empaque"],
-      [60,60,"113","c10119","Espaciador del vástago del pistón"],
-      [55,60,"114","c10120","Espaciador"],
-      [52,60,"115","d2038","Arandela"],
-      [51,71,"116","d1073a","Tuerca de seguridad"],
-      [43,75,"117","c1791","Apoyo"],
-      [31,71,"118","c1672","Perno de apoyo"],
-      [63,60,"112","1796740","Empaque"]
+      [69, 71, "110", "5601773-p134bl", "Porta empaque superior"], 
+      [65, 71, "111", "9002661", "Porta empaque inferior"], 
+      [63, 60, "112", "1796740", "Empaque"], 
+      [61, 60, "113", "c10119", "Espaciador del vástago del pistón"], 
+      [55, 60, "114", "c10120", "Espaciador"], 
+      [52, 60, "115", "d2038", "Arandela"], 
+      [51, 71, "116", "d1073a", "Tuerca de seguridad"], 
+      [44, 75, "117", "c1791", "Apoyo"], 
+      [31, 71, "118", "c1672", "Perno de apoyo"], 
+      [58, 60, "112", "1796740", "Empaque"]
     ],
     'lubricadora': [
       [36,56,"49","936658","Válvula de control de agua"],
       [27,56,"50","76001","Conexión de agua"],
       [60,56,"121","L07","Lubricador"],
+      [67,41, "122", "LFIL-L07", "Adaptador de Lubricador"],
       [69,56,"123","L06","Adaptador de Lubricador"],
       [50,56,"124","L08","Conexión de salida de lubricador"],
       [75,56,"40","lub-adap","Reductor Adaptador de lubricador"]
@@ -225,6 +229,23 @@ document.addEventListener('DOMContentLoaded', () => {
       precargarImagenes(data);
       // Mostrar elementos después de cargar los datos
       mostrarElementos();
+      
+      // Inicializar GLightbox una sola vez de forma global
+      if (!glightboxInstance) {
+        glightboxInstance = GLightbox({
+          autofocus: true,
+          openEffect: 'zoom',
+          closeEffect: 'zoom',
+          zoomEffect: 'zoom',
+          moreText: 'Ver imagen',
+          moreLength: 60,
+          closeButton: true,
+          touchNavigation: true,
+          keyboardNavigation: true,
+          closeOnOutsideClick: true,
+          loop: false
+        });
+      }
     })
     .catch(error => {
       console.error('Error cargando repuestos:', error);
@@ -241,6 +262,20 @@ document.addEventListener('DOMContentLoaded', () => {
     while (hotspotsContainer.firstChild) {
       hotspotsContainer.removeChild(hotspotsContainer.firstChild);
     }
+    
+    // Agregar texto de instrucción flotante en la parte superior
+    const instructionText = document.createElement('div');
+    instructionText.className = 'hotspot-instruction';
+    instructionText.innerHTML = '<i class="bi bi-hand-index-fill"></i> <span>Toca o haz clic en los números</span> <i class="bi bi-arrow-down-circle-fill"></i>';
+    hotspotsContainer.appendChild(instructionText);
+    
+    // Auto-ocultar después de 4 segundos
+    setTimeout(() => {
+      if (instructionText.parentNode) {
+        instructionText.style.opacity = '0';
+        instructionText.style.transform = 'translateX(-50%) translateY(-10px)';
+      }
+    }, 4000);
     
     const hotspots = hotspotsPorCategoria[categoria] || [];
     console.log('Mostrando hotspots para categoría:', categoria, hotspots);
@@ -332,18 +367,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     console.log('Buscando repuesto con código:', codigo);
-    const repuesto = repuestosData.find(r => r.id.toLowerCase() === codigo.toLowerCase());
+    const repuesto = repuestosData.find(r => r.id === codigo);
     console.log('Repuesto encontrado:', repuesto);
     
     if (repuesto) {
-      const imagen = repuesto.imagen_zoom || repuesto.imagen;
+      // Efecto de fade out antes de cambiar contenido
+      repuestoContainer.classList.add('fade-out');
+      
+      setTimeout(() => {
+        const imagen = repuesto.imagen_zoom || repuesto.imagen;
       
       repuestoContainer.innerHTML = `
         <div class="repuesto-info">
           <h3>${repuesto.id.toUpperCase()} #${repuesto.numero_repuesto}</h3>
           <h4>${repuesto.nombre}</h4>
           ${imagen ? 
-            `<img src="${imagen}" alt="${repuesto.nombre}" class="img-fluid" loading="lazy" decoding="async">` : 
+            `<div class="repuesto-image-container">
+              <a href="${imagen}" class="repuesto-image-wrapper glightbox">
+                <img src="${imagen}" alt="${repuesto.nombre}" class="img-fluid" loading="lazy" decoding="async">
+                <div class="repuesto-zoom-link">
+                  <i class="bi bi-zoom-in"></i>
+                </div>
+              </a>
+            </div>` : 
             `<div class="no-image">Imagen no disponible</div>`
           }
           <a href="#" id="boton-flotante-whatsapp" class="btn btn-whatsapp" data-producto="${repuesto.id}-${repuesto.nombre}" onclick="event.preventDefault(); window.open(this.href, '_blank');">
@@ -351,6 +397,19 @@ document.addEventListener('DOMContentLoaded', () => {
           </a>
         </div>
       `;
+
+        // Remover fade-out y mostrar nuevo contenido
+        repuestoContainer.classList.remove('fade-out');
+        
+        // Inicializar GLightbox en el nuevo enlace creado
+        setTimeout(() => {
+          const zoomLink = repuestoContainer.querySelector('.repuesto-image-wrapper');
+          if (zoomLink && glightboxInstance) {
+            // Actualizar GLightbox para incluir el nuevo elemento
+            glightboxInstance.reload();
+          }
+        }, 50);
+      }, 150); // Delay del fade out
 
       // Configurar el botón de WhatsApp
       const wsBtn = document.getElementById('boton-flotante-whatsapp');
@@ -368,23 +427,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (repuestoInfo) {
           repuestoInfo.classList.add('visible');
           
-          // Scroll automático solo cuando la información está debajo
-          const infoSection = document.querySelector('.info-section');
-          if (infoSection) {
-            // Esperar a que el contenido se renderice
+          // Scroll automático solo en pantallas pequeñas
+          if (window.innerWidth <= 992) {
             setTimeout(() => {
-              const infoRect = infoSection.getBoundingClientRect();
-              const viewportHeight = window.innerHeight;
-              const isInfoVisible = infoRect.top >= 0 && infoRect.bottom <= viewportHeight;
-              
-              // Solo hacer scroll si la información está debajo y no es completamente visible
-              if (!isInfoVisible && infoRect.top > 0 && window.innerWidth <= 992) {
+              const whatsappButton = document.getElementById('boton-flotante-whatsapp');
+              if (whatsappButton) {
+                const buttonTop = whatsappButton.offsetTop;
+                const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+                
+                // Scroll hacia el botón de WhatsApp con margen para el header
                 window.scrollTo({
-                  top: document.body.scrollHeight,
+                  top: buttonTop - headerHeight - 100,
                   behavior: 'smooth'
                 });
               }
-            }, 100);
+            }, 300);
           }
         }
       }, 50);

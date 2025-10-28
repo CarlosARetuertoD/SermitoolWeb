@@ -665,33 +665,57 @@ h6 {
 /* Scroll Top Button                                          */
 /*--------------------------------------------------------------*/
 
-/* Estilos para el botón que permite volver al tope de la página */
+/* PROPUESTA PROFESIONAL: Botón circular pequeño con flecha notoria */
 .scroll-top {
   position: fixed; /* Se posiciona de forma fija */
   visibility: hidden; /* Oculto por defecto */
   opacity: 0; /* Completamente transparente por defecto */
-  right: 15px; /* Ubicado a 15px del borde derecho */
-  bottom: 15px; /* Ubicado a 15px del borde inferior */
+  right: 20px; /* Ubicado a 20px del borde derecho */
+  bottom: 20px; /* Ubicado a 20px del borde inferior */
   z-index: 99999; /* Nivel de apilamiento alto para asegurarse que se muestre encima */
-  background-color: var(--accent-color); /* Fondo usando el color de acento */
-  width: 40px; /* Ancho de 40px */
-  height: 40px; /* Alto de 40px */
-  border-radius: 4px; /* Bordes redondeados de 4px */
-  transition: all 0.4s; /* Transición suave para cambios de estado */
+  background-color: var(--accent-color); /* Color de acento del tema */
+  width: 42px; /* Ancho más pequeño de 42px */
+  height: 42px; /* Alto más pequeño de 42px */
+  border-radius: 50%; /* Forma completamente circular */
+  transition: all 0.3s ease; /* Transición suave */
+  box-shadow: 0 3px 12px rgba(255, 107, 53, 0.25); /* Sombra profesional sutil */
+  border: 2px solid rgba(255, 255, 255, 0.15); /* Borde blanco muy sutil */
+}
+
+/* Efecto de halo profesional alrededor del botón */
+.scroll-top::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-color), transparent 92%); /* Halo usando color de acento */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 /* Estilos para el ícono dentro del botón de scroll */
 .scroll-top i {
-  font-size: 24px; /* Tamaño de fuente de 24px para el ícono */
-  color: var(--contrast-color); /* Color del ícono usando el color por defecto */
+  font-size: 24px; /* Tamaño de fuente más grande de 24px para la flecha */
+  color: white; /* Color blanco para el ícono */
   line-height: 0; /* Sin interlineado para centrar el ícono */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Sombra más notoria en el texto */
+  font-weight: bold; /* Flecha más gruesa y notoria */
 }
 
-/* Hover sobre el botón de scroll para cambiar fondo y color */
+/* Hover sobre el botón de scroll */
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-      /* Mezcla el color de acento con transparencia para efecto hover */
-  color: var(--contrast-color); /* Cambia el color del ícono a uno de alto contraste */
+  transform: translateY(-2px); /* Eleva ligeramente */
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 65%); /* Sombra usando color de acento */
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%); /* Color más claro usando acento */
+}
+
+/* Efecto de halo al hacer hover */
+.scroll-top:hover::before {
+  opacity: 1; /* Muestra el halo al hacer hover */
 }
 
 /* Estado activo del botón (cuando debe mostrarse) */
@@ -895,7 +919,7 @@ section,
   position: relative;
 }
 
-.hero .hero-content h1 .highlight::after {
+/* .hero .hero-content h1 .highlight::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -904,7 +928,7 @@ section,
   height: 3px;
   background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 50%));
   border-radius: 2px;
-}
+} */
 
 @media (max-width: 768px) {
   .hero .hero-content h1 {
@@ -3189,4 +3213,640 @@ section,
   .about-index .about-img .about-experience {
     display: none;
   }
+}
+
+/* ===============================================
+   CATÁLOGO SECTION STYLES
+   =============================================== */
+
+.catalogo {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.catalogo-content {
+  position: relative;
+  z-index: 2;
+  color: #333;
+}
+
+.catalogo-preview {
+  position: relative;
+  z-index: 2;
+}
+
+/* Icono del catálogo sin animación para mejor rendimiento */
+
+.catalogo-icon .icon-container {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  backdrop-filter: none;
+  transition: none;
+  display: inline-block;
+  position: relative;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.catalogo-icon .icon-container img {
+  max-width: 100%;
+  height: auto;
+  filter: none;
+  transition: none;
+}
+
+.catalogo-stats {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin-top: 2rem;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+.catalogo-stats:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.catalogo-stats .stat-item {
+  transition: none;
+}
+
+.catalogo-stats .stat-item:hover {
+  transform: none;
+}
+
+.catalogo-stats .stat-item h4 {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.catalogo-stats .stat-item small {
+  color: var(--default-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.catalogo-text h2 {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.catalogo-text h2 i {
+  color: #dc3545;
+}
+
+.catalogo-text p {
+  color: var(--default-color);
+}
+
+.catalogo-features {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1), 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: none;
+}
+
+.catalogo-features:hover {
+  transform: none;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1), 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.catalogo-features .feature-item {
+  transition: all 0.3s ease;
+}
+
+.catalogo-features .feature-item:hover {
+  transform: translateX(5px);
+}
+
+.catalogo-features .feature-item i {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.catalogo-features .feature-item span {
+  color: var(--default-color);
+}
+
+.catalogo-actions .btn {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--nav-dropdown-hover-color) 100%);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(194, 75, 20, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.catalogo-actions .btn:hover {
+  background: #f27237;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 75, 20, 0.4) !important;
+  color: white;
+}
+
+.catalogo-actions .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.catalogo-actions .btn:hover::before {
+  left: 100%;
+}
+
+/* Animación eliminada para mejor rendimiento */
+
+@keyframes catalogoPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .catalogo-actions .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .catalogo-actions .btn:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Cambiar orden de columnas en móviles: imagen arriba, texto abajo */
+  .catalogo .row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .catalogo .col-lg-8 {
+    order: 2; /* Texto va abajo */
+  }
+  
+  .catalogo .col-lg-4 {
+    order: 1; /* Imagen va arriba */
+  }
+  
+  /* Mantener el diseño original de las estadísticas */
+  .catalogo-stats .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .catalogo-stats .col-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* ===============================================
+   FLOATING CATALOG BUTTON - PRODUCTS PAGE ONLY
+   =============================================== */
+
+.btn-catalog-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; 
+  width: 50px;
+  height: 50px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-catalog-fixed:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(220, 53, 69, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-catalog-fixed i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.btn-catalog-fixed .tooltip-text {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  color: #dc3545;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-catalog-fixed:hover .tooltip-text {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+/* Contenedor con animación sincronizada */
+.btn-catalog-fixed {
+  animation: floatSmooth 4s ease-in-out infinite;
+}
+
+@keyframes floatSmooth {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  25% { 
+    transform: translateY(-3px); 
+  }
+  50% { 
+    transform: translateY(-6px); 
+  }
+  75% { 
+    transform: translateY(-3px); 
+  }
+}
+
+/* ALTERNATIVA: Animación de pulso suave */
+.btn-catalog-fixed.alternative {
+  animation: pulseSmooth 3s ease-in-out infinite;
+}
+
+@keyframes pulseSmooth {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .btn-catalog-fixed {
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .btn-catalog-fixed i {
+    font-size: 1.3rem;
+  }
+  
+  .btn-catalog-fixed .tooltip-text {
+    right: 50px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ===============================================
+   CONTACT SERVICES SECTION STYLES
+   =============================================== */
+
+.contact-services {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+.contact-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../img/backgrounds/page-title-bg.webp') center/cover;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.contact-services .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-services-form {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-services-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.form-section-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+  position: relative;
+}
+
+.form-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-control,
+.form-select {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  background-color: #ffffff;
+}
+
+.form-control::placeholder {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.form-check {
+  margin-bottom: 1rem;
+}
+
+.form-check-input {
+  margin-top: 0.25rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-check-label {
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.4;
+}
+
+.form-check-label a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-check-label a:hover {
+  text-decoration: underline;
+}
+
+.invalid-feedback {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #c82333);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #c82333, var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover i {
+  transform: translateX(3px);
+}
+
+/* Animaciones para los campos del formulario */
+.form-control,
+.form-select {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.form-group:nth-child(odd) .form-control,
+.form-group:nth-child(odd) .form-select {
+  animation-delay: 0.1s;
+}
+
+.form-group:nth-child(even) .form-control,
+.form-group:nth-child(even) .form-select {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estados de validación */
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+  border-color: #28a745;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.94-.94 1.44 1.44 2.44-2.44.94.94-3.38 3.38z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+  border-color: #dc3545;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 1.4 1.4 1.4-1.4'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Responsive para ContactServices */
+@media (max-width: 992px) {
+  .contact-services-form {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-services-form {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .form-section-title {
+    font-size: 1.1rem;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-services-form {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .form-control,
+  .form-select {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Botón accent para formulario de servicios */
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent-color), #a03d0f);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.btn-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-accent:hover::before {
+  left: 100%;
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, #a03d0f, var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 75, 20, 0.3);
+  color: white;
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+}
+
+.btn-accent i {
+  transition: transform 0.3s ease;
+}
+
+.btn-accent:hover i {
+  transform: translateX(3px);
 }
