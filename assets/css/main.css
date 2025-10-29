@@ -1001,13 +1001,23 @@ section,
   transform: translateY(-2px);
 }
 
+@media (max-width: 992px) and (min-width: 577px) {
+  .hero .hero-actions .btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    width: auto;
+  }
+}
+
 @media (max-width: 576px) {
   .hero .hero-actions {
     flex-direction: column;
+    align-items: center;
   }
 
   .hero .hero-actions .btn {
     text-align: center;
+    width: auto;
   }
 }
 

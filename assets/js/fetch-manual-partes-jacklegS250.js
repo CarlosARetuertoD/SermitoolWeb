@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "maneral": [
       [43, 59, "69", "a697b", "Maneral"],
       [56, 28, "70", "d1454d", "Tuerca de maneral domo"],
+      [52, 20, "71", "d1454", "Tuerca de maneral"],
       [46, 84, "72", "145m30", "Arandela de seguridad"],
       [46, 90, "73", "d8247", "Tuerca de cuerpo de valvula"],
       [56, 69, "74", "c1514-1515", "Válvula retráctil"],
@@ -166,8 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       [44, 18, "86", "d1218uf-d1684", "Tuerca de valvula"],
       [63, 76, "44", "164811-1646503", "Oring"],
       [60, 73, "75", "c1514-1515-2", "Camisa de válvula retractil"],
-      [45, 79, "44", "164811-1646503", "Oring"],
-      [52, 20, "71", "71", "Desconocido"]
+      [45, 79, "44", "164811-1646503", "Oring"]
     ],
     'barra': [
       [92,28,"97","164531-1646014","Anillo"],
