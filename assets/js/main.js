@@ -216,7 +216,20 @@
     if (footerPlaceholder) {
       fetch("/partials/footer.html")
         .then((res) => (res.ok ? res.text() : Promise.reject(res.status)))
-        .then((html) => (footerPlaceholder.outerHTML = html))
+        .then((html) => {
+          // Detectar si estamos en la carpeta products/
+          const isInProductsFolder = window.location.pathname.includes('/products/');
+          
+          if (isInProductsFolder) {
+            // Ajustar las rutas relativas agregando ../
+            html = html
+              .replace(/href="index\.html"/g, 'href="../index.html"')
+              .replace(/src="assets\//g, 'src="../assets/')
+              .replace(/href="politica-privacidad\.html"/g, 'href="../politica-privacidad.html"');
+          }
+          
+          footerPlaceholder.outerHTML = html;
+        })
         .catch((err) => console.error("Error cargando footer:", err));
     }
   });
